@@ -767,12 +767,12 @@ def num49(n):
     return -1
 
 
-def vis50(n):
-    # NOTE: The triangles can't be drawn in ASCII characters.
+def vis50(n):  # DONE
+    # NOTE: There is no way we can implement this pattern with ASCII characters.
     raise NotImplementedError
 
 
-def num50(n):
+def num50(n):  # DONE
     # NOTE: Returns a tuple (yellow squares, green triangles)
     return -1
 

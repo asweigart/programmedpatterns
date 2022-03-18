@@ -67,6 +67,7 @@ While the strings returned by the `visX()` functions have multiple lines (that i
 
 ....should be represented as `'O\nOO\nOOO'` and not `'O  \nOO \nOOO\n'`.
 
+You should also draw each pattern as far up and to the left as possible. For example, pattern #22's 2nd iteration should be `'O\nOO'` and not `'\n\nO\nOO'`.
 
 Special Case Patterns
 -------------
