@@ -1,0 +1,3 @@
+The original visual patterns are available on https://visualpatterns.org under a Creative Commons Attribution license.
+
+The Programmed Patterns repo and the code therein is copyright Al Sweigart.
