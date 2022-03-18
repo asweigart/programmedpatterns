@@ -69,7 +69,7 @@ While the strings returned by the `visX()` functions have multiple lines (that i
 
 
 Special Case Patterns
-========
+-------------
 
 Most of the patterns involve a progressive growth of generic shapes which are represented by `'O'` strings. For example:
 

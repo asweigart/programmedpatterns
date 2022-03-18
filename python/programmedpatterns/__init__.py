@@ -25,6 +25,7 @@ NUM_DESC = {
     20: 'Number of Os:',
 
     44: 'Number of filled hexagons:',
+    53: 'Number of segments:',
 
 }
 
@@ -67,7 +68,7 @@ def getPatternMultilineString(patternNum, startIteration=1, endIteration=3, sep=
     return '\n'.join(lines)
 
 
-def vis1(n):
+def vis1(n):  # DONE
     """
     O  OO  OOO
        OO  OOO
@@ -80,11 +81,11 @@ def vis1(n):
     return ''.join(result).rstrip()
 
 
-def num1(n):
+def num1(n):  # DONE
     return n * n
 
 
-def vis2(n):
+def vis2(n):  # DONE
     """
     O   O    O
        OO    O
@@ -98,11 +99,11 @@ def vis2(n):
     return ''.join(result).rstrip()
 
 
-def num2(n):
+def num2(n):  # DONE
     return 1 + (2 * (n - 1))
 
 
-def vis3(n):
+def vis3(n):  # DONE
     """
     O  O   O
        OO  OO
@@ -115,14 +116,14 @@ def vis3(n):
     return ''.join(result).rstrip()
 
 
-def num3(n):
+def num3(n):  # DONE
     total = 0
     for i in range(1, n + 1):
         total += i
     return total
 
 
-def vis4(n):
+def vis4(n):  # DONE
     """
     O O  O   O  O     O
      O    O O    O   O
@@ -151,11 +152,11 @@ def vis4(n):
     return result.rstrip()
 
 
-def num4(n):
+def num4(n):  # DONE
     return n * 4 + 1
 
 
-def vis5(n):
+def vis5(n):  # DONE
     """
      OO    OOO     OOOO
     O O     OO      OOO
@@ -180,7 +181,7 @@ def vis5(n):
     return result
 
 
-def num5(n):
+def num5(n):  # DONE
     return 3 + (2 * ((n + 1) * n))
 
 
@@ -201,7 +202,7 @@ def num6(n):
     return ((n * (n + 1)) // 2) * 3
 
 
-def vis7(n):
+def vis7(n):  # DONE
     """
     OOO  OO   OO
          OOO  OO
@@ -215,11 +216,11 @@ def vis7(n):
     return result
 
 
-def num7(n):
+def num7(n):  # DONE
     return 2 * (n - 1) + 3
 
 
-def vis8(n):
+def vis8(n):  # DONE
     """
     OO  OO   OOO
         OOO  OOO
@@ -236,11 +237,11 @@ def vis8(n):
     return result
 
 
-def num8(n):
+def num8(n):  # DONE
     return ((n * (n + 1)) // 2) + 1
 
 
-def vis9(n):
+def vis9(n):  # DONE
     """
     O    OO    OOO
     OO   OOO   OOOO
@@ -253,11 +254,11 @@ def vis9(n):
     return result
 
 
-def num9(n):
+def num9(n):  # DONE
     return (n - 1) * 3 + 6
 
 
-def vis10(n):
+def vis10(n):  # DONE
     """
     O  OO  OOO
        O   OO
@@ -268,11 +269,11 @@ def vis10(n):
     return result
 
 
-def num10(n):
+def num10(n):  # DONE
     return (n - 1) * 2 + 1
 
 
-def vis11(n):
+def vis11(n):  # DONE
     """
     O   O    O
     OO  O    O
@@ -285,11 +286,11 @@ def vis11(n):
     return result
 
 
-def num11(n):
+def num11(n):  # DONE
     return 2 * n + 1
 
 
-def vis12(n):
+def vis12(n):  # DONE
     """
     OO  OOO  OOOO
     OO  OOO  OOOO
@@ -303,11 +304,11 @@ def vis12(n):
     return result
 
 
-def num12(n):
+def num12(n):  # DONE
     return (n + 1) ** 2
 
 
-def vis13(n):
+def vis13(n):  # DONE
     """
     O  O   O
        OO  OO
@@ -320,11 +321,11 @@ def vis13(n):
     return result
 
 
-def num13(n):
+def num13(n):  # DONE
     return (n * (n + 1)) // 2
 
 
-def vis14(n):
+def vis14(n):  # DONE
     """
     O       O       O
     OOOOOO  OOOOOO  OOOOOO
@@ -338,11 +339,11 @@ def vis14(n):
     return result
 
 
-def num14(n):
+def num14(n):  # DONE
     return 1 + (n * 6)
 
 
-def vis15(n):
+def vis15(n):  # DONE
     """
      O    O O    O O O
     OXO  OXOXO  OXOXOXO
@@ -356,12 +357,12 @@ def vis15(n):
     return result
 
 
-def num15(n):
+def num15(n):  # DONE
     # Returns a tuple of (Os, Xs)
     return (4 + (n - 1) * 3, n)
 
 
-def vis16(n):
+def vis16(n):  # DONE
     """
     O   O     O
        OOO   OOO
@@ -375,11 +376,11 @@ def vis16(n):
     return result
 
 
-def num16(n):
+def num16(n):  # DONE
     return n**2
 
 
-def vis17(n):
+def vis17(n):  # DONE
     """
      O     O       O
     OOO    O       O
@@ -394,11 +395,11 @@ def vis17(n):
     return result
 
 
-def num17(n):
+def num17(n):  # DONE
     return n * 3 + 1
 
 
-def vis18(n):
+def vis18(n):  # DONE
     """
     O   O     O
     OO  OOO   OOO
@@ -415,11 +416,11 @@ def vis18(n):
     return result
 
 
-def num18(n):
+def num18(n):  # DONE
     return n * 3
 
 
-def vis19(n):
+def vis19(n):  # DONE
     """
      O    O     O
     OOO  OOOO  OOOOO
@@ -437,7 +438,7 @@ def vis19(n):
     return result
 
 
-def num19(n):
+def num19(n):  # DONE
     return 2 + n * (n + 2)
 
 
@@ -685,8 +686,7 @@ def num43(n):
     return -1
 
 
-def vis44(n):
-    # NOTE: More than one character is needed to draw each shape.
+def vis44(n):  # DONE
     r"""
         __          __    __          __    __    __
      __/##\__    __/##\__/##\__    __/##\__/##\__/##\__
@@ -707,7 +707,7 @@ def vis44(n):
 
     return '\n'.join([line1, line2, line3, line4, line5, line6, line7])
 
-def num44(n):
+def num44(n):  # DONE
     return 6 + ((n - 1) * 4)
 
 
@@ -796,36 +796,46 @@ def num52(n):
     return -1
 
 
-def vis53(n):
-    # NOTE: More than one character is needed to draw each shape.
-    result = ''
-    return result
+def vis53(n):  # DONE
     r"""
- __     __ __     __ __ __
-|  |\  |  |  |\  |  |  |  |\
-|__|/  |__|__|/  |__|__|__|/
+     __     __ __     __ __ __
+    |  |\  |  |  |\  |  |  |  |\
+    |__|/  |__|__|/  |__|__|__|/
+    Number of segments:
+    6      9         12
 """
+    line1 = ' __' * n
+    line2 = '|' + ('  |' * n) + '\\'
+    line3 = '|' + ('__|' * n) + '/'
 
-def num53(n):
+    return '\n'.join([line1, line2, line3])
+
+
+def num53(n):  # DONE
     # NOTE: Returns number of segments, not number of shapes.
-    return -1
+    return 3 + (3 * n)
 
 
-def vis54(n):
-    # NOTE: More than one character is needed to draw each shape.
+def vis54(n):  # DONE
     r"""
- __ __    __ __ __    __ __ __ __
-|  |  |  |  |  |  |  |  |  |  |  |
-|__|__|  |__|__|__|  |__|__|__|__|
-"""
+     __ __    __ __ __    __ __ __ __
+    |  |  |  |  |  |  |  |  |  |  |  |
+    |__|__|  |__|__|__|  |__|__|__|__|
+Number of segments:
+    7        10          13"""
+    line1 = ' __' * (n + 1)
+    line2 = '|' + ('  |' * (n + 1))
+    line3 = '|' + ('__|' * (n + 1))
 
+    return '\n'.join([line1, line2, line3])
 
-def num54(n):
+def num54(n):  # DONE
     # NOTE: Returns the number of segments, not the number of squares.
-    return -1
+    return 1 + ((n + 1) * 3)
 
 
-def vis55(n):
+
+def vis55(n):  # DONE
     # NOTE: More than one character is needed to draw each shape.
     r"""
  __ /\    __ __ /\    __ __ __ /\
@@ -833,10 +843,14 @@ def vis55(n):
 |__|  /  |__|__|  /  |__|__|__|  /
     \/          \/             \/
 """
+    line1 = ' __' * n + ' /\\'
+    line2 = '|' + ('  |' * n) + '  \\'
+    line3 = '|' + ('__|' * n) + '  /'
+    line4 = ' ' + ('   ' * n) + '\\/'
+    return '\n'.join([line1, line2, line3, line4])
 
-
-def num55(n):
-    return -1
+def num55(n):  # DONE
+    return 5 + (n * 3)
 
 
 def vis56(n):
@@ -4729,4 +4743,3 @@ def num480(n):
     return -1
 
 
-print(getPatternMultilineString(44, 1, 3))
