@@ -3342,6 +3342,17 @@ def num320(n):
 
 
 def vis321(n):
+    """    
+             0
+        0    0   
+   0    0   00  
+   0   00   00
+  00   00   00
+             
+    Number of Os:
+    4   6   8"""
+    
+    
     result = ''
     return result
 
@@ -4449,12 +4460,21 @@ def num443(n):
 
 
 def vis444(n):
+    """
+    O  OO  OOO  OOOO             
+       O   O    O    
+           O    O            
+                O                 
+    """
     result = ''
+    for i in range(n):
+        result = 'O' + 'O' * (n - 1)
+        result += '\nO' * (n - 1)
     return result
 
 
 def num444(n):
-    return -1
+    return n + (n - 1)
 
 
 def vis445(n):
