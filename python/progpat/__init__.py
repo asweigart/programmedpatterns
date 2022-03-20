@@ -1,31 +1,33 @@
-# These are example solutions for each of the puzzles.
 
 import sys, random
 
-NUM_DESC = {
+NUM_DESC = { # Default value will be 'Number of Os:'
     15: 'Number of Os, Xs:',
+    23: 'Number of Os, Xs, Ms:',
+    24: 'Number of Os, Xs:',
+    25: 'Number of Os, Xs:',
+    26: 'Number of Os, Xs:',
+    27: 'Number of Os, Xs:',
+    37: 'Number of line segments:',
+    38: 'Number of line segments:',
     44: 'Number of filled hexagons:',
-    53: 'Number of segments:',
-    58: 'Number of segments:',
-    59: 'Number of black tiles, white tiles:',
+    53: 'Number of line segments:',
+    58: 'Number of line segments:',
+    59: 'Number of filled tiles, empty tiles:',
     66: 'Number of Os, Xs:',
+    68: 'Number of Os, Xs:',
+    69: 'Number of hexagons:',
+    72: 'Number of Os, Xs:',
+    77: 'Number of underscores and slashes:',
+    78: 'Number of underscores and slashes:',
+    81: 'Number of circles:',
+    85: 'Number of Os, Xs, Ms:',
+    86: 'Number of Os, Xs, Ms:',
+    112: 'Number of hexagons, trapezoids, rhombuses:'
+
 }
 
-def quiz(patternNumber):
-    print(eval('vis%d.__doc__' % (patternNumber)))
-    print()
-    print('Write a (vis) function that, given integer n, returns the string of iteration n.')
-    print('Write a (num) function that, given integer n, returns the number for iteration n.')
-    print()
-    for i in range(1, 4):
-        print('vis%d(%d) returns:' % (patternNumber, i))
-        print(eval('vis%d(%d)' % (patternNumber, i)))
-        print('num%d(%d) returns:' % (patternNumber, i))
-        print(eval('num%d(%d)' % (patternNumber, i)))
-
-
-
-def testMyFunctions(patternNumber, visualFunction, numericFunction):
+def checkSolution(patternNumber, visualFunction, numericFunction):
     for i in range(100):
         visSolution = eval('vis%d(%d)' % (patternNumber, i))
         visOutput = visualFunction(i)
@@ -48,7 +50,6 @@ def testMyFunctions(patternNumber, visualFunction, numericFunction):
 
 
 
-
 def getPatternMultilineString(patternNum, startIteration=1, endIteration=3, sep='  '):
     # Return a multiline string with the first three iterations of the pattern.
     pats = []
@@ -61,7 +62,9 @@ def getPatternMultilineString(patternNum, startIteration=1, endIteration=3, sep=
     for i in range(startIteration, endIteration + 1):
         patMaxLens.append(max([len(line) for line in pats[i - startIteration]]))
 
-    lines = []
+    lines = ['Pattern #' + str(patternNum)]
+
+    # Add the patterns:
     for i in range(maxNumLines):
         line = ''
         for j, pat in enumerate(pats):
@@ -85,19 +88,31 @@ def getPatternMultilineString(patternNum, startIteration=1, endIteration=3, sep=
         line += str(nums[i - startIteration]).ljust(patMaxLens[i - startIteration] + len(sep), ' ')
     lines.append(line.rstrip())
 
+    # Add the iteration numbers to the top:
+    iterationNumbersLine = ''
+    for i in range(startIteration, endIteration + 1):
+        iterationNumbersLine += ('%d' % i).ljust(patMaxLens[i - startIteration] + len(sep), ' ')
+    lines.insert(1, iterationNumbersLine)
+
+
     return '\n'.join(lines)
 
 
 def vis1(n):  # DONE
     """
     Pattern #1
-
-    O  OO  OOO
-       OO  OOO
-           OOO
+    1  2   3    4     5      6       7        8
+    O  OO  OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
+       OO  OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
+           OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
+                OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
+                      OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
+                             OOOOOO  OOOOOOO  OOOOOOOO
+                                     OOOOOOO  OOOOOOOO
+                                              OOOOOOOO
 
     Number of Os:
-    1  4   9"""
+    1  4   9    16    25     36      49       64"""
     result = []
     for i in range(1, n + 1):
         result.append('O' * n + '\n')
@@ -111,11 +126,18 @@ def num1(n):  # DONE
 def vis2(n):  # DONE
     """
     Pattern #2
-    O  .O  ..O
-       OO  ..O
-           OOO
+    1  2   3    4     5      6       7        8
+    O  .O  ..O  ...O  ....O  .....O  ......O  .......O
+       OO  ..O  ...O  ....O  .....O  ......O  .......O
+           OOO  ...O  ....O  .....O  ......O  .......O
+                OOOO  ....O  .....O  ......O  .......O
+                      OOOOO  .....O  ......O  .......O
+                             OOOOOO  ......O  .......O
+                                     OOOOOOO  .......O
+                                              OOOOOOOO
+
     Number of Os:
-    1  3   5"""
+    1  3   5    7     9      11      13       15"""
     result = []
     for i in range(n - 1):
         result.append(('.' * (n - 1) + 'O') + '\n')
@@ -130,11 +152,18 @@ def num2(n):  # DONE
 def vis3(n):  # DONE
     """
     Pattern #3
-    O  O   O
-       OO  OO
-           OOO
+    1  2   3    4     5      6       7        8
+    O  O   O    O     O      O       O        O
+       OO  OO   OO    OO     OO      OO       OO
+           OOO  OOO   OOO    OOO     OOO      OOO
+                OOOO  OOOO   OOOO    OOOO     OOOO
+                      OOOOO  OOOOO   OOOOO    OOOOO
+                             OOOOOO  OOOOOO   OOOOOO
+                                     OOOOOOO  OOOOOOO
+                                              OOOOOOOO
+
     Number of Os:
-    1  3   6"""
+    1  3   6    10    15     21      28       36"""
     result = []
     for i in range(1, n + 1):
         result.append(('O' * i) + '\n')
@@ -150,16 +179,22 @@ def num3(n):  # DONE
 
 def vis4(n):  # DONE
     """
-    # Pattern #4
-    O.O  O...O  O.....O
-    .O   .O.O   .O...O
-    O.O  ..O    ..O.O
-         .O.O   ...O
-         O...O  ..O.O
-                .O...O
-                O.....O
+    Pattern #4
+    1    2      3        4          5
+    O.O  O...O  O.....O  O.......O  O.........O
+    .O   .O.O   .O...O   .O.....O   .O.......O
+    O.O  ..O    ..O.O    ..O...O    ..O.....O
+         .O.O   ...O     ...O.O     ...O...O
+         O...O  ..O.O    ....O      ....O.O
+                .O...O   ...O.O     .....O
+                O.....O  ..O...O    ....O.O
+                         .O.....O   ...O...O
+                         O.......O  ..O.....O
+                                    .O.......O
+                                    O.........O
+
     Number of Os:
-    5    9      13"""
+    5    9      13       17         21"""
     result = ''
     for i in range(n):
         result += '.' * i
@@ -184,16 +219,24 @@ def num4(n):  # DONE
 
 def vis5(n):  # DONE
     """
-    Pattern #5
-    .OO  ..OOO  ...OOOO
-    O.O  ...OO  ....OOO
-    OOO  O..OO  ....OOO
-         OOOO   O...OOO
-         OOO    OOOOO
-                OOOO
-                OOOO
+Pattern #5
+    1    2      3        4          5            6
+    .OO  ..OOO  ...OOOO  ....OOOOO  .....OOOOOO  ......OOOOOOO
+    O.O  ...OO  ....OOO  .....OOOO  ......OOOOO  .......OOOOOO
+    OOO  O..OO  ....OOO  .....OOOO  ......OOOOO  .......OOOOOO
+         OOOO   O...OOO  .....OOOO  ......OOOOO  .......OOOOOO
+         OOO    OOOOO    O....OOOO  ......OOOOO  .......OOOOOO
+                OOOO     OOOOOO     O.....OOOOO  .......OOOOOO
+                OOOO     OOOOO      OOOOOOO      O......OOOOOO
+                         OOOOO      OOOOOO       OOOOOOOO
+                         OOOOO      OOOOOO       OOOOOOO
+                                    OOOOOO       OOOOOOO
+                                    OOOOOO       OOOOOOO
+                                                 OOOOOOO
+                                                 OOOOOOO
+
     Number of Os:
-    7    15     27"""
+    7    15     27       43         63           87"""
     result = ''
 
     result += ('.' * n) + ('O' * (n + 1)) + '\n'
@@ -232,13 +275,20 @@ def num6(n):
 def vis7(n):  # DONE
     """
     Pattern #7
-
-    OOO  OO   OO
-         OOO  OO
-              OOO
+    1    2    3    4    5    6    7    8    9    10
+    OOO  OO   OO   OO   OO   OO   OO   OO   OO   OO
+         OOO  OO   OO   OO   OO   OO   OO   OO   OO
+              OOO  OO   OO   OO   OO   OO   OO   OO
+                   OOO  OO   OO   OO   OO   OO   OO
+                        OOO  OO   OO   OO   OO   OO
+                             OOO  OO   OO   OO   OO
+                                  OOO  OO   OO   OO
+                                       OOO  OO   OO
+                                            OOO  OO
+                                                 OOO
 
     Number of Os:
-    3    5    7"""
+    3    5    7    9    11   13   15   17   19   21"""
     result = ''
     for i in range(n - 1):
         result += 'OO\n'
@@ -252,11 +302,19 @@ def num7(n):  # DONE
 
 def vis8(n):  # DONE
     """
-    OO  OO   OOO
-        OOO  OOO
-             OOOO
+    Pattern #8
+    1   2    3     4      5       6        7         8
+    OO  OO   OOO   OOOO   OOOOO   OOOOOO   OOOOOOO   OOOOOOOO
+        OOO  OOO   OOOO   OOOOO   OOOOOO   OOOOOOO   OOOOOOOO
+             OOOO  OOOO   OOOOO   OOOOOO   OOOOOOO   OOOOOOOO
+                   OOOOO  OOOOO   OOOOOO   OOOOOOO   OOOOOOOO
+                          OOOOOO  OOOOOO   OOOOOOO   OOOOOOOO
+                                  OOOOOOO  OOOOOOO   OOOOOOOO
+                                           OOOOOOOO  OOOOOOOO
+                                                     OOOOOOOOO
+
     Number of Os:
-    2   4    7"""
+    2   4    7     11     16      22       29        37"""
     result = ''
     for i in range(1, n + 1):
         result += 'O' * (n)
@@ -273,11 +331,14 @@ def num8(n):  # DONE
 
 def vis9(n):  # DONE
     """
-    O    OO    OOO
-    OO   OOO   OOOO
-    OOO  OOOO  OOOOO
+    Pattern #9
+    1    2     3      4       5        6
+    O    OO    OOO    OOOO    OOOOO    OOOOOO
+    OO   OOO   OOOO   OOOOO   OOOOOO   OOOOOOO
+    OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
+
     Number of Os:
-    6    9     12"""
+    6    9     12     15      18       21"""
     result = 'O' * (n - 1) + 'O\n'
     result += 'O' * (n - 1) + 'OO\n'
     result += 'O' * (n - 1) + 'OOO\n'
@@ -290,10 +351,13 @@ def num9(n):  # DONE
 
 def vis10(n):  # DONE
     """
-    O  OO  OOO
-       O   OO
+    Pattern #10
+    1  2   3    4     5      6       7        8
+    O  OO  OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
+       O   OO   OOO   OOOO   OOOOO   OOOOOO   OOOOOOO
+
     Number of Os:
-    1  3   5"""
+    1  3   5    7     9      11      13       15"""
     result = 'O' * n + '\n'
     result += 'O' * (n - 1) + '\n'
     return result
@@ -305,12 +369,18 @@ def num10(n):  # DONE
 
 def vis11(n):  # DONE
     """
-    O   O    O
-    OO  O    O
-        OOO  O
-             OOOO
+    Pattern #11
+    1   2    3     4      5       6
+    O   O    O     O      O       O
+    OO  O    O     O      O       O
+        OOO  O     O      O       O
+             OOOO  O      O       O
+                   OOOOO  O       O
+                          OOOOOO  O
+                                  OOOOOOO
+
     Number of Os:
-    3   5    7"""
+    3   5    7     9      11      13"""
     result = 'O\n' * n
     result += 'O' * (n + 1) + '\n'
     return result
@@ -322,12 +392,18 @@ def num11(n):  # DONE
 
 def vis12(n):  # DONE
     """
-    OO  OOO  OOOO
-    OO  OOO  OOOO
-        OOO  OOOO
-             OOOO
+    Pattern #12
+    1   2    3     4      5       6
+    OO  OOO  OOOO  OOOOO  OOOOOO  OOOOOOO
+    OO  OOO  OOOO  OOOOO  OOOOOO  OOOOOOO
+        OOO  OOOO  OOOOO  OOOOOO  OOOOOOO
+             OOOO  OOOOO  OOOOOO  OOOOOOO
+                   OOOOO  OOOOOO  OOOOOOO
+                          OOOOOO  OOOOOOO
+                                  OOOOOOO
+
     Number of Os:
-    4   9    16"""
+    4   9    16    25     36      49"""
     result = ''
     for i in range(1, n + 2):
         result += 'O' * (n + 1) + '\n'
@@ -340,11 +416,19 @@ def num12(n):  # DONE
 
 def vis13(n):  # DONE
     """
-    O  O   O
-       OO  OO
-           OOO
+    Pattern #13
+    1  2   3    4     5      6       7        8
+    O  O   O    O     O      O       O        O
+       OO  OO   OO    OO     OO      OO       OO
+           OOO  OOO   OOO    OOO     OOO      OOO
+                OOOO  OOOO   OOOO    OOOO     OOOO
+                      OOOOO  OOOOO   OOOOO    OOOOO
+                             OOOOOO  OOOOOO   OOOOOO
+                                     OOOOOOO  OOOOOOO
+                                              OOOOOOOO
+
     Number of Os:
-    1  3   6"""
+    1  3   6    10    15     21      28       36"""
     result = ''
     for i in range(1, n + 1):
         result += 'O' * i + '\n'
@@ -357,12 +441,18 @@ def num13(n):  # DONE
 
 def vis14(n):  # DONE
     """
-    O       O       O
-    OOOOOO  OOOOOO  OOOOOO
-            OOOOOO  OOOOOO
-                    OOOOOO
+    Pattern #14
+    1       2       3       4       5       6
+    O       O       O       O       O       O
+    OOOOOO  OOOOOO  OOOOOO  OOOOOO  OOOOOO  OOOOOO
+            OOOOOO  OOOOOO  OOOOOO  OOOOOO  OOOOOO
+                    OOOOOO  OOOOOO  OOOOOO  OOOOOO
+                            OOOOOO  OOOOOO  OOOOOO
+                                    OOOOOO  OOOOOO
+                                            OOOOOO
+
     Number of Os:
-    7       13      19"""
+    7       13      19      25      31      37"""
     result = 'O\n'
     for i in range(n):
         result += 'OOOOOO\n'
@@ -375,11 +465,13 @@ def num14(n):  # DONE
 
 def vis15(n):  # DONE
     """
-    .O   .O.O   .O.O.O
-    OXO  OXOXO  OXOXOXO
-    .O   .O.O   .O.O.O
+    Pattern #15
+    1    2      3        4          5            6
+    .O   .O.O   .O.O.O   .O.O.O.O   .O.O.O.O.O   .O.O.O.O.O.O
+    OXO  OXOXO  OXOXOXO  OXOXOXOXO  OXOXOXOXOXO  OXOXOXOXOXOXO
+    .O   .O.O   .O.O.O   .O.O.O.O   .O.O.O.O.O   .O.O.O.O.O.O
     Number of Os, Xs:
-    (4, 1)(7, 2) (10, 3)"""
+    (4, 1)(7, 2) (10, 3)  (13, 4)    (16, 5)      (19, 6)"""
     # NOTE: Use 'O' for circles, 'X' for squares.
     result = '.O' * n + '\n'
     result += 'O' + ('XO' * n) + '\n'
@@ -394,11 +486,17 @@ def num15(n):  # DONE
 
 def vis16(n):  # DONE
     """
-    O  .O   ..O
-       OOO  .OOO
-            OOOOO
+    Pattern #16
+    1  2    3      4        5          6
+    O  .O   ..O    ...O     ....O      .....O
+       OOO  .OOO   ..OOO    ...OOO     ....OOO
+            OOOOO  .OOOOO   ..OOOOO    ...OOOOO
+                   OOOOOOO  .OOOOOOO   ..OOOOOOO
+                            OOOOOOOOO  .OOOOOOOOO
+                                       OOOOOOOOOOO
+
     Number of Os:
-    1  4    9"""
+    1  4    9      16       25         36"""
     result = ''
 
     for i in range(n):
@@ -412,12 +510,18 @@ def num16(n):  # DONE
 
 def vis17(n):  # DONE
     """
-    .O   ..O    ...O
-    OOO  ..O    ...O
-         OOOOO  ...O
-                OOOOOOO
+    Pattern #17
+    1    2      3        4          5            6
+    .O   ..O    ...O     ....O      .....O       ......O
+    OOO  ..O    ...O     ....O      .....O       ......O
+         OOOOO  ...O     ....O      .....O       ......O
+                OOOOOOO  ....O      .....O       ......O
+                         OOOOOOOOO  .....O       ......O
+                                    OOOOOOOOOOO  ......O
+                                                 OOOOOOOOOOOOO
+
     Number of Os:
-    4    7      10"""
+    4    7      10       13         16           19"""
     result = ''
     for i in range(n):
         result += '.' * n + 'O\n'
@@ -431,12 +535,18 @@ def num17(n):  # DONE
 
 def vis18(n):  # DONE
     """
-    O   O     O
-    OO  OOO   OOO
-        ..OO  ..OOO
-              ....OO
+    Pattern #18
+    1   2     3       4         5           6
+    O   O     O       O         O           O
+    OO  OOO   OOO     OOO       OOO         OOO
+        ..OO  ..OOO   ..OOO     ..OOO       ..OOO
+              ....OO  ....OOO   ....OOO     ....OOO
+                      ......OO  ......OOO   ......OOO
+                                ........OO  ........OOO
+                                            ..........OO
+
     Number of Os:
-    3   6     9"""
+    3   6     9       12        15          18"""
     result = 'O\n'
 
     for i in range(n - 1):
@@ -452,13 +562,19 @@ def num18(n):  # DONE
 
 def vis19(n):  # DONE
     """
-    .O   .O    .O
-    OOO  OOOO  OOOOO
-    .O   OOOO  OOOOO
-         .O    OOOOO
-               .O
+    Pattern #19
+    1    2     3      4       5        6
+    .O   .O    .O     .O      .O       .O
+    OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
+    .O   OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
+         .O    OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
+               .O     OOOOOO  OOOOOOO  OOOOOOOO
+                      .O      OOOOOOO  OOOOOOOO
+                              .O       OOOOOOOO
+                                       .O
+
     Number of Os:
-    5    10    17"""
+    5    10    17     26      37       50"""
     result = '.O\n'
 
     for i in range(n):
@@ -719,6 +835,8 @@ def num43(n):
 
 def vis44(n):  # DONE
     r"""
+    Pattern #44
+    1           2                 3
     ....__      ....__....__      ....__....__....__
     .__/##\__   .__/##\__/##\__   .__/##\__/##\__/##\__
     /##\##/##\  /##\##/##\##/##\  /##\##/##\##/##\##/##\
@@ -832,11 +950,13 @@ def num52(n):
 
 def vis53(n):  # DONE
     r"""
-    .__    .__.__    .__.__.__
-    |..|\  |..|..|\  |..|..|..|\
-    |__|/  |__|__|/  |__|__|__|/
+    Pattern #53
+    1      2         3            4               5
+    .__    .__.__    .__.__.__    .__.__.__.__    .__.__.__.__.__
+    |..|\  |..|..|\  |..|..|..|\  |..|..|..|..|\  |..|..|..|..|..|\
+    |__|/  |__|__|/  |__|__|__|/  |__|__|__|__|/  |__|__|__|__|__|/
     Number of segments:
-    6      9         12"""
+    6      9         12           15              18"""
     line1 = '.__' * n
     line2 = '|' + ('..|' * n) + '\\'
     line3 = '|' + ('__|' * n) + '/'
@@ -851,11 +971,14 @@ def num53(n):  # DONE
 
 def vis54(n):  # DONE
     r"""
-    .__.__   .__.__.__   .__.__.__.__
-    |..|..|  |..|..|..|  |..|..|..|..|
-    |__|__|  |__|__|__|  |__|__|__|__|
+    Pattern #54
+    1        2           3              4
+    .__.__   .__.__.__   .__.__.__.__   .__.__.__.__.__
+    |..|..|  |..|..|..|  |..|..|..|..|  |..|..|..|..|..|
+    |__|__|  |__|__|__|  |__|__|__|__|  |__|__|__|__|__|
 
-    7        10          13"""
+    Number of Os:
+    7        10          13             16"""
     line1 = '.__' * (n + 1)
     line2 = '|' + ('..|' * (n + 1))
     line3 = '|' + ('__|' * (n + 1))
@@ -871,12 +994,15 @@ def num54(n):  # DONE
 def vis55(n):  # DONE
     # NOTE: More than one character is needed to draw each shape.
     r"""
-    .__./\   .__.__./\   .__.__.__./\
-    |..|..\  |..|..|..\  |..|..|..|..\
-    |__|../  |__|__|../  |__|__|__|../
-    ....\/   .......\/   ..........\/
+    Pattern #55
+    1        2           3              4
+    .__./\   .__.__./\   .__.__.__./\   .__.__.__.__./\
+    |..|..\  |..|..|..\  |..|..|..|..\  |..|..|..|..|..\
+    |__|../  |__|__|../  |__|__|__|../  |__|__|__|__|../
+    ....\/   .......\/   ..........\/   .............\/
 
-    8        11          14"""
+    Number of Os:
+    8        11          14             17"""
     line1 = '.__' * n + './\\'
     line2 = '|' + ('..|' * n) + '..\\'
     line3 = '|' + ('__|' * n) + '../'
@@ -917,13 +1043,15 @@ def num57(n):
 def vis58(n):  # DONE
     # NOTE: More than one character is needed to draw each shape.
     r"""
-    ./\   ./\      ./\..../\
-    /..\  /..\__   /..\__/..\
-    \__/  \__/..\  \__/..\__/
-          ...\../  ...\../
-          ....\/   ....\/
+    Pattern #58
+    1     2        3           4
+    ./\   ./\      ./\..../\   ./\..../\
+    /..\  /..\__   /..\__/..\  /..\__/..\__
+    \__/  \__/..\  \__/..\__/  \__/..\__/..\
+          ...\../  ...\../     ...\../..\../
+          ....\/   ....\/      ....\/....\/
     Number of segments:
-    5     9        13"""
+    5     9        13          17"""
     line1 = (r'./\...' * ((n + 1) // 2)).rstrip('.')
     if n % 2 == 0:
         line2 = r'/..\__' * (n // 2)
@@ -942,7 +1070,7 @@ def num58(n):  # DONE
     return 5 + (4 * (n - 1))
 
 
-def vis59(n):  # DONE
+def vis59(n):
     # NOTE: More than one character is needed to draw each shape.
 
     r"""
@@ -950,17 +1078,22 @@ def vis59(n):  # DONE
     |..|..|..|  |..|..|..|..|  |..|..|..|..|..|
     |__|__|__|  |__|__|__|__|  |__|__|__|__|__|
     |..|##|..|  |..|#####|..|  |..|########|..|
-    |..|..|..|  |..|#####|..|  |..|########|..|
+    |..|..|..|  |..|#####|..|  |__|########|__|
     |__|__|__|  |..|..|..|..|  |..|########|..|
-                |__|__|__|__|  |..|..|..|..|..|
+                |__|__|__|__|  |__|########|__|
+                               |..|########|..|
+                               |__|########|__|
+                               |..|..|..|..|..|
                                |__|__|__|__|__|
+
     Number of black tiles, white tiles:
     (1, 8)      (4, 12)        (9, 16)"""
     result = '.__' * (n + 2) + '\n'
     result += '|..' * (n + 2) + '|\n'
     result += '|__' * (n + 2) + '|\n'
     for i in range(n):
-        result += '|..|' + ('#' * (n * 2)) + ('#' * (n - 1)) + '|..|\n'
+        # TODO - not finished
+        result += '|__|' + ('#' * (n * 2)) + ('#' * (n - 1)) + '|__|\n'
     result += '|..' * (n + 2) + '|\n'
     result += '|__' * (n + 2) + '|\n'
     return result
@@ -1748,13 +1881,19 @@ def num140(n):
 
 def vis141(n):  # DONE
     """
-    OO   OOO    OOOO
-    OOO  OOOOO  OOOOOOO
-    OOO  OOOOO  OOOOOOO
-         OOOOO  OOOOOOO
-                OOOOOOO
+    Pattern #141
+    1    2      3        4          5            6
+    OO   OOO    OOOO     OOOOO      OOOOOO       OOOOOOO
+    OOO  OOOOO  OOOOOOO  OOOOOOOOO  OOOOOOOOOOO  OOOOOOOOOOOOO
+    OOO  OOOOO  OOOOOOO  OOOOOOOOO  OOOOOOOOOOO  OOOOOOOOOOOOO
+         OOOOO  OOOOOOO  OOOOOOOOO  OOOOOOOOOOO  OOOOOOOOOOOOO
+                OOOOOOO  OOOOOOOOO  OOOOOOOOOOO  OOOOOOOOOOOOO
+                         OOOOOOOOO  OOOOOOOOOOO  OOOOOOOOOOOOO
+                                    OOOOOOOOOOO  OOOOOOOOOOOOO
+                                                 OOOOOOOOOOOOO
+
     Number of Os:
-    8    18     32"""
+    8    18     32       50         72           98"""
     result = 'O' + ('O' * n) + '\n'
     for i in range(n + 1):
         result += 'O' * ((n * 2) + 1) + '\n'
@@ -1857,13 +1996,18 @@ def num151(n):
 
 def vis152(n):  # DONE
     """
-    ..O    ...O     ....O
-    .O.O   ..O.O    ...O.O
-    O.O.O  .O...O   ..O...O
-           O.O.O.O  .O.....O
-                    O.O.O.O.O
+    Pattern #152
+    1      2        3          4            5
+    ..O    ...O     ....O      .....O       ......O
+    .O.O   ..O.O    ...O.O     ....O.O      .....O.O
+    O.O.O  .O...O   ..O...O    ...O...O     ....O...O
+           O.O.O.O  .O.....O   ..O.....O    ...O.....O
+                    O.O.O.O.O  .O.......O   ..O.......O
+                               O.O.O.O.O.O  .O.........O
+                                            O.O.O.O.O.O.O
+
     Number of Os:
-    6      9        12"""
+    6      9        12         15           18"""
     result = '.' * (n + 1) + 'O\n'
     for i in range(n):
         result += ('.' * (n - i)) + 'O' + ((i * 2 + 1) * '.') + 'O\n'
@@ -4827,5 +4971,8 @@ def vis480(n):
 def num480(n):
     return -1
 
-quiz(1)
-testMyFunctions(1, vis1, num1)
+
+def pattern(patternNumber):
+    print(eval('vis%d.__doc__' % (patternNumber)))
+
+
