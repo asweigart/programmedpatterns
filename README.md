@@ -107,6 +107,8 @@ While the strings returned by the `visX()` functions have multiple lines (that i
 
 You should also draw each pattern as far up and to the left as possible. For example, pattern #22's 2nd iteration should be `'O\nOO'` and not `'\n\nO\nOO'`.
 
+Once you have finished the visual and numeric functions for a pattern and ensured they are correct, add a `# DONE` comment to the `def` statement for the functions and update the visual function's docstring to the output of `getPatternMultilineString(patternNum, 1, endIteration)`, where patternNum is the integer of the pattern number and endIteration is as large of an integer as you can make without the output being wider than about 70 or so characters. (This is usually 3 to 6.) It's important that you use the naming pattern `visX()` and `numX()` for your solution functions or `getPatternMultilineString()` won't work.
+
 Special Case Patterns
 -------------
 
