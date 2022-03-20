@@ -1,6 +1,6 @@
 # These are example solutions for each of the puzzles.
 
-import sys
+import sys, random
 
 NUM_DESC = {
     15: 'Number of Os, Xs:',
@@ -10,6 +10,43 @@ NUM_DESC = {
     59: 'Number of black tiles, white tiles:',
     66: 'Number of Os, Xs:',
 }
+
+def quiz(patternNumber):
+    print(eval('vis%d.__doc__' % (patternNumber)))
+    print()
+    print('Write a (vis) function that, given integer n, returns the string of iteration n.')
+    print('Write a (num) function that, given integer n, returns the number for iteration n.')
+    print()
+    for i in range(1, 4):
+        print('vis%d(%d) returns:' % (patternNumber, i))
+        print(eval('vis%d(%d)' % (patternNumber, i)))
+        print('num%d(%d) returns:' % (patternNumber, i))
+        print(eval('num%d(%d)' % (patternNumber, i)))
+
+
+
+def testMyFunctions(patternNumber, visualFunction, numericFunction):
+    for i in range(100):
+        visSolution = eval('vis%d(%d)' % (patternNumber, i))
+        visOutput = visualFunction(i)
+
+        if visSolution != visOutput:  # Student solution isn't correct.
+            print('Your visual function for pattern %d produced different output for iteration %d.' % (i, i))
+            print('Expected:\n' + visSolution)
+            print('Your function:\n' + visOutput)
+            return False
+
+
+        numSolution = eval('num%d(%d)' % (patternNumber, i))
+        numOutput = numericFunction(i)
+
+        if numSolution != numOutput:  # Student solution isn't correct.
+            print('Your numeric function for pattern %d produced different output for iteration %d.' % (i, i))
+            print('Expected:\n' + numSolution)
+            print('Your function:\n' + numOutput)
+            return False
+
+
 
 
 def getPatternMultilineString(patternNum, startIteration=1, endIteration=3, sep='  '):
@@ -38,7 +75,7 @@ def getPatternMultilineString(patternNum, startIteration=1, endIteration=3, sep=
         lines.append(line.rstrip())
 
     # Add the number line:
-    lines.append(NUM_DESC.get(patternNum, 'Number of Os:'))
+    lines.append(NUM_DESC.get(patternNum, '\nNumber of Os:'))
     nums = []
     for i in range(startIteration, endIteration + 1):
         nums.append(eval('num%d(%d)' % (patternNum, i)))
@@ -53,9 +90,12 @@ def getPatternMultilineString(patternNum, startIteration=1, endIteration=3, sep=
 
 def vis1(n):  # DONE
     """
+    Pattern #1
+
     O  OO  OOO
        OO  OOO
            OOO
+
     Number of Os:
     1  4   9"""
     result = []
@@ -70,6 +110,7 @@ def num1(n):  # DONE
 
 def vis2(n):  # DONE
     """
+    Pattern #2
     O  .O  ..O
        OO  ..O
            OOO
@@ -88,6 +129,7 @@ def num2(n):  # DONE
 
 def vis3(n):  # DONE
     """
+    Pattern #3
     O  O   O
        OO  OO
            OOO
@@ -108,6 +150,7 @@ def num3(n):  # DONE
 
 def vis4(n):  # DONE
     """
+    # Pattern #4
     O.O  O...O  O.....O
     .O   .O.O   .O...O
     O.O  ..O    ..O.O
@@ -141,6 +184,7 @@ def num4(n):  # DONE
 
 def vis5(n):  # DONE
     """
+    Pattern #5
     .OO  ..OOO  ...OOOO
     O.O  ...OO  ....OOO
     OOO  O..OO  ....OOO
@@ -187,9 +231,12 @@ def num6(n):
 
 def vis7(n):  # DONE
     """
+    Pattern #7
+
     OOO  OO   OO
          OOO  OO
               OOO
+
     Number of Os:
     3    5    7"""
     result = ''
@@ -4779,3 +4826,6 @@ def vis480(n):
 
 def num480(n):
     return -1
+
+quiz(1)
+testMyFunctions(1, vis1, num1)
