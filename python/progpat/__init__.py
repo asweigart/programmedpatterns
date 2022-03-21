@@ -2461,13 +2461,37 @@ def num201(n):
     return -1
 
 
-def vis202(n):
-    result = ''
-    return result
+def vis202(n):  # DONE
+    """
+    1        2           3              4                 5                    
+    O.....O  O........O  O...........O  O..............O  O.................O
+
+    O..O     O.....O     O........O     O...........O     O..............O
+
+    O..O..O  O..O        O.....O        O........O        O...........O
+
+             O..O..O..O  O..O           O.....O           O........O
+
+                         O..O..O..O..O  O..O              O.....O
+
+                                        O..O..O..O..O..O  O..O
+
+                                                          O..O..O..O..O..O..O
+
+    Number of Os:
+    7        10          13             16                19
+
+    """
+    result = []
+    for i in range(n+1, 0, -1):
+        objects_before_spacing = 'O' + '.' * (i-1) + 'O'
+        result.append('..'.join(objects_before_spacing) + '\n\n')
+    result.append('..'.join('O' * (n+2)))
+    return ''.join(result)
 
 
-def num202(n):
-    return -1
+def num202(n):  # DONE
+    return 7 + 3 * (n-1)
 
 
 def vis203(n):
