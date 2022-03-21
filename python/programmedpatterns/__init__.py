@@ -1196,12 +1196,29 @@ def num84(n):
 
 
 def vis85(n):
+    """                  
+                 OOO  
+          OO     OOO 
+    OO  OOOO  OOOOOO          
+    OO  OOO   OOOO
+        OOO   OOOO 
+              OOOO  
+    Number of Os:
+    4   12     24    
+    """
     result = ''
+    if n == 1:
+        result = 'OO\nOO'       
+        return result
+    result = (' ' * n) + 'O' * n + '\n'
+    result += 'O' * (n * 2) + '\n'
+    for i in range(n):
+        result += 'O' * (n + 1) + '\n'
     return result
 
 
 def num85(n):
-    return -1
+    return (n + 1) * (n + 1) + (n * n - 1)
 
 
 def vis86(n):
