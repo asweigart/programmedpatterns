@@ -1,0 +1,756 @@
+Visual Patterns to Practice Programming: Improving Your Math and Critical Thinking Through Coding
+
+
+
+NOTE TO READER AND TEACHERS: The code doesn't have to be exactly like the code in this book. As long as it passes the unit tests and returns the right answer, it's correct code.
+
+
+
+QUESTION: Is it better to publish this through No Starch for money/prestige or on Amazon for $3 just for ranking and my name?
+(I could make an online course out of it.)
+
+Offer for teachers - use the patterns in this book, though solutions can probably be found online. Use my functions to create text of the patterns.
+
+Python edition and Java edition or both?
+
+Note that you can use emoji.
+
+Look at khan academy algebra and dragon box
+
+TRANSLATING TO OTHER LANGUAGES.
+
+
+0 - Introduction
+    - math and critical thinking - whatever that is
+    - installing python/java
+
+1 - Programming Basics
+    - Installation, operations, expressions, variables, interactive shell
+    - Strings, replication/concatenation
+    - Lists
+    - Loops, functions
+    - how to check your code against the answers
+
+2 - Math Basics
+    - addition/subtraction rules, check out the outline for the math book.
+
+2 - Basic Growth Patterns
+    - basic growth patterns with one and multiple characters
+    - basic algebra
+
+3 - Complex Growth Patterns
+
+4 - Periodic Patterns
+    - repeating patterns and the mod operator
+
+5 - Basic Geometric Patterns
+    - using line segments, etc.
+    - area and perimeter
+
+6 - Endless Patterns
+    - 1d (scrolling) and 2d (wallpaper)
+    - bitfield
+
+7 - State Changing Patterns
+    - stepwise function: O -> OO -> X -> OX -> OOX -> XX
+
+8 - Graphical Patterns with HTML
+    - html basics
+    - file i/o basics
+
+
+
+9 - Recursive Patterns
+
+
+
+
+
+
+
+=========================================================================
+=========================================================================
+=========================================================================
+=========================================================================
+=========================================================================
+
+
+CHAPTER 2 - ONE DIMENSIONAL PATTERNS
+
+- Introduction; these are additive patterns where each iteration adds to the previous one.
+- Each of our patterns will have a visual component and a numeric component.
+- One dimensional; basic patterns
+- 1) O -> OO -> OOO -> OOOO; adding one
+    - For our programs, we'll use 'O' to mark each <noun thing>
+    - We can convert this to a series of numbers: 1, 2, 3, 4 ...
+- 2) OO -> OOO -> OOOO; adding one, but starting at two. This is n + 1. Previously we assumed that it started at 0, or n + 0 (this can be n + 1 or 1 + n)
+- 3) OO -> OOOO -> OOOOOO; adding two, this is 2 * n
+- 4) OOO -> OOOOO -> OOOOOOO; adding two, starting at 3. This is 2 * n + 1
+- 5) OO -> OOOOO -> OOOOOOOO; subtraction 3n - 1 or 3(n - 1) + 2
+- 6) OOO -> OOO -> OOO; no change, n isn't involved, or rather 0 * n
+- Practice Problems (16 problems)
+    - 7) 3n            OOO  OOOOOO  OOOOOOOOO
+    - 8) 3n + 3 or 3(n+1)
+    - 9) 2n + 10
+    - 10) 4n - 3        O  OOOOO  OOOOOOOOO
+    - 11) 4
+    - 12) 3n + 1
+    - 13) 8n + 2
+    - 14) 8n - 2
+    - 15) 2n + 2
+    - 16) n + 2
+    - 17) 8n - 7
+    - 18) 3n + 2
+    - 19) 4n
+    - 20) 4n + 2
+    - 21) 3n + 3  (go ahead and repeat some patterns)
+    - 22) 4n - 3
+
+CHAPTER 2 - ONE DIMENSIONAL STEP PATTERNS
+
+- ->23) O -> OO -> OOOO -> OOOOO -> OOOOOOO -> OOOOOOOO (increase by 1, 2)
+- ->24) increase by 1, 2, 2, starts at 1
+- ->25) increase by 1, 0, starts at 1
+- ->26) increase by 1, 0, 0, starts at 1
+- ->27) increase by 1, 2, 3, starts at 4
+- ->28) increase by 0, 0, 0, 0, 5, starts at 5
+
+- Practice Problems
+    - ->29) increase by 1, 0, 2, 0
+    - ->30) increase by 2, 1
+    - ->31) increase by 1, 0, 1, starts at 4
+    - ->32) increase by 3, 0
+    - ->33) increase by 0, 3, starts at 3
+    - ->34) increase by 2, 3
+    - ->35) increase by 0, 0, 2
+    - ->36) increase by 0, 2, 0
+    - ->37) increase by 2, 0, 0
+    - ->38) increase by 3, 2, 1, starts at 2
+
+
+CHAPTER 3 - TWO DIMENSIONAL RECTANGULAR PATTERNS
+- Two dimensional patterns; growth in two directions
+- can use a for loop or more string replication
+
+- 39) n x n
+O    OO    OOO
+     OO    OOO
+           OOO
+
+- 40) 2n x 1n
+OO    OOOO    OOOOOO
+      OOOO    OOOOOO
+              OOOOOO
+
+- ->41) 1n x 2n
+O    OO    OOO
+O    OO    OOO
+     OO    OOO
+     OO    OOO
+           OOO
+           OOO
+
+- ->42) 2n x 2n
+
+- ->43) 3n x 2n
+
+- ->44) 2n + 2 x 2n
+
+- ->45) 2n+3 x 1n+2
+
+- algebra of exponents
+- polynomials: ax^2 + bx^1 + cx^0
+
+
+- Practice Problems:
+    - 46) 2n x 3n
+    - 47) 2n+1 x 3n
+    - 48) n+5 x 2n
+    - 49) 3n+1 x 3n+1
+    - 50) 1n x 4n+1
+    - 51) 4n+2 x 4n+2
+    - 52) 4n+2 x 4n+3
+    - 53) 4n x 1n+2
+    - 54) 1n+2 x 2n
+    - 55) 4n+3 x 2n
+
+
+CHAPTER 4 - TWO DIMENSIONAL STEP PATTERNS
+- 56) O    OO    OO    OOO    OOO    OOOO
+           OO    OO    OOO    OOO    OOOO
+                       OOO    OOO    OOOO
+                                     OOOO
+    increase by (1,1),(0,0)
+- 57) increase by (0,0),(1,1)
+- 58) increase by (0,1),(1,0)
+- 59) increase by (1,2),(2,2)
+- 60) increase by (3,3),(0,0),(0,0),(0,0)
+- 61) increase by (1,2),(3,4)
+- 62) increase by width:0,1 height:1 (the increases are out of phase with each other)
+- 63) increase by width:1,2 height:1,1,2
+
+- Practice Problems
+
+
+
+
+
+CHAPTER 5 - STAIR-SHAPED TWO DIMENSIONAL PATTERNS
+
+- 23->) stair pattern
+O    O     O
+     OO    OO
+           OOO
+- 24->) reverse stair pattern
+O    OO    OOO
+     O     OO
+           O
+- 25->) stair starts with 2 rows
+O     O      O
+OO    OO     OO
+      OOO    OOO
+             OOOO
+- 26->) stair increase two steps
+O    O      O
+     OOO    OOO
+            OOOOO
+
+- 29->) pat 97 (rearrange to form two sets of stairs)
+O    O        O
+     OOO      OOO
+     OOOOO    OOOOO
+              OOOOOOO
+              OOOOOOOOO
+    height is 2n-1, width is 4n-3, area is ((2n-1)(4n-2)) / 2
+    really, we add 4 to the width for each step (that is, adding 2 twice)
+
+
+
+
+
+CHAPTER 6 - ARBITRARY TWO DIMENSIONAL PATTERNS
+- breaking up patterns into smaller sections
+
+
+- 31) each row has exponential number
+O    OOOO    OOOOOOOOO
+     OOOO    OOOOOOOOO
+     OOOO    OOOOOOOOO
+     OOOO    OOOOOOOOO
+             OOOOOOOOO
+             OOOOOOOOO
+             OOOOOOOOO
+             OOOOOOOOO
+             OOOOOOOOO
+
+- ->) n x n minus a piece, except for step 1
+O    OO    OOO
+     O     OOO
+           OO
+
+- 30->) pat 127 viewing it as a grid and then subtracting
+OO    OOO    OOOO
+O     OOO    OOOO
+      OO     OOOO
+             OOO
+
+
+- fibonacci sequence in rows
+O    O    O     O      O         O
+     O    O     O      O         O
+          OO    OO     OO        OO
+                OOO    OOO       OOO
+                       OOOOO     OOOOO
+
+- 12) L shape pat 11
+- 13) Pat 8
+- 14) Pat 14
+- Practice questions:
+    - pat 19 (but without leading spaces)
+    - pat 21
+    - 4-row/5-row, 4-row/5-row/4-row/5-row
+    - 2r2r4r, 2r2r4r2r2r4r, 2r2r4r2r2r4r2r2r4r
+    - pat jabula.png
+
+
+CHAPTER 4 - PATTERNS WITH WHITESPACE
+    - This is the chapter where we start making interesting patterns while having the mathematical background to create formulas for them.
+    - pat 4, X pattern
+    - pat 16, pyramid
+    - upside down pyramid
+    - pyramid arrow pointing left
+    - growing cross
+    - pat 18, snakey
+    - pat 35, worm
+    - pat 5
+    - fibonacci sequence but vertical
+    - Practice Questions: (Maybe have multiple sets of questions?)
+        - pat 101 thicker X
+        - pat 45
+        - pat 76
+        - pat 107 (picture frame)
+        - picture frame rectangle
+        - pat 109 graph x=y slope downwards
+        - pat 114 graph x=y slope
+        - pat 115 castle
+        - pat 116
+        - pat 120 S curve
+        - S curve
+        - pat 137 diamond
+        - pat 138 picture frame with corner cut out
+        - pat 140 picture frame with more corner cut out
+        - pat 130
+        - pat 124 sorta circle slash
+
+
+CHAPTER 5 - PERIODIC PATTERNS
+- ex: zig zag wrap around
+- ex: zig zag bounce
+
+
+CHAPTER 6 - MULTI-CHARACTER PATTERNS
+
+
+
+CHAPTER 7 - CARTESIAN COORDINATE PATTERNS
+-
+- bitfield: x + y % 2
+- bitfield: x ^ y
+
+
+
+CHAPTER 8 - L-SYSTEMS
+
+
+- 5) n x n pattern
+- 6) n x (n+1) pattern; double stairs
+- 7) nx(n+1)/2 stair pattern;
+
+
+
+CHAPTER 9 - GRAPHICAL PATTERNS WITH HTML
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+
+
+
+
+
+
+(basic one dimensional growth)
+
+O    OO    OOO
+
+---------
+
+(n + 2)
+
+OOO    OOOO    OOOOO
+
+---------
+
+(n * 2)
+
+OO    OOOO    OOOOOO
+
+---------
+
+(n * 3)
+(n * 3 + 2)
+
+---------
+
+(n but growing down)
+
+O
+
+O
+OO
+
+O
+OO
+OOO
+
+---------
+
+OOO
+
+OOO
+OOOO
+
+OOO
+OOOO
+OOOOO
+
+---------
+
+OO
+
+OO
+OOOO
+
+OO
+OOOO
+OOOOOO
+
+---------
+
+OOO
+
+OOO
+OOOOOO
+
+OOO
+OOOOOO
+OOOOOOOOO
+
+---------
+(somewhat more complicated powers, idnetifying different parts of growth)
+
+
+OOO
+
+OO
+OOO
+
+OO
+OO
+OOO
+
+---------
+
+1   2    3     4
+OO  OO   OOO   OOOO
+    OOO  OOO   OOOO
+         OOOO  OOOO
+               OOOOO
+
+---------
+
+1    2     3      4       5        6
+O    OO    OOO    OOOO    OOOOO    OOOOOO
+OO   OOO   OOOO   OOOOO   OOOOOO   OOOOOOO
+OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
+
+
+---------
+
+1  2   3    4     5      6       7        8
+O  OO  OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
+   O   OO   OOO   OOOO   OOOOO   OOOOOO   OOOOOOO
+
+---------
+
+O
+OO
+
+O
+O
+OOO
+
+O
+O
+O
+OOOO
+
+---------
+
+pat 107
+
+
+---------
+pat 31
+
+ O
+OOO
+ O
+
+ OOO
+OOOOO
+ OOO
+
+ OOOOO
+OOOOOOO
+ OOOOO
+
+---------
+(leading whitespace)
+
+O
+
+ O
+OO
+
+  O
+  O
+OOO
+
+---------
+
+O   O
+ O O
+  O
+ O O
+O   O
+
+---------
+
+O O O O
+ O O O O
+O O O O
+ O O O O
+
+---------
+
+O
+
+O O
+ O
+
+O O O
+ O O
+  O
+
+---------
+pat 33
+
+O
+
+O O
+ O
+O O
+
+O O O
+ O O
+  O
+ O O
+O O O
+
+---------
+
+ O
+OOO
+
+  O
+  O
+OOOOO
+
+   O
+   O
+   O
+OOOOOOO
+
+---------
+
+O
+
+ O
+OOO
+
+  O
+ OOO
+OOOOO
+
+---------
+
+1    2      3
+.OO  ..OOO  ...OOOO
+O.O  ...OO  ....OOO
+OOO  O..OO  ....OOO
+     OOOO   O...OOO
+     OOO    OOOOO
+            OOOO
+            OOOO
+
+---------
+Pat 18
+
+O
+OO
+
+O
+OOO
+  OO
+
+O
+OOO
+  OOO
+    OO
+
+---------
+
+pat 249
+
+---------
+
+ O
+OOO
+ O
+
+ O
+OOOO
+OOOO
+ O
+
+ O
+OOOOO
+OOOOO
+OOOOO
+ O
+
+---------
+
+pat 101-106
+pat 114
+pat 115
+pat 116
+pat 120
+
+pat 134-140
+
+
+---------
+
+
+(multiple characters)
+
+
+OXOXOXOX
+XOXOXOXO
+OXOXOXOX
+XOXOXOXO
+
+---------
+
+
+1    2      3        4          5            6
+.O   .O.O   .O.O.O   .O.O.O.O   .O.O.O.O.O   .O.O.O.O.O.O
+OXO  OXOXO  OXOXOXO  OXOXOXOXO  OXOXOXOXOXO  OXOXOXOXOXOXO
+.O   .O.O   .O.O.O   .O.O.O.O   .O.O.O.O.O   .O.O.O.O.O.O
+
+
+---------
+
+O
+OX
+OX
+
+O
+OXX
+OXX
+
+O
+OXXX
+OXXX
+
+---------
+
+O
+O
+OXX
+
+O
+OX
+OXXX
+
+O
+OXX
+OXXXX
+
+---------
+
+pat 23
+
+ X
+OXW
+
+OOX
+OOX
+OOX
+OOXW
+
+OOO
+OOO
+OOO
+OOOX
+OOOX
+OOOX
+OOOX
+OOOX
+OOOXW
+
+---------
+
+(geometric shapes, squares)
+pat 1
+growing rectangle
+
+(geometrc shapes, triangles)
+pat 2
+pat 56
+
+
+(geometric shapes, hexagons)
+pat 42
+pat 51
+pat 44
+pat 45
+pat 58
+pat 55
+
+(geometric shapes, other)
+pat 77
+pat 78
+pat 112
+
+pat 219
+pat 220
+
+
+-----------
+(stepwise state)
+
+O -> OO -> X -> OX -> OOX -> XX
+rose vine growing
+spiral
+
+-----------
+(recursive and l-systems)
+
+pat 250 (subtractive staircase)
+sierpinski triangle
+sierpinski carpet
+tree growth pattern?
+
+
