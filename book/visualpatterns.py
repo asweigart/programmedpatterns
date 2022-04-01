@@ -1310,12 +1310,12 @@ def formula51(step):
 
 def pattern52(step):
     row = ('OOOO' * step) + 'OO\n'
-    pattern = row * (step * 4) + row + row + row
+    pattern = row * (step * 2) + row + row + row
     return pattern
 
 def formula52(step):
     width = (step * 4) + 2
-    height = (step * 4) + 3
+    height = (step * 2) + 3
     return width * height
 
 
@@ -1355,6 +1355,503 @@ def pattern55(step):
 def formula55(step):
     width = (step * 4) + 3
     height = step * 2
+    return width * height
+
+
+def pattern56(step):
+    size = 1
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            size += 1
+    row = ('O' * size) + '\n'
+    pattern = row * size
+    return pattern
+
+def formula56(step):
+    size = 1
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            size += 1
+    return size * size
+
+def pattern57(step):
+    size = 1
+    for i in range(2, step + 1):
+        if i % 2 == 1:
+            size += 1
+    row = ('O' * size) + '\n'
+    pattern = row * size
+    return pattern
+
+def pattern57b(step):
+    if step == 1:
+        return 'O'
+    else:
+        return pattern56(step - 1)
+
+
+def formula57(step):
+    size = 1
+    for i in range(2, step + 1):
+        if i % 2 == 1:
+            size += 1
+    return size * size
+
+
+def formula57b(step):
+    if step == 1:
+        return 1
+    else:
+        return formula56(step - 1)
+
+
+def pattern58(step):
+    width = 1
+    height = 1
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            height += 1
+        else:
+            width += 1
+    row = ('O' * width) + '\n'
+    pattern = row * height
+    return pattern
+
+def formula58(step):
+    width = 1
+    height = 1
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            height += 1
+        else:
+            width += 1
+    return width * height
+
+
+def pattern59(step):
+    width = 4
+    height = 2
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            width += 2
+            height += 1
+        else:
+            width += 2
+            height += 2
+    row = ('O' * width) + '\n'
+    pattern = row * height
+    return pattern
+
+
+def formula59(step):
+    width = 4
+    height = 2
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            width += 2
+            height += 1
+        else:
+            width += 2
+            height += 2
+    return width * height
+
+
+
+def pattern60(step):
+    size = 1
+    for i in range(2, step + 1):
+        if i % 4 == 2:
+            size += 3
+    row = ('O' * size) + '\n'
+    pattern = row * size
+    return pattern
+
+
+def formula60(step):
+    size = 1
+    for i in range(2, step + 1):
+        if i % 4 == 2:
+            size += 3
+    return size * size
+
+
+
+
+def pattern61(step):
+    size = 1
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            size += 2
+        else:
+            size -= 1
+    row = ('O' * size) + '\n'
+    pattern = row * size
+    return pattern
+
+
+def formula61(step):
+    size = 1
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            size += 2
+        else:
+            size -= 1
+    return size * size
+
+
+
+
+def pattern62(step):
+    width = 1
+    height = 1
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            width += 2
+            height += 2
+        else:
+            height -= 1
+    row = ('O' * width) + '\n'
+    pattern = row * height
+    return pattern
+
+
+def formula62(step):
+    width = 1
+    height = 1
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            width += 2
+            height += 2
+        else:
+            height -= 1
+    return width * height
+
+
+
+
+def pattern63(step):
+    width = 1
+    height = 1
+    for i in range(2, step + 1):
+        if i % 4 == 2:
+            width += 2
+            height += 1
+        elif i % 4 == 0:
+            width -= 1
+            height -= 1
+    row = ('O' * width) + '\n'
+    pattern = row * height
+    return pattern
+
+
+def formula63(step):
+    width = 1
+    height = 1
+    for i in range(2, step + 1):
+        if i % 4 == 2:
+            width += 2
+            height += 1
+        elif i % 4 == 0:
+            width -= 1
+            height -= 1
+    return width * height
+
+
+
+
+def pattern64(step):
+    width = 5
+    height = 1
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            width -= 1
+            height += 1
+        elif i % 2 == 1:
+            width += 3
+            height += 4
+    row = ('O' * width) + '\n'
+    pattern = row * height
+    return pattern
+
+
+def formula64(step):
+    width = 5
+    height = 1
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            width -= 1
+            height += 1
+        elif i % 2 == 1:
+            width += 3
+            height += 4
+    return width * height
+
+
+
+
+
+def pattern65(step):
+    width = 1
+    height = 1
+    for i in range(2, step + 1):
+        if i % 3 == 0:
+            width += 3
+            height += 2
+        elif i % 3 == 1:
+            width -= 1
+            height -= 1
+    row = ('O' * width) + '\n'
+    pattern = row * height
+    return pattern
+
+
+def formula65(step):
+    width = 1
+    height = 1
+    for i in range(2, step + 1):
+        if i % 3 == 0:
+            width += 3
+            height += 2
+        elif i % 3 == 1:
+            width -= 1
+            height -= 1
+    return width * height
+
+
+
+
+def pattern66(step):
+    width = 1
+    height = 3
+    for i in range(2, step + 1):
+        if i % 3 == 2:
+            width += 4
+        elif i % 3 == 0:
+            width += 2
+            height -= 2
+        elif i % 3 == 1:
+            width += 1
+            height += 2
+    row = ('O' * width) + '\n'
+    pattern = row * height
+    return pattern
+
+
+def formula66(step):
+    width = 1
+    height = 3
+    for i in range(2, step + 1):
+        if i % 3 == 2:
+            width += 4
+        elif i % 3 == 0:
+            width += 2
+            height -= 2
+        elif i % 3 == 1:
+            width += 1
+            height += 2
+    return width * height
+
+
+
+
+
+
+def pattern67(step):
+    width = 4
+    height = 3
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            width += 3
+        elif i % 2 == 1:
+            width += 2
+            height += 1
+    row = ('O' * width) + '\n'
+    pattern = row * height
+    return pattern
+
+
+def formula67(step):
+    width = 4
+    height = 3
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            width += 3
+        elif i % 2 == 1:
+            width += 2
+            height += 1
+    return width * height
+
+
+
+
+
+
+def pattern68(step):
+    width = 2
+    height = 3
+    for i in range(2, step + 1):
+        if i % 4 == 2:
+            width += 4
+            height -= 1
+        elif i % 4 == 3:
+            width += 2
+            height += 2
+        elif i % 4 == 0:
+            width += 4
+            height -= 2
+        elif i % 4 == 1:
+            height += 2
+    row = ('O' * width) + '\n'
+    pattern = row * height
+    return pattern
+
+
+def formula68(step):
+    width = 2
+    height = 3
+    for i in range(2, step + 1):
+        if i % 4 == 2:
+            width += 4
+            height -= 1
+        elif i % 4 == 3:
+            width += 2
+            height += 2
+        elif i % 4 == 0:
+            width += 4
+            height -= 2
+        elif i % 4 == 1:
+            height += 2
+    return width * height
+
+
+
+
+
+
+
+def pattern69(step):
+    width = 4
+    height = 3
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            width += 2
+            height += 1
+        elif i % 2 == 1:
+            height += 1
+    row = ('O' * width) + '\n'
+    pattern = row * height
+    return pattern
+
+
+def formula69(step):
+    width = 4
+    height = 3
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            width += 2
+            height += 1
+        elif i % 2 == 1:
+            height += 1
+    return width * height
+
+
+
+
+
+
+def pattern70(step):
+    width = 3
+    height = 3
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            height += 2
+        elif i % 2 == 1:
+            width += 2
+            height += 1
+    row = ('O' * width) + '\n'
+    pattern = row * height
+    return pattern
+
+
+def formula70(step):
+    width = 3
+    height = 3
+    for i in range(2, step + 1):
+        if i % 2 == 0:
+            height += 2
+        elif i % 2 == 1:
+            width += 2
+            height += 1
+    return width * height
+
+
+
+
+
+
+def pattern71(step):
+    width = 2
+    height = 1
+    for i in range(2, step + 1):
+        if i % 3 == 2:
+            width += 1
+        elif i % 3 == 0:
+            width += 3
+            height += 3
+        elif i % 3 == 1:
+            width += 4
+    row = ('O' * width) + '\n'
+    pattern = row * height
+    return pattern
+
+
+def formula71(step):
+    width = 2
+    height = 1
+    for i in range(2, step + 1):
+        if i % 3 == 2:
+            width += 1
+        elif i % 3 == 0:
+            width += 3
+            height += 3
+        elif i % 3 == 1:
+            width += 4
+    return width * height
+
+
+
+
+
+
+def pattern72(step):
+    width = 3
+    height = 2
+    for i in range(2, step + 1):
+        if i % 3 == 2:
+            width -= 1
+        elif i % 3 == 0:
+            width -= 1
+            height += 1
+        elif i % 3 == 1:
+            width += 2
+            height -= 1
+    row = ('O' * width) + '\n'
+    pattern = row * height
+    return pattern
+
+
+def formula72(step):
+    width = 3
+    height = 2
+    for i in range(2, step + 1):
+        if i % 3 == 2:
+            width -= 1
+        elif i % 3 == 0:
+            width -= 1
+            height += 1
+        elif i % 3 == 1:
+            width += 2
+            height -= 1
     return width * height
 
 

@@ -5,6 +5,12 @@ Visual Patterns to Practice Programming: Improving Your Math and Critical Thinki
 NOTE TO READER AND TEACHERS: The code doesn't have to be exactly like the code in this book. As long as it passes the unit tests and returns the right answer, it's correct code.
 
 
+Don't cheat when writing formula functions by calling the pattern function and counting the Os in it. Don't cheat by calling previous functions (though you get a cookie for solving it that way)
+
+It's really easy to make off-by-one "fence post" errors when solving these patterns.
+
+Make use of the interactive shell. (Cover reloading your code.)
+
 
 QUESTION: Is it better to publish this through No Starch for money/prestige or on Amazon for $3 just for ranking and my name?
 (I could make an online course out of it.)
@@ -169,7 +175,7 @@ O    OO    OOO
     - 49) 3n+1 x 3n+1
     - 50) 1n x 4n+1
     - 51) 4n+2 x 4n+2
-    - 52) 4n+2 x 4n+3
+    - 52) 4n+2 x 2n+3
     - 53) 4n x 1n+2
     - 54) 1n+2 x 2n
     - 55) 4n+3 x 2n
@@ -181,17 +187,34 @@ CHAPTER 4 - TWO DIMENSIONAL STEP PATTERNS
                        OOO    OOO    OOOO
                                      OOOO
     increase by (1,1),(0,0)
-- 57) increase by (0,0),(1,1)
+
+- 57) O    O     OO    OO    OOO    OOO    OOOO
+                 OO    OO    OOO    OOO    OOOO
+                             OOO    OOO    OOOO
+                                           OOOO
+    increase by (0,0),(1,1)
 - 58) increase by (0,1),(1,0)
-- 59) increase by (1,2),(2,2)
+- 59) increase by (2,1),(2,2), starting 4,2
 - 60) increase by (3,3),(0,0),(0,0),(0,0)
-- 61) increase by (1,2),(3,4)
-- 62) increase by width:0,1 height:1 (the increases are out of phase with each other)
-- 63) increase by width:1,2 height:1,1,2
+- 61) increase by (2,2),(-1,-1)
+- 62) increase by (2,2),(0,-1)
+- 63) increase by (2,1),(0,0),(-1,-1),(0,0)
+- 64) increase by (-1,1),(3,4), starting 5,1
 
 - Practice Problems
 
+    Technically, you could just be given the numbers
+    and then have to figure out the step increases by
+    factoring them.
 
+    65) (0, 0),(3, 2),(-1, -1),starting at 1,1
+    66) (4, 2),(2, -2),(1, 2),starting at 1,3
+    67) (3, 0),(2, 1),starting at 4,3
+    68) (4, -1),(2, 2),(4, -2),(0, 2),starting at 2,3
+    69) (2, 1),(0, 1),starting at 4,3
+    70) (0, 2),(2, 1),starting at 3,3
+    71) (1, 0),(3, 3),(4, 0),starting at 2,1
+    72) (-1, 0),(-1, 1),(2, -1),starting at 3,2
 
 
 
@@ -228,7 +251,7 @@ O    O        O
 
 
 
-CHAPTER 6 - ARBITRARY TWO DIMENSIONAL PATTERNS
+CHAPTER 6 - ARBITRARY TWO DIMENSIONAL PATTERNS (WITHOUT WHITESPACE)
 - breaking up patterns into smaller sections
 
 
@@ -312,14 +335,17 @@ CHAPTER 6 - MULTI-CHARACTER PATTERNS
 
 
 
-CHAPTER 7 - CARTESIAN COORDINATE PATTERNS
+CHAPTER 7 - GEOMETRIC SHAPE PATTERNS
+
+
+CHAPTER 8 - CARTESIAN COORDINATE PATTERNS
 -
 - bitfield: x + y % 2
 - bitfield: x ^ y
 
 
 
-CHAPTER 8 - L-SYSTEMS
+CHAPTER 9 - L-SYSTEMS
 
 
 - 5) n x n pattern
@@ -328,7 +354,7 @@ CHAPTER 8 - L-SYSTEMS
 
 
 
-CHAPTER 9 - GRAPHICAL PATTERNS WITH HTML
+CHAPTER 10 - GRAPHICAL PATTERNS WITH HTML
 
 
 

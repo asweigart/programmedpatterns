@@ -1037,6 +1037,1095 @@ OOOOOOOOOOO"""[1:]
 
 
 
+def test_48(): # n+5 x 2n
+    patternFunc = vp.pattern48
+    formulaFunc = vp.formula48
+
+    assert patternFunc(1).rstrip() == """
+OOOOOO
+OOOOOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO"""[1:]
+
+    assert formulaFunc(1) == 12
+    assert formulaFunc(2) == 28
+    assert formulaFunc(3) == 48
+    assert formulaFunc(5) == 100
+
+
+
+
+
+
+def test_49(): # 3n+1 x 3n+1
+    patternFunc = vp.pattern49
+    formulaFunc = vp.formula49
+
+    assert patternFunc(1).rstrip() == """
+OOOO
+OOOO
+OOOO
+OOOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO"""[1:]
+
+    assert formulaFunc(1) == 16
+    assert formulaFunc(2) == 49
+    assert formulaFunc(3) == 100
+    assert formulaFunc(5) == 256
+
+
+
+
+
+
+def test_50(): # 1n x 4n+1
+    patternFunc = vp.pattern50
+    formulaFunc = vp.formula50
+
+    assert patternFunc(1).rstrip() == """
+O
+O
+O
+O
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOO
+OOO
+OOO
+OOO
+OOO
+OOO
+OOO
+OOO
+OOO
+OOO
+OOO
+OOO
+OOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOOO
+OOOO
+OOOO
+OOOO
+OOOO
+OOOO
+OOOO
+OOOO
+OOOO
+OOOO
+OOOO
+OOOO
+OOOO
+OOOO
+OOOO
+OOOO
+OOOO"""[1:]
+
+    assert formulaFunc(1) == 5
+    assert formulaFunc(2) == 18
+    assert formulaFunc(3) == 39
+    assert formulaFunc(5) == 105
+
+
+
+
+def test_51(): # 4n+2 x 4n+2
+    patternFunc = vp.pattern51
+    formulaFunc = vp.formula51
+
+    assert patternFunc(1).rstrip() == """
+OOOOOO
+OOOOOO
+OOOOOO
+OOOOOO
+OOOOOO
+OOOOOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO"""[1:]
+
+    assert formulaFunc(1) == 36
+    assert formulaFunc(2) == 100
+    assert formulaFunc(3) == 196
+    assert formulaFunc(5) == 484
+
+
+
+def test_52(): # 4n+2 x 2n+3
+    patternFunc = vp.pattern52
+    formulaFunc = vp.formula52
+
+    assert patternFunc(1).rstrip() == """
+OOOOOO
+OOOOOO
+OOOOOO
+OOOOOO
+OOOOOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOO"""[1:]
+
+    assert formulaFunc(1) == 30
+    assert formulaFunc(2) == 70
+    assert formulaFunc(3) == 126
+    assert formulaFunc(5) == 286
+
+
+
+
+def test_53(): # 4n x 1n+2
+    patternFunc = vp.pattern53
+    formulaFunc = vp.formula53
+
+    assert patternFunc(1).rstrip() == """
+OOOO
+OOOO
+OOOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOO"""[1:]
+
+    assert formulaFunc(1) == 12
+    assert formulaFunc(2) == 32
+    assert formulaFunc(3) == 60
+    assert formulaFunc(5) == 140
+
+
+
+
+
+
+def test_54(): # 1n+2 x 2n
+    patternFunc = vp.pattern54
+    formulaFunc = vp.formula54
+
+    assert patternFunc(1).rstrip() == """
+OOO
+OOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOO
+OOOO
+OOOO
+OOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO"""[1:]
+
+    assert formulaFunc(1) == 6
+    assert formulaFunc(2) == 16
+    assert formulaFunc(3) == 30
+    assert formulaFunc(5) == 70
+
+
+
+
+
+def test_55():  # 4n+3 x 2n
+    patternFunc = vp.pattern55
+    formulaFunc = vp.formula55
+
+    assert patternFunc(1).rstrip() == """
+OOOOOOO
+OOOOOOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOOOOOOOOO
+OOOOOOOOOOO
+OOOOOOOOOOO
+OOOOOOOOOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOO"""[1:]
+
+    assert formulaFunc(1) == 14
+    assert formulaFunc(2) == 44
+    assert formulaFunc(3) == 90
+    assert formulaFunc(5) == 230
+
+
+
+
+
+def test_56():  # step increase (1,1),(0,0)
+    patternFunc = vp.pattern56
+    formulaFunc = vp.formula56
+
+    assert patternFunc(1).rstrip() == """
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+OO
+OO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OO
+OO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOO
+OOO
+OOO"""[1:]
+    assert patternFunc(8).rstrip() == """
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO"""[1:]
+
+
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 4
+    assert formulaFunc(3) == 4
+    assert formulaFunc(4) == 9
+    assert formulaFunc(8) == 25
+
+
+
+
+
+def test_57():  # step increase (0,0),(1,1)
+    patternFunc = vp.pattern57
+    formulaFunc = vp.formula57
+
+    assert patternFunc(1).rstrip() == """
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+O"""[1:]
+    assert patternFunc(3).rstrip() == """
+OO
+OO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OO
+OO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOO
+OOO
+OOO"""[1:]
+
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 1
+    assert formulaFunc(3) == 4
+    assert formulaFunc(4) == 4
+    assert formulaFunc(5) == 9
+
+    for i in range(1, 100):
+        assert patternFunc(i).rstrip() == vp.pattern57b(i).rstrip()
+        assert formulaFunc(i) == vp.formula57b(i)
+
+
+
+
+def test_58():  # step increase (0,1),(1,0)
+    patternFunc = vp.pattern58
+    formulaFunc = vp.formula58
+
+    assert patternFunc(1).rstrip() == """
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+O
+O"""[1:]
+    assert patternFunc(3).rstrip() == """
+OO
+OO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OO
+OO
+OO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOO
+OOO
+OOO"""[1:]
+    assert patternFunc(6).rstrip() == """
+OOO
+OOO
+OOO
+OOO"""[1:]
+
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 2
+    assert formulaFunc(3) == 4
+    assert formulaFunc(4) == 6
+    assert formulaFunc(5) == 9
+    assert formulaFunc(6) == 12
+
+
+
+
+def test_pat59():  # step increase (2,1),(2,2)
+    patternFunc = vp.pattern59
+
+    assert patternFunc(1).rstrip() == """
+OOOO
+OOOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOOOO
+OOOOOO
+OOOOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO"""[1:]
+    assert patternFunc(6).rstrip() == """
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO"""[1:]
+
+
+def test_form59():  # step increase (2,1),(2,2)
+    formulaFunc = vp.formula59
+    assert formulaFunc(1) == 8
+    assert formulaFunc(2) == 18
+    assert formulaFunc(3) == 40
+    assert formulaFunc(4) == 60
+    assert formulaFunc(5) == 96
+    assert formulaFunc(6) == 126
+
+
+
+def test_pat60():  # step increase (3,3),(0,0),(0,0),(0,0)
+    patternFunc = vp.pattern60
+
+    assert patternFunc(1).rstrip() == """
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOO
+OOOO
+OOOO
+OOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOO
+OOOO
+OOOO
+OOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOOO
+OOOO
+OOOO
+OOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOO
+OOOO
+OOOO
+OOOO"""[1:]
+    assert patternFunc(6).rstrip() == """
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO"""[1:]
+
+
+def test_form60():  # step increase (3,3),(0,0),(0,0),(0,0)
+    formulaFunc = vp.formula60
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 16
+    assert formulaFunc(3) == 16
+    assert formulaFunc(4) == 16
+    assert formulaFunc(5) == 16
+    assert formulaFunc(6) == 49
+
+
+
+
+def test_pat61():  # step increase (2,2),(-1,-1)
+    patternFunc = vp.pattern61
+
+    assert patternFunc(1).rstrip() == """
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOO
+OOO
+OOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OO
+OO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOOO
+OOOO
+OOOO
+OOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOO
+OOO
+OOO"""[1:]
+    assert patternFunc(6).rstrip() == """
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO"""[1:]
+
+
+def test_form61():  # step increase (2,2),(-1,-1)
+    formulaFunc = vp.formula61
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 3**2
+    assert formulaFunc(3) == 2**2
+    assert formulaFunc(4) == 4**2
+    assert formulaFunc(5) == 3**2
+    assert formulaFunc(6) == 5**2
+
+
+
+
+def test_pat62():  # step increase (2,2),(0,-1)
+    patternFunc = vp.pattern62
+
+    assert patternFunc(1).rstrip() == """
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOO
+OOO
+OOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOO
+OOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOOOO
+OOOOO
+OOOOO
+OOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOO
+OOOOO
+OOOOO"""[1:]
+    assert patternFunc(6).rstrip() == """
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO"""[1:]
+
+
+def test_form62():  # step increase (2,2),(0,-1)
+    formulaFunc = vp.formula62
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 9
+    assert formulaFunc(3) == 6
+    assert formulaFunc(4) == 20
+    assert formulaFunc(5) == 15
+    assert formulaFunc(6) == 35
+
+
+
+
+
+def test_pat63():  # step increase (2,1),(0,0),(-1,-1),(0,0)
+    patternFunc = vp.pattern63
+
+    assert patternFunc(1).rstrip() == """
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOO
+OOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOO
+OOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OO"""[1:]
+    assert patternFunc(6).rstrip() == """
+OOOO
+OOOO"""[1:]
+    assert patternFunc(7).rstrip() == """
+OOOO
+OOOO"""[1:]
+    assert patternFunc(8).rstrip() == """
+OOO"""[1:]
+
+
+def test_form63():  # step increase (2,1),(0,0),(-1,-1),(0,0)
+    formulaFunc = vp.formula63
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 6
+    assert formulaFunc(3) == 6
+    assert formulaFunc(4) == 2
+    assert formulaFunc(5) == 2
+    assert formulaFunc(6) == 8
+    assert formulaFunc(7) == 8
+    assert formulaFunc(8) == 3
+
+
+
+
+
+def test_pat64():  # step increase (-1,1),(3,4), starting 5,1
+    patternFunc = vp.pattern64
+
+    assert patternFunc(1).rstrip() == """
+OOOOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOO
+OOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOOOOO
+OOOOOO
+OOOOOO
+OOOOOO
+OOOOOO
+OOOOOO
+OOOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOOOO
+OOOOOOOOO
+OOOOOOOOO
+OOOOOOOOO
+OOOOOOOOO
+OOOOOOOOO
+OOOOOOOOO
+OOOOOOOOO
+OOOOOOOOO
+OOOOOOOOO
+OOOOOOOOO"""[1:]
+
+
+def test_form64():  # step increase (-1,1),(3,4), starting 5,1
+    formulaFunc = vp.formula64
+    assert formulaFunc(1) == 5
+    assert formulaFunc(2) == 8
+    assert formulaFunc(3) == 42
+    assert formulaFunc(4) == 42
+    assert formulaFunc(5) == 99
+
+
+
+
+
+
+def test_pat65():  # step increase (0, 0),(3, 2),(-1, -1),starting at 1,1
+    patternFunc = vp.pattern65
+
+    assert patternFunc(1).rstrip() == """
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+O"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOO
+OOOO
+OOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOO
+OOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOO
+OOO"""[1:]
+
+
+
+def test_form65():  # step increase (0, 0),(3, 2),(-1, -1),starting at 1,1
+    formulaFunc = vp.formula65
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 1
+    assert formulaFunc(3) == 12
+    assert formulaFunc(4) == 6
+    assert formulaFunc(5) == 6
+
+
+
+
+def test_pat66():  # step increase (4, 0),(2, -2),(1, 2),starting at 1,3
+    patternFunc = vp.pattern66
+
+    assert patternFunc(1).rstrip() == """
+O
+O
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOOO
+OOOOO
+OOOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO"""[1:]
+
+
+
+def test_form66():  # step increase (4, 0),(2, -2),(1, 2),starting at 1,3
+    formulaFunc = vp.formula66
+    assert formulaFunc(1) == 3
+    assert formulaFunc(2) == 15
+    assert formulaFunc(3) == 7
+    assert formulaFunc(4) == 24
+    assert formulaFunc(5) == 36
+
+
+
+
+def test_pat67():  # step increase (3, 0),(2, 1),starting at 4,3
+    patternFunc = vp.pattern67
+
+    assert patternFunc(1).rstrip() == """
+OOOO
+OOOO
+OOOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOOOOO
+OOOOOOO
+OOOOOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOOOOOO
+OOOOOOOOO
+OOOOOOOOO
+OOOOOOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO"""[1:]
+
+
+
+def test_form67():  # step increase
+    formulaFunc = vp.formula67
+    assert formulaFunc(1) == 12
+    assert formulaFunc(2) == 21
+    assert formulaFunc(3) == 36
+    assert formulaFunc(4) == 48
+    assert formulaFunc(5) == 70
+
+
+
+
+def test_pat68():  # step increase (4, -1),(2, 2),(4, -2),(0, 2),starting at 2,3
+    patternFunc = vp.pattern68
+
+    assert patternFunc(1).rstrip() == """
+OO
+OO
+OO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOOOO
+OOOOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOOOOOOOOOOO
+OOOOOOOOOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOO"""[1:]
+    assert patternFunc(6).rstrip() == """
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOO"""[1:]
+
+
+
+def test_form68():  # step increase (4, -1),(2, 2),(4, -2),(0, 2),starting at 2,3
+    formulaFunc = vp.formula68
+    assert formulaFunc(1) == 6
+    assert formulaFunc(2) == 12
+    assert formulaFunc(3) == 32
+    assert formulaFunc(4) == 24
+    assert formulaFunc(5) == 48
+    assert formulaFunc(6) == 48
+
+
+
+
+def test_pat69():  # step increase (2, 1),(0, 1),starting at 4,3
+    patternFunc = vp.pattern69
+
+    assert patternFunc(1).rstrip() == """
+OOOO
+OOOO
+OOOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOOOOO
+OOOOOO
+OOOOOO
+OOOOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOOO
+OOOOOO
+OOOOOO
+OOOOOO
+OOOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO
+OOOOOOOO"""[1:]
+
+
+
+def test_form69():  # step increase (2, 1),(0, 1),starting at 4,3
+    formulaFunc = vp.formula69
+    assert formulaFunc(1) == 12
+    assert formulaFunc(2) == 24
+    assert formulaFunc(3) == 30
+    assert formulaFunc(4) == 48
+    assert formulaFunc(5) == 56
+
+
+
+
+def test_pat70():  # step increase (0, 2),(2, 1),starting at 3,3
+    patternFunc = vp.pattern70
+
+    assert patternFunc(1).rstrip() == """
+OOO
+OOO
+OOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOO
+OOO
+OOO
+OOO
+OOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO
+OOOOOOO"""[1:]
+
+
+
+def test_form70():  # step increase (0, 2),(2, 1),starting at 3,3
+    formulaFunc = vp.formula70
+    assert formulaFunc(1) == 9
+    assert formulaFunc(2) == 15
+    assert formulaFunc(3) == 30
+    assert formulaFunc(4) == 40
+    assert formulaFunc(5) == 63
+
+
+
+
+def test_pat71():  # step increase (1, 0),(3, 3),(4, 0),starting at 2,1
+    patternFunc = vp.pattern71
+
+    assert patternFunc(1).rstrip() == """
+OO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOOOOO
+OOOOOO
+OOOOOO
+OOOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO
+OOOOOOOOOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OOOOOOOOOOO
+OOOOOOOOOOO
+OOOOOOOOOOO
+OOOOOOOOOOO"""[1:]
+
+
+
+def test_form71():  # step increase (1, 0),(3, 3),(4, 0),starting at 2,1
+    formulaFunc = vp.formula71
+    assert formulaFunc(1) == 2
+    assert formulaFunc(2) == 3
+    assert formulaFunc(3) == 24
+    assert formulaFunc(4) == 40
+    assert formulaFunc(5) == 44
+
+
+
+
+def test_pat72():  # step increase (-1, 0),(-1, 1),(2, -1),starting at 3,2
+    patternFunc = vp.pattern72
+
+    assert patternFunc(1).rstrip() == """
+OOO
+OOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OO
+OO"""[1:]
+    assert patternFunc(3).rstrip() == """
+O
+O
+O"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOO
+OOO"""[1:]
+    assert patternFunc(5).rstrip() == """
+OO
+OO"""[1:]
+
+
+
+def test_form72():  # step increase (-1, 0),(-1, 1),(2, -1),starting at 3,2
+    formulaFunc = vp.formula72
+    assert formulaFunc(1) == 6
+    assert formulaFunc(2) == 4
+    assert formulaFunc(3) == 3
+    assert formulaFunc(4) == 6
+    assert formulaFunc(5) == 4
+
+
+
 
 
 
