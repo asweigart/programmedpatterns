@@ -1,15 +1,29 @@
 Visual Patterns to Practice Programming: Improving Your Math and Critical Thinking Through Coding
 
 
+You don't have to look at the code for the explained patterns if you want to try to solve them yourself first.
 
 NOTE TO READER AND TEACHERS: The code doesn't have to be exactly like the code in this book. As long as it passes the unit tests and returns the right answer, it's correct code.
 
+When making your own tessellations, you can create angles but the slashes aren't quite 45 degrees. I tend to use underscores on the line above. For hexagon-type shapes, you can draw horizontal lines much more cleanly than vertical lines:
+ __
+/  \          /\       /\
+\__/    vs    ||  or  |  |
+              \/       \/
+
+V is a good down arrow, but ^ carets are meh for up arrows.
+
+Introduce box drawing characters.
 
 Don't cheat when writing formula functions by calling the pattern function and counting the Os in it. Don't cheat by calling previous functions (though you get a cookie for solving it that way)
 
 It's really easy to make off-by-one "fence post" errors when solving these patterns.
 
 Make use of the interactive shell. (Cover reloading your code.)
+
+Instructors: You can use the explained patterns for exams.
+
+Note about string building, etc.
 
 
 QUESTION: Is it better to publish this through No Starch for money/prestige or on Amazon for $3 just for ranking and my name?
@@ -74,6 +88,25 @@ TRANSLATING TO OTHER LANGUAGES.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 =========================================================================
 =========================================================================
 =========================================================================
@@ -107,6 +140,7 @@ CHAPTER 2 - ONE DIMENSIONAL PATTERNS
     - 16) n + 2
     - 17) 8n - 7
     - 18) 3n + 2
+    MAYBE CUT FOUR OF THESE?
     - 19) 4n
     - 20) 4n + 2
     - 21) 3n + 3  (go ahead and repeat some patterns)
@@ -181,7 +215,308 @@ O    OO    OOO
     - 55) 4n+3 x 2n
 
 
-CHAPTER 4 - TWO DIMENSIONAL STEP PATTERNS
+CHAPTER 4 - ENDLESS WALLPAPER PATTERNS
+
+
+Google for "quilt patterns" or "tessellation" for ideas.
+
+88) Brick wall
+89) Hex grid
+90) Bigger hex grid
+91) Shining Carpet
+Practice problems
+92) vines
+93) Two Concentric hexagons
+94) Three concentric hexagons
+95) 3-pills
+96) Skull
+
+97) Lincoln logs
+
+tess = [
+r'__  |  _',
+r'| \_|_/ ',
+r'|  ___  ',
+r'|_/ | \_',
+]
+
+__  |  ___  |  ___  |  ___  |  ___  |  ___  |  _
+| \_|_/ | \_|_/ | \_|_/ | \_|_/ | \_|_/ | \_|_/
+|  ___  |  ___  |  ___  |  ___  |  ___  |  ___
+|_/ | \_|_/ | \_|_/ | \_|_/ | \_|_/ | \_|_/ | \_
+__  |  ___  |  ___  |  ___  |  ___  |  ___  |  _
+| \_|_/ | \_|_/ | \_|_/ | \_|_/ | \_|_/ | \_|_/
+|  ___  |  ___  |  ___  |  ___  |  ___  |  ___
+|_/ | \_|_/ | \_|_/ | \_|_/ | \_|_/ | \_|_/ | \_
+__  |  ___  |  ___  |  ___  |  ___  |  ___  |  _
+| \_|_/ | \_|_/ | \_|_/ | \_|_/ | \_|_/ | \_|_/
+|  ___  |  ___  |  ___  |  ___  |  ___  |  ___
+|_/ | \_|_/ | \_|_/ | \_|_/ | \_|_/ | \_|_/ | \_
+
+98) Star field
+
+tess = [
+r' /\  \/  ',
+r'<  >     ',
+r' \/  /\  ',
+r'    <  > ',
+]
+
+ /\  \/   /\  \/   /\  \/   /\  \/   /\  \/
+<  >     <  >     <  >     <  >     <  >
+ \/  /\   \/  /\   \/  /\   \/  /\   \/  /\
+    <  >     <  >     <  >     <  >     <  >
+ /\  \/   /\  \/   /\  \/   /\  \/   /\  \/
+<  >     <  >     <  >     <  >     <  >
+ \/  /\   \/  /\   \/  /\   \/  /\   \/  /\
+    <  >     <  >     <  >     <  >     <  >
+ /\  \/   /\  \/   /\  \/   /\  \/   /\  \/
+<  >     <  >     <  >     <  >     <  >
+ \/  /\   \/  /\   \/  /\   \/  /\   \/  /\
+    <  >     <  >     <  >     <  >     <  >
+ /\  \/   /\  \/   /\  \/   /\  \/   /\  \/
+<  >     <  >     <  >     <  >     <  >
+ \/  /\   \/  /\   \/  /\   \/  /\   \/  /\
+    <  >     <  >     <  >     <  >     <  >
+
+99) thick vines
+tess = [
+r'  /  /\   ',
+r' /  /  \  ',
+r'/  / \  \ ',
+r'\  \ /  / ',
+r' \  /  /  ',
+r'  \/  /   ',
+]
+  /  /\     /  /\     /  /\     /  /\
+ /  /  \   /  /  \   /  /  \   /  /  \
+/  / \  \ /  / \  \ /  / \  \ /  / \  \
+\  \ /  / \  \ /  / \  \ /  / \  \ /  /
+ \  /  /   \  /  /   \  /  /   \  /  /
+  \/  /     \/  /     \/  /     \/  /
+  /  /\     /  /\     /  /\     /  /\
+ /  /  \   /  /  \   /  /  \   /  /  \
+/  / \  \ /  / \  \ /  / \  \ /  / \  \
+\  \ /  / \  \ /  / \  \ /  / \  \ /  /
+ \  /  /   \  /  /   \  /  /   \  /  /
+  \/  /     \/  /     \/  /     \/  /
+  /  /\     /  /\     /  /\     /  /\
+ /  /  \   /  /  \   /  /  \   /  /  \
+/  / \  \ /  / \  \ /  / \  \ /  / \  \
+
+
+100) packed thick vines
+tess = [
+r' //  /\\  \ / ',
+r'//  /  \\  /  ',
+r'/  / \  \\/  /',
+ '\\  \\ /  //  /\\',
+r'\\  /  //  /  ',
+r' \\/  //  / \ ',
+]
+ //  /\\  \ /  //  /\\  \ /  //  /\\  \ /  //  /\\  \ /
+//  /  \\  /  //  /  \\  /  //  /  \\  /  //  /  \\  /
+/  / \  \\/  //  / \  \\/  //  / \  \\/  //  / \  \\/  /
+\  \ /  //  /\\  \ /  //  /\\  \ /  //  /\\  \ /  //  /\
+\\  /  //  /  \\  /  //  /  \\  /  //  /  \\  /  //  /
+ \\/  //  / \  \\/  //  / \  \\/  //  / \  \\/  //  / \
+ //  /\\  \ /  //  /\\  \ /  //  /\\  \ /  //  /\\  \ /
+//  /  \\  /  //  /  \\  /  //  /  \\  /  //  /  \\  /
+/  / \  \\/  //  / \  \\/  //  / \  \\/  //  / \  \\/  /
+\  \ /  //  /\\  \ /  //  /\\  \ /  //  /\\  \ /  //  /\
+\\  /  //  /  \\  /  //  /  \\  /  //  /  \\  /  //  /
+ \\/  //  / \  \\/  //  / \  \\/  //  / \  \\/  //  / \
+ //  /\\  \ /  //  /\\  \ /  //  /\\  \ /  //  /\\  \ /
+//  /  \\  /  //  /  \\  /  //  /  \\  /  //  /  \\  /
+
+101) shared thick vines
+tess = [
+r' /  /\  \ / ',
+r'/  /  \  /  ',
+r'  / \  \/  /',
+ '  \\ /  /  /\\',
+r'\  /  /  /  ',
+r' \/  /  / \ ',
+]
+ /  /\  \ /  /  /\  \ /  /  /\  \ /  /  /\  \ /
+/  /  \  /  /  /  \  /  /  /  \  /  /  /  \  /
+  / \  \/  /  / \  \/  /  / \  \/  /  / \  \/  /
+  \ /  /  /\  \ /  /  /\  \ /  /  /\  \ /  /  /\
+\  /  /  /  \  /  /  /  \  /  /  /  \  /  /  /
+ \/  /  / \  \/  /  / \  \/  /  / \  \/  /  / \
+ /  /\  \ /  /  /\  \ /  /  /\  \ /  /  /\  \ /
+/  /  \  /  /  /  \  /  /  /  \  /  /  /  \  /
+  / \  \/  /  / \  \/  /  / \  \/  /  / \  \/  /
+  \ /  /  /\  \ /  /  /\  \ /  /  /\  \ /  /  /\
+\  /  /  /  \  /  /  /  \  /  /  /  \  /  /  /
+ \/  /  / \  \/  /  / \  \/  /  / \  \/  /  / \
+ /  /\  \ /  /  /\  \ /  /  /\  \ /  /  /\  \ /
+/  /  \  /  /  /  \  /  /  /  \  /  /  /  \  /
+
+
+102) thick arrows
+tess = [
+r' / |__  ',
+r'/     |_',
+r'\   __| ',
+r' \_|    ',
+]
+
+ / |__   / |__   / |__   / |__
+/     |_/     |_/     |_/     |_
+\   __| \   __| \   __| \   __|
+ \_|     \_|     \_|     \_|
+ / |__   / |__   / |__   / |__
+/     |_/     |_/     |_/     |_
+\   __| \   __| \   __| \   __|
+ \_|     \_|     \_|     \_|
+ / |__   / |__   / |__   / |__
+/     |_/     |_/     |_/     |_
+\   __| \   __| \   __| \   __|
+ \_|     \_|     \_|     \_|
+
+
+
+103) stacked snakes
+tess = [
+r'__  | |___  | |_',
+r'  | |___  | |___',
+r'| |___  | |___  ',
+r'|___  | |___  | ',
+]
+__  | |___  | |___  | |___  | |___  | |___  | |_
+  | |___  | |___  | |___  | |___  | |___  | |___
+| |___  | |___  | |___  | |___  | |___  | |___
+|___  | |___  | |___  | |___  | |___  | |___  |
+__  | |___  | |___  | |___  | |___  | |___  | |_
+  | |___  | |___  | |___  | |___  | |___  | |___
+| |___  | |___  | |___  | |___  | |___  | |___
+
+
+104) basic grid
+tess = [
+r'|   ',
+r'|___',
+]
+|   |   |   |   |   |   |   |
+|___|___|___|___|___|___|___|___
+|   |   |   |   |   |   |   |
+|___|___|___|___|___|___|___|___
+|   |   |   |   |   |   |   |
+|___|___|___|___|___|___|___|___
+|   |   |   |   |   |   |   |
+|___|___|___|___|___|___|___|___
+
+
+105) hexagons and triangles
+tess = [
+r'/\  /____\__',
+r'  \/  \    /',
+r'___\__/\  /_',
+r'\    /  \/  ',
+]
+/\  /____\__/\  /____\__/\  /____\__/\  /____\__
+  \/  \    /  \/  \    /  \/  \    /  \/  \    /
+___\__/\  /____\__/\  /____\__/\  /____\__/\  /_
+\    /  \/  \    /  \/  \    /  \/  \    /  \/
+/\  /____\__/\  /____\__/\  /____\__/\  /____\__
+  \/  \    /  \/  \    /  \/  \    /  \/  \    /
+___\__/\  /____\__/\  /____\__/\  /____\__/\  /_
+\    /  \/  \    /  \/  \    /  \/  \    /  \/
+/\  /____\__/\  /____\__/\  /____\__/\  /____\__
+  \/  \    /  \/  \    /  \/  \    /  \/  \    /
+___\__/\  /____\__/\  /____\__/\  /____\__/\  /_
+\    /  \/  \    /  \/  \    /  \/  \    /  \/
+/\  /____\__/\  /____\__/\  /____\__/\  /____\__
+  \/  \    /  \/  \    /  \/  \    /  \/  \    /
+___\__/\  /____\__/\  /____\__/\  /____\__/\  /_
+
+
+
+106) crosses
+tess = [
+'|_| |_   _',
+'|_   _|_| ',
+' _|_| |_  ',
+'| |_   _|_',
+'   _|_| |_',
+]
+
+|_| |_   _|_| |_   _|_| |_   _|_| |_   _
+|_   _|_| |_   _|_| |_   _|_| |_   _|_|
+ _|_| |_   _|_| |_   _|_| |_   _|_| |_
+| |_   _|_| |_   _|_| |_   _|_| |_   _|_
+   _|_| |_   _|_| |_   _|_| |_   _|_| |_
+|_| |_   _|_| |_   _|_| |_   _|_| |_   _
+|_   _|_| |_   _|_| |_   _|_| |_   _|_|
+ _|_| |_   _|_| |_   _|_| |_   _|_| |_
+| |_   _|_| |_   _|_| |_   _|_| |_   _|_
+
+
+
+107) Diagonal bricks
+tess = [
+r'\/\/',
+r'/ / ',
+r'\/\/',
+ ' \\ \\',
+]
+\/\/\/\/\/\/\/\/
+/ / / / / / / /
+\/\/\/\/\/\/\/\/
+ \ \ \ \ \ \ \ \
+\/\/\/\/\/\/\/\/
+/ / / / / / / /
+\/\/\/\/\/\/\/\/
+ \ \ \ \ \ \ \ \
+
+
+108) tri-weave
+tess = [
+r'__   \______   \____',
+r'  \   \  /  \   \  /',
+r'  /\   \/   /\   \/ ',
+r' /__\__/   /__\__/  ',
+r'/         /         ',
+r'\______   \______   ',
+r' \  /  \   \  /  \  ',
+r'  \/   /\   \/   /\ ',
+ '__/   /__\\__/   /__\\',
+r'     /         /    ',
+]
+
+__   \______   \______   \______   \____
+  \   \  /  \   \  /  \   \  /  \   \  /
+  /\   \/   /\   \/   /\   \/   /\   \/
+ /__\__/   /__\__/   /__\__/   /__\__/
+/         /         /         /
+\______   \______   \______   \______
+ \  /  \   \  /  \   \  /  \   \  /  \
+  \/   /\   \/   /\   \/   /\   \/   /\
+__/   /__\__/   /__\__/   /__\__/   /__\
+     /         /         /         /
+__   \______   \______   \______   \____
+  \   \  /  \   \  /  \   \  /  \   \  /
+  /\   \/   /\   \/   /\   \/   /\   \/
+ /__\__/   /__\__/   /__\__/   /__\__/
+/         /         /         /
+\______   \______   \______   \______
+ \  /  \   \  /  \   \  /  \   \  /  \
+  \/   /\   \/   /\   \/   /\   \/   /\
+__/   /__\__/   /__\__/   /__\__/   /__\
+     /         /         /         /
+__   \______   \______   \______   \____
+  \   \  /  \   \  /  \   \  /  \   \  /
+
+
+
+CHAPTER 5 - GRAPHICAL PATTERNS WITH HTML
+
+
+
+
+
+CHAPTER 6 - TWO DIMENSIONAL STEP PATTERNS
 - 56) O    OO    OO    OOO    OOO    OOOO
            OO    OO    OOO    OOO    OOOO
                        OOO    OOO    OOOO
@@ -218,58 +553,111 @@ CHAPTER 4 - TWO DIMENSIONAL STEP PATTERNS
 
 
 
-CHAPTER 5 - STAIR-SHAPED TWO DIMENSIONAL PATTERNS
+CHAPTER 7 - STAIR-SHAPED TWO DIMENSIONAL PATTERNS
 
-- 23->) stair pattern
+- 73) stair pattern
 O    O     O
      OO    OO
            OOO
-- 24->) reverse stair pattern
+- 74) reverse stair pattern
 O    OO    OOO
      O     OO
            O
-- 25->) stair starts with 2 rows
+- 75) stair starts with 3 rows
 O     O      O
 OO    OO     OO
-      OOO    OOO
-             OOOO
-- 26->) stair increase two steps
+OOO   OOO    OOO
+      OOOO   OOOO
+             OOOOO
+- 76) stair increase two steps
 O    O      O
      OOO    OOO
             OOOOO
 
-- 29->) pat 97 (rearrange to form two sets of stairs)
-O    O        O
-     OOO      OOO
-     OOOOO    OOOOO
-              OOOOOOO
-              OOOOOOOOO
-    height is 2n-1, width is 4n-3, area is ((2n-1)(4n-2)) / 2
-    really, we add 4 to the width for each step (that is, adding 2 twice)
+- 77) double stairs
+
+O    O     O     O
+     OO    OO    OO
+     OO    OOO   OOO
+     O     OOO   OOOO
+           OO    OOOO
+           O     OOO
+                 OO
+                 O
+
+- 78) pat 97 previous stairs increase as well
+O
+
+OO
+OOO
+
+OOO
+OOOO
+OOOOO
+
+OOOO
+OOOOO
+OOOOOO
+OOOOOOO
+
+- Practice Problems
+
+- 79) stair increase two steps
+O    O      O
+     OOO    OOO
+            OOOOO
 
 
+- 80) double stairs with one middle, forming an arrow:
+O    O     O     O
+     OO    OO    OO
+     O     OOO   OOO
+           OO    OOOO
+           O     OOO
+                 OO
+                 O
+- 81) stacked stairs
+O   O     O     O
+O   OO    OO    OO
+    O     OOO   OOO
+    OO    O     OOOO
+          OO    O
+          OOO   OO
+                OOO
+                OOOO
+- 82) exponential stairs
+O    O    O     O
+     OO   OO    OO
+          OOOO  OOOO
+                OOOOOOO
+- 83) slow growing stairs
+O   O   O    O    O
+    O   O    O    O
+        OO   OO   OO
+             OO   OO
+                  OOO
+
+- 84) double stairs
+O   O   O
+O   O   O
+    OO  OO
+    OO  OO
+        OOO
+        OOO
+
+- 85) grow by 2, start at 2
+OO    OO       OO        OO
+      OOOO     OOOO      OOOO
+               OOOOOO    OOOOOO
+                         OOOOOOOO
+
+- 86) grow by 3, start at 3
+
+- 87) grow by 2 and double stairs
 
 
-
-CHAPTER 6 - ARBITRARY TWO DIMENSIONAL PATTERNS (WITHOUT WHITESPACE)
+CHAPTER 8 - ARBITRARY TWO DIMENSIONAL PATTERNS (WITHOUT WHITESPACE)
 - breaking up patterns into smaller sections
-
-
-- 31) each row has exponential number
-O    OOOO    OOOOOOOOO
-     OOOO    OOOOOOOOO
-     OOOO    OOOOOOOOO
-     OOOO    OOOOOOOOO
-             OOOOOOOOO
-             OOOOOOOOO
-             OOOOOOOOO
-             OOOOOOOOO
-             OOOOOOOOO
-
-- ->) n x n minus a piece, except for step 1
-O    OO    OOO
-     O     OOO
-           OO
 
 - 30->) pat 127 viewing it as a grid and then subtracting
 OO    OOO    OOOO
@@ -277,26 +665,79 @@ O     OOO    OOOO
       OO     OOOO
              OOO
 
+- )
+OO    OOOO    OOOOOO
+O     OO      OOO
+OO    OOOO    OOOOOO
+      OO      OOO
+      OOOO    OOOOOO
+              OOO
+              OOOOOO
 
-- fibonacci sequence in rows
+- ) fibonacci sequence in rows
 O    O    O     O      O         O
      O    O     O      O         O
           OO    OO     OO        OO
                 OOO    OOO       OOO
                        OOOOO     OOOOO
 
-- 12) L shape pat 11
+- ) L shape pat 11
+O   O    O
+OO  O    O
+    OOO  O
+         OOOO
+
+
 - 13) Pat 8
-- 14) Pat 14
+
+OO
+
+O
+OOO
+
+O
+OO
+OOOO
+
+O
+OO
+OOO
+OOOOO
+
+
 - Practice questions:
-    - pat 19 (but without leading spaces)
     - pat 21
-    - 4-row/5-row, 4-row/5-row/4-row/5-row
-    - 2r2r4r, 2r2r4r2r2r4r, 2r2r4r2r2r4r2r2r4r
     - pat jabula.png
+    - makes use of increasing whitespace:
+O    OO    OOO    OOOO
+O
+     OO
+           OOO
+                  OOOO
+    - first and last row are missing one:
+O     OO     OOO
+O     OOO    OOOO
+      OO     OOOO
+             OOO
+    - chunk in first row gets bigger:
+OO      OOO      OOOO
+OOO     OOOOO    OOOOOOO
+OOO     OOOOO    OOOOOOO
+        OOOOO    OOOOOOO
+                 OOOOOOO
+                 OOOOOOO
+                 OOOOOOO
+    - sideways T
+O   O    O
+OO  O    O
+O   OOO  O
+    O    OOOO
+    O    O
+         O
+         O
 
 
-CHAPTER 4 - PATTERNS WITH WHITESPACE
+CHAPTER 9 - PATTERNS WITH WHITESPACE
     - This is the chapter where we start making interesting patterns while having the mathematical background to create formulas for them.
     - pat 4, X pattern
     - pat 16, pyramid
@@ -326,26 +767,28 @@ CHAPTER 4 - PATTERNS WITH WHITESPACE
         - pat 124 sorta circle slash
 
 
-CHAPTER 5 - PERIODIC PATTERNS
+CHAPTER 10 - PERIODIC PATTERNS
 - ex: zig zag wrap around
 - ex: zig zag bounce
 
 
-CHAPTER 6 - MULTI-CHARACTER PATTERNS
 
-
-
-CHAPTER 7 - GEOMETRIC SHAPE PATTERNS
-
-
-CHAPTER 8 - CARTESIAN COORDINATE PATTERNS
+CHAPTER XX - CARTESIAN COORDINATE PATTERNS
 -
 - bitfield: x + y % 2
 - bitfield: x ^ y
 
 
 
-CHAPTER 9 - L-SYSTEMS
+CHAPTER 11 - MULTI-CHARACTER PATTERNS
+
+
+
+CHAPTER 12 - GEOMETRIC SHAPE PATTERNS
+
+
+
+CHAPTER 13 - L-SYSTEMS
 
 
 - 5) n x n pattern
@@ -354,7 +797,6 @@ CHAPTER 9 - L-SYSTEMS
 
 
 
-CHAPTER 10 - GRAPHICAL PATTERNS WITH HTML
 
 
 

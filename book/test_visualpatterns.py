@@ -1,6 +1,7 @@
 import pytest
 import visualpatterns as vp
 
+'''
 def test_1():  # n
     assert vp.pattern1(1) == 'O'
     assert vp.pattern1(2) == 'OO'
@@ -318,96 +319,6 @@ def test_22():  # 4n - 3
     assert formulaFunc(3) == 9
     assert formulaFunc(10) == 37
 
-    """
-def test_23(): # stair pattern
-    patternFunc = vp.pattern23
-    formulaFunc = vp.formula23
-
-    assert patternFunc(1).rstrip() == 'O'
-    assert patternFunc(2).rstrip() == 'O\nOO'
-    assert patternFunc(3).rstrip() == 'O\nOO\nOOO'
-    assert patternFunc(8).rstrip() == 'O\nOO\nOOO\nOOOO\nOOOOO\nOOOOOO\nOOOOOOO\nOOOOOOOO'
-
-    assert formulaFunc(1) == 1
-    assert formulaFunc(2) == 3
-    assert formulaFunc(3) == 6
-    assert formulaFunc(10) == 55
-
-    for i in range(1, 100):
-        assert patternFunc(i).rstrip() == vp.pattern23b(i).rstrip()
-        assert formulaFunc(i) == vp.formula23b(i)
-
-
-def test_24(): # reverse stair pattern
-    patternFunc = vp.pattern24
-    formulaFunc = vp.formula24
-
-    assert patternFunc(1).rstrip() == 'O'
-    assert patternFunc(2).rstrip() == 'OO\nO'
-    assert patternFunc(3).rstrip() == 'OOO\nOO\nO'
-    assert patternFunc(5).rstrip() == 'OOOOO\nOOOO\nOOO\nOO\nO'
-
-    assert formulaFunc(1) == 1
-    assert formulaFunc(2) == 3
-    assert formulaFunc(3) == 6
-    assert formulaFunc(10) == 55
-
-    for i in range(1, 100):
-        assert formulaFunc(i) == vp.formula23(i)
-
-def test_25():  # stair pattern, starts with 2 rows
-    patternFunc = vp.pattern25
-    formulaFunc = vp.formula25
-
-    assert patternFunc(1).rstrip() == 'O\nOO'
-    assert patternFunc(2).rstrip() == 'O\nOO\nOOO'
-    assert patternFunc(3).rstrip() == 'O\nOO\nOOO\nOOOO'
-    assert patternFunc(7).rstrip() == 'O\nOO\nOOO\nOOOO\nOOOOO\nOOOOOO\nOOOOOOO\nOOOOOOOO'
-
-    assert formulaFunc(1) == 3
-    assert formulaFunc(2) == 6
-    assert formulaFunc(3) == 10
-    assert formulaFunc(9) == 55
-
-def test_26():  # stair that increases width by 2
-    patternFunc = vp.pattern26
-    formulaFunc = vp.formula26
-
-    assert patternFunc(1).rstrip() == 'O'
-    assert patternFunc(2).rstrip() == 'O\nOOO'
-    assert patternFunc(3).rstrip() == 'O\nOOO\nOOOOO'
-    assert patternFunc(5).rstrip() == 'O\nOOO\nOOOOO\nOOOOOOO\nOOOOOOOOO'
-
-    assert formulaFunc(1) == 1
-    assert formulaFunc(2) == 4
-    assert formulaFunc(3) == 9
-    assert formulaFunc(10) == 100
-
-    for i in range(1, 100):
-        assert formulaFunc(i) == vp.formula26b(i)
-
-
-
-
-
-def test_29():  # stair pattern, increase width and height by 2
-    patternFunc = vp.pattern29
-    formulaFunc = vp.formula29
-
-    assert patternFunc(1).rstrip() == 'O'
-    assert patternFunc(2).rstrip() == 'O\nOOO\nOOOOO'
-    assert patternFunc(3).rstrip() == 'O\nOOO\nOOOOO\nOOOOOOO\nOOOOOOOOO'
-    assert patternFunc(5).rstrip() == 'O\nOOO\nOOOOO\nOOOOOOO\nOOOOOOOOO\n' + 'O' * 11 + '\n' + 'O' * 13 + '\n' + 'O' * 15 + '\n' + 'O' * 17
-
-    assert formulaFunc(1) == 1
-    assert formulaFunc(2) == 9
-    assert formulaFunc(3) == 25
-    assert formulaFunc(10) == 361
-
-    for i in range(1, 100):
-        assert patternFunc(i).rstrip() == vp.pattern29b(i).rstrip()
-        assert formulaFunc(i) == vp.formula29b(i)
-"""
 
 def test_23(): # 1D step increase by 1, 2
     patternFunc = vp.pattern23
@@ -2123,6 +2034,493 @@ def test_form72():  # step increase (-1, 0),(-1, 1),(2, -1),starting at 3,2
     assert formulaFunc(3) == 3
     assert formulaFunc(4) == 6
     assert formulaFunc(5) == 4
+
+
+
+
+
+def test_73(): # stair pattern
+    patternFunc = vp.pattern73
+    formulaFunc = vp.formula73
+
+    assert patternFunc(1).rstrip() == 'O'
+    assert patternFunc(2).rstrip() == 'O\nOO'
+    assert patternFunc(3).rstrip() == 'O\nOO\nOOO'
+    assert patternFunc(8).rstrip() == 'O\nOO\nOOO\nOOOO\nOOOOO\nOOOOOO\nOOOOOOO\nOOOOOOOO'
+
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 3
+    assert formulaFunc(3) == 6
+    assert formulaFunc(10) == 55
+
+    for i in range(1, 100):
+        assert patternFunc(i).rstrip() == vp.pattern73b(i).rstrip()
+        assert formulaFunc(i) == vp.formula73b(i)
+
+
+def test_74(): # reverse stair pattern
+    patternFunc = vp.pattern74
+    formulaFunc = vp.formula74
+
+    assert patternFunc(1).rstrip() == 'O'
+    assert patternFunc(2).rstrip() == 'OO\nO'
+    assert patternFunc(3).rstrip() == 'OOO\nOO\nO'
+    assert patternFunc(5).rstrip() == 'OOOOO\nOOOO\nOOO\nOO\nO'
+
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 3
+    assert formulaFunc(3) == 6
+    assert formulaFunc(10) == 55
+
+
+
+
+
+
+
+def test_pat75():  # stair starts with 3 rows
+    patternFunc = vp.pattern75
+
+    assert patternFunc(1).rstrip() == """
+O
+OO
+OOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+O
+OO
+OOO
+OOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+O
+OO
+OOO
+OOOO
+OOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+O
+OO
+OOO
+OOOO
+OOOOO
+OOOOOO"""[1:]
+
+
+
+def test_form75():  # stair starts with 3 rows
+    formulaFunc = vp.formula75
+    assert formulaFunc(1) == 6
+    assert formulaFunc(2) == 10
+    assert formulaFunc(3) == 15
+    assert formulaFunc(4) == 21
+
+
+def test_76():  # stair that increases width by 2
+    patternFunc = vp.pattern76
+    formulaFunc = vp.formula76
+
+    assert patternFunc(1).rstrip() == 'O'
+    assert patternFunc(2).rstrip() == 'O\nOOO'
+    assert patternFunc(3).rstrip() == 'O\nOOO\nOOOOO'
+    assert patternFunc(5).rstrip() == 'O\nOOO\nOOOOO\nOOOOOOO\nOOOOOOOOO'
+
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 4
+    assert formulaFunc(3) == 9
+    assert formulaFunc(10) == 100
+
+    for i in range(1, 100):
+        assert formulaFunc(i) == vp.formula76b(i)
+
+'''
+
+
+
+def test_pat77():  # double stairs
+    patternFunc = vp.pattern77
+
+    assert patternFunc(1).rstrip() == """
+O
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+O
+OO
+OO
+O"""[1:]
+    assert patternFunc(3).rstrip() == """
+O
+OO
+OOO
+OOO
+OO
+O"""[1:]
+    assert patternFunc(4).rstrip() == """
+O
+OO
+OOO
+OOOO
+OOOO
+OOO
+OO
+O"""[1:]
+
+
+
+def test_form77():  # double stairs
+    formulaFunc = vp.formula77
+    assert formulaFunc(1) == 2
+    assert formulaFunc(2) == 6
+    assert formulaFunc(3) == 12
+    assert formulaFunc(4) == 20
+
+
+
+
+
+
+def test_pat78():  # pat 97 previous stairs increase as well
+    patternFunc = vp.pattern78
+
+    assert patternFunc(1).rstrip() == """
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+OO
+OOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOO
+OOOO
+OOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOOO
+OOOOO
+OOOOOO
+OOOOOOO"""[1:]
+
+
+
+def test_form78():  # pat 97 previous stairs increase as well
+    formulaFunc = vp.formula78
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 5
+    assert formulaFunc(3) == 12
+    assert formulaFunc(4) == 22
+
+
+
+
+def test_79():  # stair pattern, increase width and height by 2
+    patternFunc = vp.pattern79
+    formulaFunc = vp.formula79
+
+    assert patternFunc(1).rstrip() == 'O'
+    assert patternFunc(2).rstrip() == 'O\nOOO\nOOOOO'
+    assert patternFunc(3).rstrip() == 'O\nOOO\nOOOOO\nOOOOOOO\nOOOOOOOOO'
+    assert patternFunc(5).rstrip() == 'O\nOOO\nOOOOO\nOOOOOOO\nOOOOOOOOO\n' + 'O' * 11 + '\n' + 'O' * 13 + '\n' + 'O' * 15 + '\n' + 'O' * 17
+
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 9
+    assert formulaFunc(3) == 25
+    assert formulaFunc(10) == 361
+
+
+
+def test_pat80():  # double stairs with one middle, forming an arrow:
+    patternFunc = vp.pattern80
+
+    assert patternFunc(1).rstrip() == """
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+O
+OO
+O"""[1:]
+    assert patternFunc(3).rstrip() == """
+O
+OO
+OOO
+OO
+O"""[1:]
+    assert patternFunc(4).rstrip() == """
+O
+OO
+OOO
+OOOO
+OOO
+OO
+O"""[1:]
+
+
+
+def test_form80():  # double stairs with one middle, forming an arrow:
+    formulaFunc = vp.formula80
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 4
+    assert formulaFunc(3) == 9
+    assert formulaFunc(4) == 16
+
+
+
+
+
+
+
+
+def test_pat81():  # stacked stairs
+    patternFunc = vp.pattern81
+
+    assert patternFunc(1).rstrip() == """
+O
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+O
+OO
+O
+OO"""[1:]
+    assert patternFunc(3).rstrip() == """
+O
+OO
+OOO
+O
+OO
+OOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+O
+OO
+OOO
+OOOO
+O
+OO
+OOO
+OOOO"""[1:]
+
+
+def test_form81():  # stacked stairs
+    formulaFunc = vp.formula81
+    assert formulaFunc(1) == 2
+    assert formulaFunc(2) == 6
+    assert formulaFunc(3) == 12
+    assert formulaFunc(4) == 20
+
+
+
+
+
+
+def test_pat82():  # exponential stairs
+    patternFunc = vp.pattern82
+
+    assert patternFunc(1).rstrip() == """
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+O
+OOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+O
+OOOO
+OOOOOOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+O
+OOOO
+OOOOOOOOO
+OOOOOOOOOOOOOOOO"""[1:]
+
+
+def test_form82():  # exponential stairs
+    formulaFunc = vp.formula82
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 5
+    assert formulaFunc(3) == 14
+    assert formulaFunc(4) == 30
+
+
+
+
+
+
+
+def test_pat83():  # slow growing stairs
+    patternFunc = vp.pattern83
+
+    assert patternFunc(1).rstrip() == """
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+O
+O"""[1:]
+    assert patternFunc(3).rstrip() == """
+O
+O
+OO"""[1:]
+    assert patternFunc(4).rstrip() == """
+O
+O
+OO
+OO"""[1:]
+
+
+def test_form83():  # slow growing stairs
+    formulaFunc = vp.formula83
+    assert formulaFunc(1) == 1
+    assert formulaFunc(2) == 2
+    assert formulaFunc(3) == 4
+    assert formulaFunc(4) == 6
+
+
+
+
+
+
+
+
+def test_pat84():  # double stairs
+    patternFunc = vp.pattern84
+
+    assert patternFunc(1).rstrip() == """
+O
+O"""[1:]
+    assert patternFunc(2).rstrip() == """
+O
+O
+OO
+OO"""[1:]
+    assert patternFunc(3).rstrip() == """
+O
+O
+OO
+OO
+OOO
+OOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+O
+O
+OO
+OO
+OOO
+OOO
+OOOO
+OOOO"""[1:]
+
+
+def test_form84():  # double stairs
+    formulaFunc = vp.formula84
+    assert formulaFunc(1) == 2
+    assert formulaFunc(2) == 6
+    assert formulaFunc(3) == 12
+    assert formulaFunc(4) == 20
+
+
+
+
+
+
+
+
+
+def test_pat85():  # grow by 2, start at 2
+    patternFunc = vp.pattern85
+
+    assert patternFunc(1).rstrip() == """
+OO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OO
+OOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OO
+OOOO
+OOOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OO
+OOOO
+OOOOOO
+OOOOOOOO"""[1:]
+
+
+def test_form85():  # grow by 2, start at 2
+    formulaFunc = vp.formula85
+    assert formulaFunc(1) == 2
+    assert formulaFunc(2) == 6
+    assert formulaFunc(3) == 12
+    assert formulaFunc(4) == 20
+
+
+
+
+
+
+
+def test_pat86():  # grow by 3, start at 3
+    patternFunc = vp.pattern86
+
+    assert patternFunc(1).rstrip() == """
+OOO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OOO
+OOOOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OOO
+OOOOOO
+OOOOOOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OOO
+OOOOOO
+OOOOOOOOO
+OOOOOOOOOOOO"""[1:]
+
+
+def test_form86():  # grow by 3, start at 3
+    formulaFunc = vp.formula86
+    assert formulaFunc(1) == 3
+    assert formulaFunc(2) == 9
+    assert formulaFunc(3) == 18
+    assert formulaFunc(4) == 30
+
+
+
+
+
+
+
+def test_pat87():  # grow by 2 and double stairs
+    patternFunc = vp.pattern87
+
+    assert patternFunc(1).rstrip() == """
+OO
+OO"""[1:]
+    assert patternFunc(2).rstrip() == """
+OO
+OO
+OOOO
+OOOO"""[1:]
+    assert patternFunc(3).rstrip() == """
+OO
+OO
+OOOO
+OOOO
+OOOOOO
+OOOOOO"""[1:]
+    assert patternFunc(4).rstrip() == """
+OO
+OO
+OOOO
+OOOO
+OOOOOO
+OOOOOO
+OOOOOOOO
+OOOOOOOO"""[1:]
+
+
+def test_form87():  # grow by 2 and double stairs
+    formulaFunc = vp.formula87
+    assert formulaFunc(1) == 4
+    assert formulaFunc(2) == 12
+    assert formulaFunc(3) == 24
+    assert formulaFunc(4) == 40
+
+
+
+
+
+
+
+
+
 
 
 

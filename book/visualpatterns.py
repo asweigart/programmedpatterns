@@ -187,130 +187,6 @@ def pattern22(step):
 def formula22(step):
     return 4 * step - 3
 
-def xpattern23(step):
-    pattern = ''
-    for i in range(1, step + 1):
-        pattern += ('O' * i) + '\n'
-    return pattern
-
-def xpattern23b(step):
-    pattern = ''
-    i = 1
-    while True:
-        pattern += ('O' * i) + '\n'
-        if i == step:
-            break
-        i += 1
-    return pattern
-
-def xformula23(step):
-    count = 0
-    for i in range(1, step + 1):
-        count += i
-    return count
-
-def xformula23b(step):
-    return (step * (step + 1)) // 2
-
-
-def xpattern24(step):
-    pattern = ''
-    for i in range(step, 0, -1):
-        pattern += ('O' * i) + '\n'
-    return pattern
-
-def xformula24(step):
-    count = 0
-    for i in range(step, 0, -1):
-        count += i
-    return count
-
-def xpattern25(step):
-    pattern = 'O\n'
-    for i in range(2, step + 2):
-        pattern += ('O' * i) + '\n'
-    return pattern
-
-def xformula25(step):
-    count = 1
-    for i in range(2, step + 2):
-        count += i
-    return count
-
-def xpattern26(step):
-    pattern = 'O\n'
-    width = 3
-    for i in range(2, step + 1):
-        pattern += ('O' * width) + '\n'
-        width += 2
-    return pattern
-
-def xformula26(step):
-    count = 1
-
-    width = 3
-    for i in range(2, step + 1):
-        count += width
-        width += 2
-    return count
-
-def xformula26b(step):
-    return (step * (2 * step)) // 2
-
-
-def xpattern27(step):
-    row = ('O' * step) + '\n'
-    pattern = row * step
-    return pattern
-
-def xformula27(step):
-    return step * step
-
-def xpattern28(step):
-    row = ('OO' * step) + '\n'
-    pattern = row * step
-    return pattern
-
-def xformula28(step):
-    return (2 * step) * step
-
-
-def xpattern29(step):
-    pattern = 'O\n'
-
-    width = 3
-    for i in range(2, step + 1):
-        pattern += ('O' * width) + '\n'
-        width += 2
-        pattern += ('O' * width) + '\n'
-        width += 2
-    return pattern
-
-def xpattern29b(step):
-    pattern = 'O\n'
-
-    width = 3
-    for i in range(2, step + 1):
-        for j in range(2):
-            pattern += ('O' * width) + '\n'
-            width += 2
-    return pattern
-
-def xformula29(step):
-    count = 1
-
-    width = 3
-    for i in range(2, step + 1):
-        count += width
-        width += 2
-        count += width
-        width += 2
-    return count
-
-def xformula29b(step):
-    return ((2 * step - 1) * (4 * step - 2)) // 2
-
-
 
 
 def pattern23(step):
@@ -1853,5 +1729,591 @@ def formula72(step):
             width += 2
             height -= 1
     return width * height
+
+
+
+
+def pattern73(step):
+    pattern = ''
+    for i in range(1, step + 1):
+        pattern += ('O' * i) + '\n'
+    return pattern
+
+def pattern73b(step):
+    pattern = ''
+    i = 1
+    while True:
+        pattern += ('O' * i) + '\n'
+        if i == step:
+            break
+        i += 1
+    return pattern
+
+def formula73(step):
+    count = 0
+    for i in range(1, step + 1):
+        count += i
+    return count
+
+def formula73b(step):
+    return (step * (step + 1)) // 2
+
+
+def pattern74(step):
+    pattern = ''
+    for i in range(step, 0, -1):
+        pattern += ('O' * i) + '\n'
+    return pattern
+
+def formula74(step):
+    count = 0
+    for i in range(step, 0, -1):
+        count += i
+    return count
+
+def pattern75(step):
+    pattern = 'O\nOO\n'
+    for i in range(2, step + 2):
+        pattern += 'O' + ('O' * i) + '\n'
+    return pattern
+
+def formula75(step):
+    count = 3
+    for i in range(2, step + 2):
+        count += i + 2
+    return count
+
+def pattern76(step):
+    pattern = 'O\n'
+    width = 3
+    for i in range(2, step + 1):
+        pattern += ('O' * width) + '\n'
+        width += 2
+    return pattern
+
+def formula76(step):
+    count = 1
+
+    width = 3
+    for i in range(2, step + 1):
+        count += width
+        width += 2
+    return count
+
+def formula76b(step):
+    return (step * (2 * step)) // 2
+
+
+def pattern77(step):
+    pattern = ''
+    for i in range(1, step + 1):
+        pattern += ('O' * i) + '\n'
+    for i in range(step, 0, -1):
+        pattern += ('O' * i) + '\n'
+    return pattern
+
+def formula77(step):
+    return (step * (step + 1))
+
+
+def pattern78(step):
+    pattern = ''
+    for i in range(0, step):
+        pattern += ('O' * step) + ('O' * i) + '\n'
+    return pattern
+
+def formula78(step):
+    count = 0
+    for i in range(0, step):
+        count += step + i
+    return count
+
+
+def pattern79(step):
+    pattern = 'O\n'
+    rowWidth = 3
+    for i in range(2, step + 1):
+        pattern += ('O' * rowWidth) + '\n'
+        rowWidth += 2
+        pattern += ('O' * rowWidth) + '\n'
+        rowWidth += 2
+    return pattern
+
+def formula79(step):
+    count = 1
+    rowWidth = 3
+    for i in range(2, step + 1):
+        count += rowWidth
+        rowWidth += 2
+        count += rowWidth
+        rowWidth += 2
+    return count
+
+
+def pattern80(step):
+    pattern = ''
+    for i in range(1, step + 1):
+        pattern += ('O' * i) + '\n'
+    for i in range(step - 1, 0, -1):
+        pattern += ('O' * i) + '\n'
+    return pattern
+
+def formula80(step):
+    return (step * (step + 1)) - step
+
+
+def pattern81(step):
+    pattern = ''
+    for i in range(1, step + 1):
+        pattern += ('O' * i) + '\n'
+    for i in range(1, step + 1):
+        pattern += ('O' * i) + '\n'
+    return pattern
+
+def formula81(step):
+    return (step * (step + 1))
+
+def pattern82(step):
+    pattern = ''
+    for i in range(1, step + 1):
+        pattern += ('O' * i**2) + '\n'
+    return pattern
+
+
+def formula82(step):
+    count = 0
+    for i in range(1, step + 1):
+        count += i**2
+    return count
+
+
+def pattern83(step):
+    pattern = 'O\n'
+    rowWidth = 1
+    for i in range(2, step + 1):
+        pattern += ('O' * rowWidth) + '\n'
+        if rowWidth % 2 == 1:
+            rowWidth += 1
+    return pattern
+
+def formula83(step):
+    count = 1
+    rowWidth = 1
+    for i in range(2, step + 1):
+        count += rowWidth
+        if rowWidth % 2 == 1:
+            rowWidth += 1
+    return count
+
+def pattern84(step):
+    pattern = ''
+    for i in range(1, step + 1):
+        pattern += ('O' * i) + '\n'
+        pattern += ('O' * i) + '\n'
+    return pattern
+
+def formula84(step):
+    count = 0
+    for i in range(1, step + 1):
+        count += i * 2
+    return count
+
+
+def pattern85(step):
+    pattern = ''
+    for i in range(1, step + 1):
+        pattern += 'O' * (i * 2) + '\n'
+    return pattern
+
+def formula85(step):
+    count = 0
+    for i in range(1, step + 1):
+        count += i * 2
+    return count
+
+
+def pattern86(step):
+    pattern = ''
+    for i in range(1, step + 1):
+        pattern += 'O' * (i * 3) + '\n'
+    return pattern
+
+def formula86(step):
+    count = 0
+    for i in range(1, step + 1):
+        count += i * 3
+    return count
+
+
+
+def pattern87(step):
+    pattern = ''
+    for i in range(1, step + 1):
+        pattern += 'O' * (i * 2) + '\n'
+        pattern += 'O' * (i * 2) + '\n'
+    return pattern
+
+def formula87(step):
+    count = 0
+    for i in range(1, step + 1):
+        count += i * 4
+    return count
+
+
+
+
+
+# Tessellation patterns
+def pattern88(size):
+    tess = [
+    r'___|',
+    r'_|__',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+def pattern89(size):
+    tess = [
+    r'/  \__',
+    r'\__/  ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+def pattern90(size):
+    tess = [
+    r' /    \     ',
+    r'/      \____',
+    r'\      /    ',
+    r' \____/     ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+def pattern91(size):
+    tess = [
+    r'_ \ \ \_/ __',
+    r' \ \ \___/ _',
+    r'\ \ \_____/ ',
+    r'/ / / ___ \_',
+    r'_/ / / _ \__',
+    r'__/ / / \___',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+def pattern92(size):
+    tess = [
+    r'((  )',
+    r' ))( ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+
+def pattern93(size):
+    tess = [
+    r'/ / __ \ \__',
+    r'_/ /  \ \___',
+    r' \ \__/ / __',
+    r'\ \____/ /  ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+def pattern94(size):
+    tess = [
+    r'/ / / ____ \ \ \__',
+    r'_/ / / __ \ \ \___',
+    r'__/ / /  \ \ \____',
+    r'_ \ \ \__/ / / ___',
+    r' \ \ \____/ / / __',
+    r'\ \ \______/ / /  ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+def pattern95(size):
+    tess = [
+    r'   \__   \__',
+    r'\__/  \__/  ',
+    r'   \     \  ',
+    r' __/   __/  ',
+    r'/  \__/  \__',
+    r'   /     /  ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+def pattern96(size):
+    tess = [
+    r'__ \ ^ / _',
+    r'  \ VVV / ',
+    r' ()|   |()',
+    r'^ / ___ \ ',
+    r'VV /   \ V',
+    r'  |() ()| ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+def pattern97(size):
+    tess = [
+    r'__  |  _',
+    r'| \_|_/ ',
+    r'|  ___  ',
+    r'|_/ | \_',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+
+
+def pattern98(size):
+    tess = [
+    r' /\  \/  ',
+    r'<  >     ',
+    r' \/  /\  ',
+    r'    <  > ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+
+
+
+def pattern99(size):
+    tess = [
+    r'  /  /\   ',
+    r' /  /  \  ',
+    r'/  / \  \ ',
+    r'\  \ /  / ',
+    r' \  /  /  ',
+    r'  \/  /   ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+
+
+
+def pattern100(size):
+    tess = [
+    r' //  /\\  \ / ',
+    r'//  /  \\  /  ',
+    r'/  / \  \\/  /',
+     '\\  \\ /  //  /\\',
+    r'\\  /  //  /  ',
+    r' \\/  //  / \ ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+
+
+def pattern101(size):
+    tess = [
+    r' /  /\  \ / ',
+    r'/  /  \  /  ',
+    r'  / \  \/  /',
+     '  \\ /  /  /\\',
+    r'\  /  /  /  ',
+    r' \/  /  / \ ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+
+
+def pattern102(size):
+    tess = [
+    r' / |__  ',
+    r'/     |_',
+    r'\   __| ',
+    r' \_|    ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+
+
+def pattern103(size):
+    tess = [
+    r'__  | |___  | |_',
+    r'  | |___  | |___',
+    r'| |___  | |___  ',
+    r'|___  | |___  | ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+
+
+def pattern104(size):
+    tess = [
+    r'|   ',
+    r'|___',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+
+
+def pattern105(size):
+    tess = [
+    r'/\  /____\__',
+    r'  \/  \    /',
+    r'___\__/\  /_',
+    r'\    /  \/  ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+
+
+def pattern106(size):
+    tess = [
+    '|_| |_   _',
+    '|_   _|_| ',
+    ' _|_| |_  ',
+    '| |_   _|_',
+    '   _|_| |_',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+
+
+def pattern107(size):
+    tess = [
+    r'\/\/',
+    r'/ / ',
+    r'\/\/',
+     ' \\ \\',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
+
+
+
+
+def pattern108(size):
+    tess = [
+    r'__   \______   \____',
+    r'  \   \  /  \   \  /',
+    r'  /\   \/   /\   \/ ',
+    r' /__\__/   /__\__/  ',
+    r'/         /         ',
+    r'\______   \______   ',
+    r' \  /  \   \  /  \  ',
+    r'  \/   /\   \/   /\ ',
+     '__/   /__\\__/   /__\\',
+    r'     /         /    ',
+    ]
+
+    pattern = ''
+    for y in range(size):
+        for line in tess:
+            pattern += (line * size) + '\n'
+    return pattern
 
 
