@@ -1,6 +1,73 @@
 Visual Patterns to Practice Programming: Improving Your Math and Critical Thinking Through Coding
 
 
+TABLE OF CONTENTS
+1 - 1D patterns
+    - This comes first because it's the simplest.
+
+X - 2D rectangular patterns
+    - Introduces newlines, nested loops
+
+X - Wallpaper patterns
+    - Fun and pretty, easy and no math or programming. Making graphics with text. Put this before HTML so it doesn't get overshadowed.
+
+X - General patterns without whitespace
+    - A gentler introduction to general patterns
+
+X - General patterns with whitespace
+
+X - Arbitrary 2D patterns without whitespace
+
+X - Graphical patterns with HTML
+    - Short chapter that tells you how to use graphics instead of 'O' strings for the previous patterns. Both colored squares and icons.
+
+X - Multi-character patterns
+
+X - Geometric shape patterns
+
+X - Flag Patterns
+
+X - Procedurally Generated Art patterns (tree, diamond, cube) (this is more than geometric art)
+
+
+The mathy chapters should come later. The non-mathy chapters can just use loops to "build-up" patterns, rather than form them from a formula.
+
+
+X - Stair patterns
+
+X - Step patterns
+    - Includes 1D and 2D step patterns
+
+X - Periodic patterns
+
+X - Bitfield patterns
+
+X - L-Systems
+
+
+
+
+
+
+
+
+
+
+"Patterns with whitespace" is such a wide category. How can we break it up into smaller pieces?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 You don't have to look at the code for the explained patterns if you want to try to solve them yourself first.
 
 NOTE TO READER AND TEACHERS: The code doesn't have to be exactly like the code in this book. As long as it passes the unit tests and returns the right answer, it's correct code.
@@ -230,6 +297,51 @@ Practice problems
 94) Three concentric hexagons
 95) 3-pills
 96) Skull
+
+
+ADDITIONAL: "COOL S"
+  / \
+ /   \
+ | | |
+ \  \/
+ /\  \
+ | | |
+ \   /
+  \_/
+
+ADDITIONAL: "ROPE TWIST"
+ | \ |
+ \  \/
+ /\  \
+ | \ |
+ \  \/
+ /\  \
+ | \ |
+ \  \/
+ /\  \
+ | \ |
+ \  \/
+ /\  \
+ | \ |
+ \  \/
+ /\  \
+
+
+ | \ |    | \ |    | \ |    | \ |    | \ |    | \ |    | \ |
+ \  \/    \  \/    \  \/    \  \/    \  \/    \  \/    \  \/
+ /\  \    /\  \    /\  \    /\  \    /\  \    /\  \    /\  \
+ | \ |    | \ |    | \ |    | \ |    | \ |    | \ |    | \ |
+ \  \/    \  \/    \  \/    \  \/    \  \/    \  \/    \  \/
+ /\  \    /\  \    /\  \    /\  \    /\  \    /\  \    /\  \
+ | \ |    | \ |    | \ |    | \ |    | \ |    | \ |    | \ |
+ \  \/    \  \/    \  \/    \  \/    \  \/    \  \/    \  \/
+ /\  \    /\  \    /\  \    /\  \    /\  \    /\  \    /\  \
+ | \ |    | \ |    | \ |    | \ |    | \ |    | \ |    | \ |
+ \  \/    \  \/    \  \/    \  \/    \  \/    \  \/    \  \/
+ /\  \    /\  \    /\  \    /\  \    /\  \    /\  \    /\  \
+ | \ |    | \ |    | \ |    | \ |    | \ |    | \ |    | \ |
+ \  \/    \  \/    \  \/    \  \/    \  \/    \  \/    \  \/
+ /\  \    /\  \    /\  \    /\  \    /\  \    /\  \    /\  \
 
 97) Lincoln logs
 
@@ -508,9 +620,135 @@ __/   /__\__/   /__\__/   /__\__/   /__\
 __   \______   \______   \______   \____
   \   \  /  \   \  /  \   \  /  \   \  /
 
+109)
+tess = [
+r'  | |   | | ',
+r'--------| |-',
+r'--------| |-',
+r'  | |   | | ',
+r'  | |   | | ',
+r'--| |-------',
+r'--| |-------',
+r'  | |   | | ',
+]
+
+  | |   | |   | |   | |   | |   | |   | |   | |
+--------| |---------| |---------| |---------| |-
+--------| |---------| |---------| |---------| |-
+  | |   | |   | |   | |   | |   | |   | |   | |
+  | |   | |   | |   | |   | |   | |   | |   | |
+--| |---------| |---------| |---------| |-------
+--| |---------| |---------| |---------| |-------
+  | |   | |   | |   | |   | |   | |   | |   | |
+  | |   | |   | |   | |   | |   | |   | |   | |
+--------| |---------| |---------| |---------| |-
+--------| |---------| |---------| |---------| |-
+  | |   | |   | |   | |   | |   | |   | |   | |
+  | |   | |   | |   | |   | |   | |   | |   | |
+--| |---------| |---------| |---------| |-------
+--| |---------| |---------| |---------| |-------
+  | |   | |   | |   | |   | |   | |   | |   | |
+  | |   | |   | |   | |   | |   | |   | |   | |
+--------| |---------| |---------| |---------| |-
+--------| |---------| |---------| |---------| |-
+  | |   | |   | |   | |   | |   | |   | |   | |
+  | |   | |   | |   | |   | |   | |   | |   | |
+--| |---------| |---------| |---------| |-------
+--| |---------| |---------| |---------| |-------
+  | |   | |   | |   | |   | |   | |   | |   | |
+
+
+110)
+tess = [
+r' || || ',
+r'----||-',
+r'----||-',
+r' || || ',
+r' || || ',
+r'-||----',
+r'-||----',
+r' || || ',
+]
+
+ || ||  || ||  || ||  || ||
+----||-----||-----||-----||-
+----||-----||-----||-----||-
+ || ||  || ||  || ||  || ||
+ || ||  || ||  || ||  || ||
+-||-----||-----||-----||----
+-||-----||-----||-----||----
+ || ||  || ||  || ||  || ||
+ || ||  || ||  || ||  || ||
+----||-----||-----||-----||-
+----||-----||-----||-----||-
+ || ||  || ||  || ||  || ||
+ || ||  || ||  || ||  || ||
+-||-----||-----||-----||----
+-||-----||-----||-----||----
+ || ||  || ||  || ||  || ||
+ || ||  || ||  || ||  || ||
+----||-----||-----||-----||-
+----||-----||-----||-----||-
+ || ||  || ||  || ||  || ||
+ || ||  || ||  || ||  || ||
+-||-----||-----||-----||----
+-||-----||-----||-----||----
+ || ||  || ||  || ||  || ||
+
+
+
+
+111)
+tess = [
+r' ||| ||| ',
+r'-----|||-',
+r'-----|||-',
+r' ||| ||| ',
+r' ||| ||| ',
+r'-|||-----',
+r'-|||-----',
+r' ||| ||| ',
+]
+
+ ||| |||  ||| |||  ||| |||  ||| |||
+-----|||------|||------|||------|||-
+-----|||------|||------|||------|||-
+ ||| |||  ||| |||  ||| |||  ||| |||
+ ||| |||  ||| |||  ||| |||  ||| |||
+-|||------|||------|||------|||-----
+-|||------|||------|||------|||-----
+ ||| |||  ||| |||  ||| |||  ||| |||
+ ||| |||  ||| |||  ||| |||  ||| |||
+-----|||------|||------|||------|||-
+-----|||------|||------|||------|||-
+ ||| |||  ||| |||  ||| |||  ||| |||
+ ||| |||  ||| |||  ||| |||  ||| |||
+-|||------|||------|||------|||-----
+-|||------|||------|||------|||-----
+ ||| |||  ||| |||  ||| |||  ||| |||
+ ||| |||  ||| |||  ||| |||  ||| |||
+-----|||------|||------|||------|||-
+-----|||------|||------|||------|||-
+ ||| |||  ||| |||  ||| |||  ||| |||
+ ||| |||  ||| |||  ||| |||  ||| |||
+-|||------|||------|||------|||-----
+-|||------|||------|||------|||-----
+ ||| |||  ||| |||  ||| |||  ||| |||
+
+
+
+CHAPTER X - BASIC ARBITRARY TWO DIMENSIONAL PATTERNS (WITHOUT WHITESPACE)
 
 
 CHAPTER 5 - GRAPHICAL PATTERNS WITH HTML
+
+For this chapter, I need to grab a bunch of different logos and images, or even colored squares.
+
+Icons for graphical patterns like visual patterns, or table of colors for just colors.
+
+Use table of colors to draw various flags: Netherlands, France, Ukraine, Russian, etc.
+
+Later, use this to cover Abelian Sandpile Model: http://www.natureincode.com/code/various/sandpile.html
 
 
 
@@ -553,7 +791,7 @@ CHAPTER 6 - TWO DIMENSIONAL STEP PATTERNS
 
 
 
-CHAPTER 7 - STAIR-SHAPED TWO DIMENSIONAL PATTERNS
+CHAPTER 7 - STAIR PATTERNS
 
 - 73) stair pattern
 O    O     O
@@ -659,6 +897,13 @@ OO    OO       OO        OO
 CHAPTER 8 - ARBITRARY TWO DIMENSIONAL PATTERNS (WITHOUT WHITESPACE)
 - breaking up patterns into smaller sections
 
+
+
+
+
+
+
+
 - 30->) pat 127 viewing it as a grid and then subtracting
 OO    OOO    OOOO
 O     OOO    OOOO
@@ -707,7 +952,31 @@ OOOOO
 
 - Practice questions:
     - pat 21
-    - pat jabula.png
+    - pat jabula.png:
+OOOO    OOOOOO    OOOOOOOO
+OOOO    OOOOOO    OOOOOOOO
+OOOO    OOOOOO    OOOOOOOO
+        OOOO      OOOOO
+                  OOOOO
+
+    - U-shape:
+OO    OOO    OOOO
+O     O      O
+OO    O      O
+      OOO    O
+             OOOO
+
+
+    - shrinking 4x4 pattern, step 16 is a blank string
+OOOO    OOOO    OOOO    OOOO    OOOO
+OOOO    OOOO    OOOO    OOOO    OOOO
+OOOO    OOOO    OOOO    OOOO    OOO
+OOO     OO      O
+
+    - growing pattern, max width 4:
+O    OO    OOO    OOOO    OOOO    OOOO    OOOO
+                          O       OO      OOO
+
     - makes use of increasing whitespace:
 O    OO    OOO    OOOO
 O
@@ -736,6 +1005,11 @@ O   OOO  O
          O
          O
 
+         - madison.png:
+O     OO      OOO
+OO    OO      OOO
+      OOO     OOO
+              OOOO
 
 CHAPTER 9 - PATTERNS WITH WHITESPACE
     - This is the chapter where we start making interesting patterns while having the mathematical background to create formulas for them.
@@ -747,7 +1021,7 @@ CHAPTER 9 - PATTERNS WITH WHITESPACE
     - pat 18, snakey
     - pat 35, worm
     - pat 5
-    - fibonacci sequence but vertical
+
     - Practice Questions: (Maybe have multiple sets of questions?)
         - pat 101 thicker X
         - pat 45
@@ -766,6 +1040,14 @@ CHAPTER 9 - PATTERNS WITH WHITESPACE
         - pat 130
         - pat 124 sorta circle slash
 
+- nicholas.png
+ *      *       *        *
+***    ***     ****     *****
+ *      ***     ***      ****
+         *      ****     ****
+                  *      *****
+                            *
+
 
 CHAPTER 10 - PERIODIC PATTERNS
 - ex: zig zag wrap around
@@ -774,7 +1056,6 @@ CHAPTER 10 - PERIODIC PATTERNS
 
 
 CHAPTER XX - CARTESIAN COORDINATE PATTERNS
--
 - bitfield: x + y % 2
 - bitfield: x ^ y
 
