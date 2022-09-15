@@ -8,21 +8,19 @@ The patterns are *not* in order of difficulty. Many are simple, some are incredi
 
 THIS MODULE IS CURRENTLY UNDER CONSTRUCTION AND NOT WORKING YET.
 
-Installation
-------------
+## Installation
 
 To install with pip, from the Command Prompt/terminal run:
 
     python -m pip install programmedpatterns
 
-Doing the Programming Challenge
------------
+## Solving the Programming Exercises
 
-After installing, you can find the 461 programming challenges by calling `progpat.pattern(X)` where `X` is 1 to 461. For example:
+After installing, you can find the 461 programming exercises by calling `progpat.exercise(X)` where *X* is 1 to 461. For example:
 
     >>> import progpat
-    >>> progpat.pattern(1)
-        Pattern #1
+    >>> progpat.exercise(1)
+        Exercise #1
         1  2   3    4     5      6       7        8
         O  OO  OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
            OO  OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
@@ -36,13 +34,20 @@ After installing, you can find the 461 programming challenges by calling `progpa
         1  4   9    16    25     36      49       64
 
 
-Each pattern has a visual string component and a numeric math component. Your challenge is to write a function that, given an integer `n`, returns a multiline string of the pattern at iteration `n`. For example, write a `myVis1Solution(3)` would return the string `'OOO\nOOO\nOOO'`.
+Each exercise has a visual string component and a numeric math component. To solve the exercise you must write two functions. The visual string component function must have a name `visX()` where *X* is the exercise number. The numeric math component functionmust have a name `numX()` where *X* is the exercise number.
 
-Next, write a function that, given an integer `n`, returns a count of the objects in pattern at iteration `n`. For example, write a `myNum1Solution(3)` should return `9`.
+For example, `vis1(3)` would return the string `'OOO\nOOO\nOOO'` because that is the visual string pattern for step 3 of exercise #1. Meanwhile, `num1(3)` should return `9` because that is the numeric math component for step 3 of exercise #1. Your two functions should return the correct answers for *any* integer (greater than 0) passed to them.
 
-You can identify what you're supposed to count in the string displayed by `progpat.pattern()`. For example, pattern #1 asks for the number of Os. Most patterns ask for the number of Os, but some patterns have other characters or ask for a number of line segments.
+You can identify what you're supposed to count in the string displayed by `progpat.exercise()`. For example, exercise #1 asks for the number of Os. Most exercises ask for the number of Os, but some exercises have other characters or ask for a number of line segments.
 
-Patterns don't have trailing whitespace on their lines, and use period (.) characters instead of spaces to make the spacing easier to count.
+The visual strings don't have trailing whitespace on their lines. They use period (.) characters instead of spaces to make the spacing easier to count.
+
+To check if your code is correct, run the following from the *.py* file that contains your `visX()` and `numX()` functions:
+
+    import progpat
+    progpat.check(1, vis1, num1)  # Checks the vis1() and num1() functions for correctness.
+
+Notice that you are passing the functions themselves, not calling them. This is why they don't have the () parentheses after their names.
 
 Eventually, I'd like to make a website to track people's solutions (similar to what Advent of Code does).
 
@@ -95,7 +100,7 @@ These functions will be used to check student solutions. Each pattern puzzle has
 
 Where you can help is by writing the solution functions for the unsolved patterns. Check out https://visualpatterns.org and find a pattern to write function solutions for. To avoid working on patterns that other people may be working on, pick patterns to solve randomly by running `random.randint(1, 468)` in Python (or some other random selection method) and then check the GitHub repo to make sure it hasn't already been solved.
 
-The source code file has boilerplate `visX()` and `numX()` functions that you can fill in with your solution. You can then run `getPatternMultilineString(X, 1, 10)` (where `X` is the pattern number) to verify that the solution looks correct for iterations 1 through 10.
+The source code file has boilerplate `visX()` and `numX()` functions that you can fill in with your solution. You can then run `_getPatternMultilineString(X, 1, 10)` (where `X` is the pattern number) to verify that the solution looks correct for iterations 1 through 10.
 
 While the strings returned by the `visX()` functions have multiple lines (that is, they contain \n newline charactrs) each line should remove all trailing whitespace for their canonical answer. For example, this pattern:
 
@@ -176,7 +181,13 @@ However, Python has a slight bug in its language design where \ slashes cannot b
 
 Please contact me at al@inventwithpython.com or on Twitter @AlSweigart if you'd like to contribute to this git repo.
 
+How to Solve Programmed Patterns
+-----------
+
+TODO - Finish this section with advice on how to tackle these problems. (i.e. notice the changes between iterations including amounts, recall that you'll print things left-to-right, break it down line by line, use loops for multiple lines and string replication for multiple characters on a line, etc.)
+
 Support
 -------
 
 If you find this project helpful and would like to support its development, [consider donating to its creator on Patreon](https://www.patreon.com/AlSweigart).
+

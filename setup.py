@@ -7,7 +7,7 @@ scriptFolder = os.path.dirname(os.path.realpath(__file__))
 os.chdir(scriptFolder)
 
 # Find version info from module (without importing the module):
-with open("src/visualpatterns/__init__.py", "r") as fileObj:
+with open("src/progpat/__init__.py", "r") as fileObj:
     version = re.search(
         r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', fileObj.read(), re.MULTILINE
     ).group(1)
@@ -17,9 +17,9 @@ with io.open("README.md", encoding="utf-8") as fileObj:
     long_description = fileObj.read()
 
 setup(
-    name="visualpatterns",
+    name="ProgrammedPatterns",
     version=version,
-    url="https://github.com/asweigart/visualpatterns",
+    url="https://github.com/asweigart/programmedpatterns",
     author="Al Sweigart",
     author_email="al@inventwithpython.com",
     description=("""Programming practice exercises in pattern recognition, written in Python. Ideal for beginner programmers."""),

@@ -1,3 +1,4 @@
+__version__ = '0.1.0'
 
 import sys, random
 
@@ -27,8 +28,8 @@ NUM_DESC = { # Default value will be 'Number of Os:'
 
 }
 
-def checkSolution(patternNumber, visualFunction, numericFunction):
-    for i in range(100):
+def check(patternNumber, visualFunction, numericFunction):
+    for i in range(50):
         visSolution = eval('vis%d(%d)' % (patternNumber, i))
         visOutput = visualFunction(i)
 
@@ -47,10 +48,10 @@ def checkSolution(patternNumber, visualFunction, numericFunction):
             print('Expected:\n' + numSolution)
             print('Your function:\n' + numOutput)
             return False
+    return True
 
 
-
-def getPatternMultilineString(patternNum, startIteration=1, endIteration=3, sep='  '):
+def _getPatternMultilineString(patternNum, startIteration=1, endIteration=3, sep='  '):
     # Return a multiline string with the first three iterations of the pattern.
     pats = []
     for i in range(startIteration, endIteration + 1):
@@ -62,7 +63,7 @@ def getPatternMultilineString(patternNum, startIteration=1, endIteration=3, sep=
     for i in range(startIteration, endIteration + 1):
         patMaxLens.append(max([len(line) for line in pats[i - startIteration]]))
 
-    lines = ['Pattern #' + str(patternNum)]
+    lines = ['Exercise #' + str(patternNum)]
 
     # Add the patterns:
     for i in range(maxNumLines):
@@ -95,12 +96,18 @@ def getPatternMultilineString(patternNum, startIteration=1, endIteration=3, sep=
     lines.insert(1, iterationNumbersLine)
 
 
-    return '\n'.join(lines)
+    print('\n'.join(lines))
+
+_g = _getPatternMultilineString
+
+
+def exercise(exerciseNumber):
+    print(eval('vis' + str(int(exerciseNumber)) + '.__doc__'))
 
 
 def vis1(n):  # DONE
     """
-    Pattern #1
+    Exercise #1
     1  2   3    4     5      6       7        8
     O  OO  OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
        OO  OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
@@ -125,7 +132,7 @@ def num1(n):  # DONE
 
 def vis2(n):  # DONE
     """
-    Pattern #2
+    Exercise #2
     1  2   3    4     5      6       7        8
     O  .O  ..O  ...O  ....O  .....O  ......O  .......O
        OO  ..O  ...O  ....O  .....O  ......O  .......O
@@ -151,7 +158,7 @@ def num2(n):  # DONE
 
 def vis3(n):  # DONE
     """
-    Pattern #3
+    Exercise #3
     1  2   3    4     5      6       7        8
     O  O   O    O     O      O       O        O
        OO  OO   OO    OO     OO      OO       OO
@@ -179,7 +186,7 @@ def num3(n):  # DONE
 
 def vis4(n):  # DONE
     """
-    Pattern #4
+    Exercise #4
     1    2      3        4          5
     O.O  O...O  O.....O  O.......O  O.........O
     .O   .O.O   .O...O   .O.....O   .O.......O
@@ -219,7 +226,7 @@ def num4(n):  # DONE
 
 def vis5(n):  # DONE
     """
-Pattern #5
+Exercise #5
     1    2      3        4          5            6
     .OO  ..OOO  ...OOOO  ....OOOOO  .....OOOOOO  ......OOOOOOO
     O.O  ...OO  ....OOO  .....OOOO  ......OOOOO  .......OOOOOO
@@ -257,7 +264,7 @@ def num5(n):  # DONE
 
 def vis6(n):
     # NOTE: This is a difficult puzzle.
-    # NOTE: This is similar to the Sierpinski triangle in pattern #41
+    # NOTE: This is similar to the Sierpinski triangle in Exercise #41
     # NOTE: More than one character is needed to draw each shape.
     r"""
      /\
@@ -274,7 +281,7 @@ def num6(n):
 
 def vis7(n):  # DONE
     """
-    Pattern #7
+    Exercise #7
     1    2    3    4    5    6    7    8    9    10
     OOO  OO   OO   OO   OO   OO   OO   OO   OO   OO
          OOO  OO   OO   OO   OO   OO   OO   OO   OO
@@ -302,7 +309,7 @@ def num7(n):  # DONE
 
 def vis8(n):  # DONE
     """
-    Pattern #8
+    Exercise #8
     1   2    3     4      5       6        7         8
     OO  OO   OOO   OOOO   OOOOO   OOOOOO   OOOOOOO   OOOOOOOO
         OOO  OOO   OOOO   OOOOO   OOOOOO   OOOOOOO   OOOOOOOO
@@ -331,7 +338,7 @@ def num8(n):  # DONE
 
 def vis9(n):  # DONE
     """
-    Pattern #9
+    Exercise #9
     1    2     3      4       5        6
     O    OO    OOO    OOOO    OOOOO    OOOOOO
     OO   OOO   OOOO   OOOOO   OOOOOO   OOOOOOO
@@ -351,7 +358,7 @@ def num9(n):  # DONE
 
 def vis10(n):  # DONE
     """
-    Pattern #10
+    Exercise #10
     1  2   3    4     5      6       7        8
     O  OO  OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
        O   OO   OOO   OOOO   OOOOO   OOOOOO   OOOOOOO
@@ -369,7 +376,7 @@ def num10(n):  # DONE
 
 def vis11(n):  # DONE
     """
-    Pattern #11
+    Exercise #11
     1   2    3     4      5       6
     O   O    O     O      O       O
     OO  O    O     O      O       O
@@ -392,7 +399,7 @@ def num11(n):  # DONE
 
 def vis12(n):  # DONE
     """
-    Pattern #12
+    Exercise #12
     1   2    3     4      5       6
     OO  OOO  OOOO  OOOOO  OOOOOO  OOOOOOO
     OO  OOO  OOOO  OOOOO  OOOOOO  OOOOOOO
@@ -416,7 +423,7 @@ def num12(n):  # DONE
 
 def vis13(n):  # DONE
     """
-    Pattern #13
+    Exercise #13
     1  2   3    4     5      6       7        8
     O  O   O    O     O      O       O        O
        OO  OO   OO    OO     OO      OO       OO
@@ -441,7 +448,7 @@ def num13(n):  # DONE
 
 def vis14(n):  # DONE
     """
-    Pattern #14
+    Exercise #14
     1       2       3       4       5       6
     O       O       O       O       O       O
     OOOOOO  OOOOOO  OOOOOO  OOOOOO  OOOOOO  OOOOOO
@@ -465,7 +472,7 @@ def num14(n):  # DONE
 
 def vis15(n):  # DONE
     """
-    Pattern #15
+    Exercise #15
     1    2      3        4          5            6
     .O   .O.O   .O.O.O   .O.O.O.O   .O.O.O.O.O   .O.O.O.O.O.O
     OXO  OXOXO  OXOXOXO  OXOXOXOXO  OXOXOXOXOXO  OXOXOXOXOXOXO
@@ -486,7 +493,7 @@ def num15(n):  # DONE
 
 def vis16(n):  # DONE
     """
-    Pattern #16
+    Exercise #16
     1  2    3      4        5          6
     O  .O   ..O    ...O     ....O      .....O
        OOO  .OOO   ..OOO    ...OOO     ....OOO
@@ -510,7 +517,7 @@ def num16(n):  # DONE
 
 def vis17(n):  # DONE
     """
-    Pattern #17
+    Exercise #17
     1    2      3        4          5            6
     .O   ..O    ...O     ....O      .....O       ......O
     OOO  ..O    ...O     ....O      .....O       ......O
@@ -535,7 +542,7 @@ def num17(n):  # DONE
 
 def vis18(n):  # DONE
     """
-    Pattern #18
+    Exercise #18
     1   2     3       4         5           6
     O   O     O       O         O           O
     OO  OOO   OOO     OOO       OOO         OOO
@@ -562,7 +569,7 @@ def num18(n):  # DONE
 
 def vis19(n):  # DONE
     """
-    Pattern #19
+    Exercise #19
     1    2     3      4       5        6
     .O   .O    .O     .O      .O       .O
     OOO  OOOO  OOOOO  OOOOOO  OOOOOOO  OOOOOOOO
@@ -588,22 +595,56 @@ def num19(n):  # DONE
     return 2 + n * (n + 2)
 
 
-def vis20(n):
-    result = ''
-    return result
+def vis20(n): # DONE
+    """
+    Exercise #20
+    1    2      3        4          5
+    OOO  OOOOO  OOOOOOO  OOOOOOOOO  OOOOOOOOOOO
+         OOOOO  OOOOOOO  OOOOOOOOO  OOOOOOOOOOO
+                OOOOOOO  OOOOOOOOO  OOOOOOOOOOO
+                         OOOOOOOOO  OOOOOOOOOOO
+                                    OOOOOOOOOOO
+
+    Number of Os:
+    3    10     21       36         55"""
+    result = ('O' + ('OO' * n) + '\n') * n
+    return result[:-1]
 
 
-def num20(n):
-    return -1
+def num20(n):  # DONE
+    return (1 + (n * 2)) * n
 
 
 def vis21(n):
+    """
+    Exercise #21
+    1   2    3     4      5
+    OO  OO   OOO   OOOO   OOOOO
+    OO  OO   OOO   OOOO   OOOOO
+        OOO  OOO   OOOO   OOOOO
+        OOO  OOO   OOOO   OOOOO
+             OOOO  OOOO   OOOOO
+             OOOO  OOOO   OOOOO
+                   OOOOO  OOOOO
+                   OOOOO  OOOOO
+                          OOOOOO
+                          OOOOOO
+
+    Number of Os:
+    4   10   20    34     52"""
     result = ''
-    return result
+    for i in range(n * 2):
+        result += 'O' * n
+        if i >= (n * 2) - 2:
+            result += 'O\n'
+        else:
+            result += '\n'
+
+    return result[:-1]
 
 
 def num21(n):
-    return -1
+    return n * (n * 2) + 2
 
 
 def vis22(n):
@@ -788,7 +829,7 @@ def num40(n):
 
 
 def vis41(n):
-    # NOTE: This is similar to the Sierpinski triangle in pattern #5.
+    # NOTE: This is similar to the Sierpinski triangle in Exercise #5.
     # NOTE: More than one character is needed to draw each shape.
     r"""
        /\
@@ -835,7 +876,7 @@ def num43(n):
 
 def vis44(n):  # DONE
     r"""
-    Pattern #44
+    Exercise #44
     1           2                 3
     ....__      ....__....__      ....__....__....__
     .__/##\__   .__/##\__/##\__   .__/##\__/##\__/##\__
@@ -950,7 +991,7 @@ def num52(n):
 
 def vis53(n):  # DONE
     r"""
-    Pattern #53
+    Exercise #53
     1      2         3            4               5
     .__    .__.__    .__.__.__    .__.__.__.__    .__.__.__.__.__
     |..|\  |..|..|\  |..|..|..|\  |..|..|..|..|\  |..|..|..|..|..|\
@@ -971,7 +1012,7 @@ def num53(n):  # DONE
 
 def vis54(n):  # DONE
     r"""
-    Pattern #54
+    Exercise #54
     1        2           3              4
     .__.__   .__.__.__   .__.__.__.__   .__.__.__.__.__
     |..|..|  |..|..|..|  |..|..|..|..|  |..|..|..|..|..|
@@ -994,7 +1035,7 @@ def num54(n):  # DONE
 def vis55(n):  # DONE
     # NOTE: More than one character is needed to draw each shape.
     r"""
-    Pattern #55
+    Exercise #55
     1        2           3              4
     .__./\   .__.__./\   .__.__.__./\   .__.__.__.__./\
     |..|..\  |..|..|..\  |..|..|..|..\  |..|..|..|..|..\
@@ -1043,7 +1084,7 @@ def num57(n):
 def vis58(n):  # DONE
     # NOTE: More than one character is needed to draw each shape.
     r"""
-    Pattern #58
+    Exercise #58
     1     2        3           4
     ./\   ./\      ./\..../\   ./\..../\
     /..\  /..\__   /..\__/..\  /..\__/..\__
@@ -1881,7 +1922,7 @@ def num140(n):
 
 def vis141(n):  # DONE
     """
-    Pattern #141
+    Exercise #141
     1    2      3        4          5            6
     OO   OOO    OOOO     OOOOO      OOOOOO       OOOOOOO
     OOO  OOOOO  OOOOOOO  OOOOOOOOO  OOOOOOOOOOO  OOOOOOOOOOOOO
@@ -1996,7 +2037,7 @@ def num151(n):
 
 def vis152(n):  # DONE
     """
-    Pattern #152
+    Exercise #152
     1      2        3          4            5
     ..O    ...O     ....O      .....O       ......O
     .O.O   ..O.O    ...O.O     ....O.O      .....O.O
