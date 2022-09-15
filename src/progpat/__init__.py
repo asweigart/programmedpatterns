@@ -1561,66 +1561,135 @@ def num100(n):
 
 
 def vis101(n):
+    """
+    Exercise #101
+    1    2     3      4       5        6         
+    O.O  O..O  O...O  O....O  O.....O  O......O
+    .O   .OO   .OOO   .OOOO   .OOOOO   .OOOOOO
+    O.O  .OO   .OOO   .OOOO   .OOOOO   .OOOOOO
+         O..O  .OOO   .OOOO   .OOOOO   .OOOOOO
+               O...O  .OOOO   .OOOOO   .OOOOOO
+                      O....O  .OOOOO   .OOOOOO
+                              O.....O  .OOOOOO
+                                       O......O
+
+    Number of Os:
+    5    8     13     20      29       40"""
     result = ''
+    row_top = 'O' + n * '.' + 'O' + '\n'
+    row_middle = '.' + n * 'O' + '\n'
+    row_bottom = row_top[:-1] # Same as top without the newline
+    rows = n + 2
+    for i in range(rows):
+        if i == 0:
+            result += row_top
+        elif i == rows - 1:
+            result += row_bottom
+        else:
+            result += row_middle
     return result
 
 
 def num101(n):
-    return -1
+    # Add four corners pieces around the inner square
+    return n * n + 4
 
 
 def vis102(n):
-    result = ''
+    result = (n - 1) * 'O' + '\n'
+    for i in range(n - 1):
+        result += n * 'O' + '\n'
     return result
 
 
 def num102(n):
-    return -1
+    # Chew off one corner of a square
+    return n * n - 1
 
 
 def vis103(n):
-    result = ''
+    side_length = n + 3
+    result = side_length * ((side_length * 'O') + '\n')
     return result
 
 
 def num103(n):
-    return -1
+    side_length = n + 3
+    return side_length * side_length
 
 
 def vis104(n):
+    width = n + 2
+    height = 6 + 2 * (n - 1)
     result = ''
+
+    # Create initial rectangle
+    result += height * (width * 'O' + '\n')
+
+    # Append 2x3 rectangle
+    result += "OOO\nOOO"
     return result
 
 
 def num104(n):
-    return -1
+    # NOTE: The first shape is three blocks wide so the 2x3 rectangle does not pop out
+    width = n + 2
+    height = 6 + 2 * (n - 1)
+    return width * height + 6
 
 
 def vis105(n):
-    result = ''
+    result = (3 * n) * ((n * 'O') + '\n')
     return result
 
 
 def num105(n):
-    return -1
+    return 3 * n * n
 
 
 def vis106(n):
     result = ''
+    height = n + 1
+    row_top = (height - 1) * 'O'
+    row_middle = height * 'O'
+    row_bottom = '.' + (height - 1) * 'O'
+    for i in range(height):
+        if i == 0:
+            result += row_top + '\n'
+        elif i == height - 1:
+            result += row_bottom
+        else:
+            result += row_middle + '\n'
     return result
 
 
 def num106(n):
-    return -1
+    # Chew off two corners of a square
+    width = n + 1
+    return width * width - 2
 
 
 def vis107(n):
     result = ''
+    outer_height = n + 2
+    row_top = outer_height * 'O' + '\n'
+    row_middle = 'O' + n * '.' + 'O' + '\n'
+    row_bottom = row_top[:-1] # Same as top without the newline
+    for i in range(outer_height):
+        if i == 0:
+            result += row_top
+        elif i == outer_height - 1:
+            result += row_bottom
+        else:
+            result += row_middle
     return result
 
 
 def num107(n):
-    return -1
+    # Subtract the inner square from the outer square
+    inner_width = n
+    outer_width = n + 2
+    return outer_width * outer_width - inner_width * inner_width
 
 
 def vis108(n):
