@@ -9,6 +9,7 @@ NUM_DESC = { # Default value will be 'Number of Os:'
     25: 'Number of Os, Xs:',
     26: 'Number of Os, Xs:',
     27: 'Number of Os, Xs:',
+    28: 'Number of Os, Xs:',
     37: 'Number of line segments:',
     38: 'Number of line segments:',
     44: 'Number of filled hexagons:',
@@ -608,14 +609,14 @@ def vis20(n): # DONE
     Number of Os:
     3    10     21       36         55"""
     result = ('O' + ('OO' * n) + '\n') * n
-    return result[:-1]
+    return result
 
 
 def num20(n):  # DONE
     return (1 + (n * 2)) * n
 
 
-def vis21(n):
+def vis21(n):  # DONE
     """
     Exercise #21
     1   2    3     4      5
@@ -640,79 +641,190 @@ def vis21(n):
         else:
             result += '\n'
 
-    return result[:-1]
+    return result
 
 
-def num21(n):
+def num21(n):  # DONE
     return n * (n * 2) + 2
 
 
-def vis22(n):
+def vis22(n):  # DONE
+    """
+    Exercise #22
+    1  2   3    4     5      6
+    O  O   O    O     O      O
+       OO  OO   OO    OO     OO
+           OOO  OOO   OOO    OOO
+                OOOO  OOOO   OOOO
+                      OOOOO  OOOOO
+                             OOOOOO
+
+    Number of Os:
+    1  3   6    10    15     21"""
     result = ''
+    for i in range(1, n + 1):
+        result += 'O' * i + '\n'
     return result
 
 
-def num22(n):
-    return -1
+def num22(n):  # DONE
+    n += 1
+    return (n * (n-1)) // 2
 
 
-def vis23(n):
+def vis23(n):  # DONE
     # NOTE: Use 'O' for red, 'X' for green, 'M' for yellow.
+    # NOTE: It's okay to hard-code step 1
+    """
+    Exercise #23
+    1    2     3
+    .X   OOX   OOO
+    OXM  OOX   OOO
+         OOX   OOO
+         OOXM  OOOX
+               OOOX
+               OOOX
+               OOOX
+               OOOX
+               OOOXM
+
+    Number of Os, Xs, Ms:
+    4    13    34"""
+    if n == 1:
+        return '.X\nOXM'
+
     result = ''
+
+    for i in range(n ** 2):
+        result += 'O' * n
+
+        if i >= n ** 2 - (n * 2):
+            result += 'X'
+
+        if i == n ** 2 - 1:
+            result += 'M\n'
+        else:
+            result += '\n'
+
     return result
 
 
-def num23(n):
-    return -1
+def num23(n):  # DONE
+    return ((n ** 2 * n), (n * 2), 1)
 
 
-def vis24(n):
+def vis24(n):  # DONE
+    """
+    Exercise #24
+    1      2       3        4
+    O      O       O        O
+    OX     OXX     OXXX     OXXXX
+    OX     OXX     OXXX     OXXXX
+    Number of Os, Xs:
+    (3, 2) (3, 4)  (3, 6)   (3, 8)"""
+    # NOTE: Use 'O' for red, 'X' for blue.
+    result = 'O\n'
+    result += 'O' + ('X' * n) + '\n'
+    result += 'O' + ('X' * n) + '\n'
+    return result
+
+
+def num24(n):  # DONE
+    return (3, 2 * n)
+
+
+def vis25(n):  # DONE
+    """
+    Exercise #25
+    1      2       3        4
+    O      O       O        O
+    O      OX      OXX      OXXX
+    OXX    OXXX    OXXXX    OXXXXX
+
+    Number of Os, Xs:
+    (3, 2) (3, 4)  (3, 6)   (3, 8)"""
+    # NOTE: Use 'O' for red, 'X' for blue.
+    result = 'O\n'
+    result += 'O' + ('X' * (n - 1)) + '\n'
+    result += 'O' + ('X' * (n + 1)) + '\n'
+    return result
+
+
+def num25(n):  # DONE
+    return (3, (n-1) + (n+1))
+
+
+def vis26(n):  # DONE
+    """
+    Exercise #26
+    1      2       3        4         5
+    O      O       O        O         O
+    OO     OOX     OOXX     OOXXX     OOXXXX
+    OO     OOX     OOXX     OOXXX     OOXXXX
+
+    Number of Os, Xs:
+    (5, 0) (5, 2)  (5, 4)   (5, 6)    (5, 8)"""
+
+    # NOTE: Use 'O' for red, 'X' for blue.
+    result = 'O\n'
+    result += 'OO' + ('X' * (n-1)) + '\n'
+    result += 'OO' + ('X' * (n-1)) + '\n'
+    return result
+
+
+def num26(n):  # DONE
+    return (5, (n-1) * 2)
+
+
+def vis27(n):  # DONE
+    """
+    Exercise #27
+    1      2        3          4
+    OX     OO       OOO        OOOO
+           OOXX     OOO        OOOO
+                    OOOXXX     OOOO
+                               OOOOXXXX
+    Number of Os, Xs:
+    (1, 1) (4, 2)   (9, 3)     (16, 4)"""
     # NOTE: Use 'O' for red, 'X' for blue.
     result = ''
+    for i in range(n):
+        result += 'O' * n
+
+        if i == n - 1:
+            result += 'X' * n
+
+        result += '\n'
     return result
 
 
-def num24(n):
-    return -1
+def num27(n):  # DONE
+    return (n**2, n)
 
 
-def vis25(n):
-    # NOTE: Use 'O' for red, 'X' for blue.
+def vis28(n):  # DONE
+    """
+    Exercise #28
+    1      2       3        4         5
+    O      OX      OXX      OXXX      OXXXX
+           OO      OXX      OXXX      OXXXX
+                   OOO      OXXX      OXXXX
+                            OOOO      OXXXX
+                                      OOOOO
+
+    Number of Os, Xs:
+    (1, 0) (3, 1)  (5, 4)   (7, 9)    (9, 16)"""
+
+    # NOTE: This pattern is in 3D and can't be drawn in ASCII, so I've changed it slightly.
     result = ''
+    for i in range(n - 1):
+        result += 'O' + ('X' * (n - 1)) + '\n'
+    result += 'O' * n + '\n'
     return result
 
 
-def num25(n):
-    return -1
-
-
-def vis26(n):
-    # NOTE: Use 'O' for red, 'X' for blue.
-    result = ''
-    return result
-
-
-def num26(n):
-    return -1
-
-
-def vis27(n):
-    # NOTE: Use 'O' for red, 'X' for blue.
-    result = ''
-    return result
-
-
-def num27(n):
-    return -1
-
-
-def vis28(n):
-    # NOTE: This pattern is in 3D and can't be drawn in ASCII.
-    raise NotImplementedError
-
-
-def num28(n):
-    return -1
+def num28(n):  # DONE
+    return (n * 2 - 1, (n - 1) ** 2)
 
 
 def vis29(n):
@@ -725,32 +837,90 @@ def num29(n):
     return -1
 
 
-def vis30(n):
+def vis30(n):  # DONE
+    """
+    Exercise #30
+    1  2    3      4
+    O  OO   OOO    OOOO
+    O  OO   OOO    OOOO
+    O  .O   OOO    OOOO
+       .O   ..O    OOOO
+       .OO  ..O    ...O
+       .OO  ..O    ...O
+            ..OOO  ...O
+            ..OOO  ...O
+            ..OOO  ...OOOO
+                   ...OOOO
+                   ...OOOO
+                   ...OOOO
+
+    Number of Os:
+    3  10   21     36"""
     # NOTE: This pattern is drawn rotated 45 degrees.
+    # NOTE: I'm modifying this pattern to be easier and not including the missing squares.
     result = ''
+
+    # Draw top-left n x n square:
+    for i in range(n):
+        result += ('O' * n) + '\n'
+
+    # Draw middle bar:
+    for i in range(n):
+        result += '.' * (n-1) + 'O\n'
+
+    # Draw bottom-right n x n square:
+    for i in range(n):
+        result += '.' *(n-1) + ('O' * n) + '\n'
     return result
 
 
-def num30(n):
-    return -1
+def num30(n):  # DONE
+    return (n**2) * 2 + n
 
 
-def vis31(n):
-    result = ''
+def vis31(n):  # DONE
+    """
+    Exercise #31
+    1    2      3        4
+    .O   .OOO   .OOOOO   .OOOOOOO
+    OOO  OOOOO  OOOOOOO  OOOOOOOOO
+    .O   .OOO   .OOOOO   .OOOOOOO
+
+    Number of Os:
+    5    11     17       23"""
+    result = '.' + ('O' * (n * 2 - 1)) + '\n'
+    result += 'O' + ('O' * (n * 2 - 1)) + 'O\n'
+    result += '.' + ('O' * (n * 2 - 1)) + '\n'
     return result
 
 
-def num31(n):
-    return -1
+def num31(n):  # DONE
+    return 2 + ((n * 2 - 1) * 3)
 
 
-def vis32(n):
+def vis32(n):  # DONE
+    """
+    Exercise #32
+    1  2   3    4     5      6
+    O  OO  OOO  OOOO  OOOOO  OOOOOO
+    O  OO  OOO  OOOO  OOOOO  OOOOOO
+       OO  OOO  OOOO  OOOOO  OOOOOO
+           OOO  OOOO  OOOOO  OOOOOO
+                OOOO  OOOOO  OOOOOO
+                      OOOOO  OOOOOO
+                             OOOOOO
+
+    Number of Os:
+    2  6   12   20    30     42"""
     result = ''
+    for i in range(n + 1):
+        result += 'O' * n + '\n'
+
     return result
 
 
-def num32(n):
-    return -1
+def num32(n):  # DONE
+    return n * (n + 1)
 
 
 def vis33(n):
