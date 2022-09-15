@@ -1596,6 +1596,18 @@ def num101(n):
 
 
 def vis102(n):
+    """
+    Exercise #102
+    1 2   3    4     5      6       
+      O   OO   OOO   OOOO   OOOOO
+      OO  OOO  OOOO  OOOOO  OOOOOO
+          OOO  OOOO  OOOOO  OOOOOO
+               OOOO  OOOOO  OOOOOO
+                     OOOOO  OOOOOO
+                            OOOOOO
+    
+    Number of Os:
+    0 3   8    15    24     35"""
     result = (n - 1) * 'O' + '\n'
     for i in range(n - 1):
         result += n * 'O' + '\n'
@@ -1608,6 +1620,18 @@ def num102(n):
 
 
 def vis103(n):
+    """
+    Exercise #103
+    1     2      3       
+    OOOO  OOOOO  OOOOOO
+    OOOO  OOOOO  OOOOOO
+    OOOO  OOOOO  OOOOOO
+    OOOO  OOOOO  OOOOOO
+          OOOOO  OOOOOO
+                 OOOOOO
+
+    Number of Os:
+    16    25     36"""
     side_length = n + 3
     result = side_length * ((side_length * 'O') + '\n')
     return result
@@ -1619,6 +1643,24 @@ def num103(n):
 
 
 def vis104(n):
+    """
+    Exercise #104
+    1    2     3      
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+         OOO   OOOOO
+         OOO   OOOOO
+               OOO
+               OOO
+
+    Number of Os:
+    24   38    56"""
     width = n + 2
     height = 6 + 2 * (n - 1)
     result = ''
@@ -1639,6 +1681,21 @@ def num104(n):
 
 
 def vis105(n):
+    """
+    Exercise #105
+    1  2   3    
+    O  OO  OOO
+    O  OO  OOO
+    O  OO  OOO
+       OO  OOO
+       OO  OOO
+       OO  OOO
+           OOO
+           OOO
+           OOO
+
+    Number of Os:
+    3  12  27"""
     result = (3 * n) * ((n * 'O') + '\n')
     return result
 
@@ -1648,9 +1705,21 @@ def num105(n):
 
 
 def vis106(n):
+    """
+    Exercise #106
+    1   2    3     4      5       
+    O   OO   OOO   OOOO   OOOOO
+    .O  OOO  OOOO  OOOOO  OOOOOO
+        .OO  OOOO  OOOOO  OOOOOO
+             .OOO  OOOOO  OOOOOO
+                   .OOOO  OOOOOO
+                          .OOOOO
+
+    Number of Os:
+    2   7    14    23     34"""
     result = ''
     height = n + 1
-    row_top = (height - 1) * 'O'
+    row_top = (height - 1) * 'O' # Could add dot after for clarity
     row_middle = height * 'O'
     row_bottom = '.' + (height - 1) * 'O'
     for i in range(height):
@@ -1670,6 +1739,18 @@ def num106(n):
 
 
 def vis107(n):
+    """
+    1    2     3      4       5        
+    OOO  OOOO  OOOOO  OOOOOO  OOOOOOO
+    O.O  O..O  O...O  O....O  O.....O
+    OOO  O..O  O...O  O....O  O.....O
+         OOOO  O...O  O....O  O.....O
+               OOOOO  O....O  O.....O
+                      OOOOOO  O.....O
+                              OOOOOOO
+    
+    Number of Os:
+    8    12    16     20      24"""
     result = ''
     outer_height = n + 2
     row_top = outer_height * 'O' + '\n'
