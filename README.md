@@ -54,7 +54,7 @@ Eventually, I'd like to make a website to track people's solutions (similar to w
 Contribute
 ----------
 
-Currently a lot of basic programming work is needed (in Python and other languages) to make Programmed Patterns work.
+Currently a lot of basic programming work is needed (in Python and other languages) to make Programmed Patterns work. If you submit a PR, you must agree to the contributor agreement and Code of Conduct.
 
 First, we need the solutions for all 468 patterns. Each solution is comprised of a `visX(n)` function that returns a multiline string for pattern *X* at iteration *n*, and a `numX(n)` function that returns a numeric count of the number of shapes in pattern *X* at iteration *n*.
 
