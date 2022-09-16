@@ -2016,7 +2016,7 @@ def vis110(n):
             X    X     X...X
                  X     X
                        X
-    
+
     Number of Os, Xs:
     (1, 3)(1, 5)(1, 7)(1, 9)(1, 11)"""
     result = 'OX\n' # Hard-coded first row
@@ -2058,13 +2058,30 @@ def num113(n):
     return -1
 
 
-def vis114(n):
-    result = ''
+def vis114(n): # DONE
+    """
+    Exercise #114
+    1    2     3      4       5        
+    O.O  O..O  O...O  O....O  O.....O
+    OO   O.O   O..O   O...O   O....O
+    OOO  OO    O.O    O..O    O...O
+         OOOO  OO     O.O     O..O
+               OOOOO  OO      O.O
+                      OOOOOO  OO
+                              OOOOOOO
+
+    Number of Os:
+    7    10    13     16      19"""
+    result = 'O' + n * '.' + 'O\n'
+    for i in range(n):
+        result += 'O' + (n - i - 1) * '.' + 'O\n'
+    result += (n + 2) * 'O'
     return result
 
 
-def num114(n):
-    return -1
+def num114(n): # DONE
+    # Three equal length beams appended to a corner piece
+    return 1 + 3 * (n + 1)
 
 
 def vis115(n):
