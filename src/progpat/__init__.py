@@ -1730,7 +1730,7 @@ def num100(n):
     return -1
 
 
-def vis101(n):
+def vis101(n): # DONE
     """
     Exercise #101
     1    2     3      4       5        6         
@@ -1760,12 +1760,12 @@ def vis101(n):
     return result
 
 
-def num101(n):
+def num101(n): # DONE
     # Add four corners pieces around the inner square
     return n * n + 4
 
 
-def vis102(n):
+def vis102(n): # DONE
     """
     Exercise #102
     1 2   3    4     5      6       
@@ -1784,12 +1784,12 @@ def vis102(n):
     return result
 
 
-def num102(n):
+def num102(n): # DONE
     # Chew off one corner of a square
     return n * n - 1
 
 
-def vis103(n):
+def vis103(n): # DONE
     """
     Exercise #103
     1     2      3       
@@ -1807,12 +1807,12 @@ def vis103(n):
     return result
 
 
-def num103(n):
+def num103(n): # DONE
     side_length = n + 3
     return side_length * side_length
 
 
-def vis104(n):
+def vis104(n): # DONE
     """
     Exercise #104
     1    2     3      
@@ -1843,14 +1843,14 @@ def vis104(n):
     return result
 
 
-def num104(n):
+def num104(n): # DONE
     # NOTE: The first shape is three blocks wide so the 2x3 rectangle does not pop out
     width = n + 2
     height = 6 + 2 * (n - 1)
     return width * height + 6
 
 
-def vis105(n):
+def vis105(n): # DONE
     """
     Exercise #105
     1  2   3    
@@ -1870,11 +1870,11 @@ def vis105(n):
     return result
 
 
-def num105(n):
+def num105(n): # DONE
     return 3 * n * n
 
 
-def vis106(n):
+def vis106(n): # DONE
     """
     Exercise #106
     1   2    3     4      5       
@@ -1902,13 +1902,13 @@ def vis106(n):
     return result
 
 
-def num106(n):
+def num106(n): # DONE
     # Chew off two corners of a square
     width = n + 1
     return width * width - 2
 
 
-def vis107(n):
+def vis107(n): # DONE
     """
     1    2     3      4       5        
     OOO  OOOO  OOOOO  OOOOOO  OOOOOOO
@@ -1936,20 +1936,46 @@ def vis107(n):
     return result
 
 
-def num107(n):
+def num107(n): # DONE
     # Subtract the inner square from the outer square
     inner_width = n
     outer_width = n + 2
     return outer_width * outer_width - inner_width * inner_width
 
 
-def vis108(n):
+def vis108(n): # DONE
+    """
+    Exercise #108
+    1    2     3      4       5        
+    .OO  .OOO  .OOOO  .OOOOO  .OOOOOO
+    .O   .OO   .OOO   .OOOO   .OOOOO
+    OO   .OO   .OOO   .OOOO   .OOOOO
+         OOO   .OOO   .OOOO   .OOOOO
+               OOOO   .OOOO   .OOOOO
+                      OOOOO   .OOOOO
+                              OOOOOO
+
+    Number of Os:
+    5    10    17     26      37"""
     result = ''
+    rows = n + 2
+    row_top = '.' + (rows - 1) * 'O' + '\n'
+    row_middle = '.' + (rows - 2) * 'O' + '\n'
+    row_bottom = row_top[1:-1] # Same as top shifted left without newline
+    for i in range(rows):
+        if i == 0:
+            result += row_top
+        elif i == rows - 1:
+            result += row_bottom
+        else:
+            result += row_middle
     return result
 
 
-def num108(n):
-    return -1
+def num108(n): # DONE
+    # Square with two sides missing all but one square
+    height = n + 2
+    return height * height - 2 * (height - 1)
 
 
 def vis109(n):
