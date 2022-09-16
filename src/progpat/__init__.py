@@ -1978,13 +1978,31 @@ def num108(n): # DONE
     return height * height - 2 * (height - 1)
 
 
-def vis109(n):
-    result = ''
+def vis109(n): # DONE
+    """
+    Exercise #109
+    1   2    3     4      5       
+    OX  OXX  OXXX  OXXXX  OXXXXX
+    X   XX   XX    XX     XX
+        X    X.X   X.X    X.X
+             X     X..X   X..X
+                   X      X...X
+                          X
+
+    Number of Os, Xs:
+    (1, 2)(1, 5)(1, 8)(1, 11)(1, 14)"""
+    # NOTE: 'O' for the red circle, 'X' for others
+    result = 'O' + n * 'X' + '\n'
+    for i in range(n - 1):
+        result += 'X' + i * '.' + 'X' + '\n'
+    result += 'X'
     return result
 
 
-def num109(n):
-    return -1
+def num109(n): # DONE
+    # Returns a tuple of (Os, Xs)
+    # The middle diagonal with the red circle is as long as the blue side lengths
+    return (1, 3 * n - 1)
 
 
 def vis110(n):
