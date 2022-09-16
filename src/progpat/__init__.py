@@ -1994,7 +1994,7 @@ def vis109(n): # DONE
     # NOTE: 'O' for the red circle, 'X' for others
     result = 'O' + n * 'X' + '\n'
     for i in range(n - 1):
-        result += 'X' + i * '.' + 'X' + '\n'
+        result += 'X' + i * '.' + 'X\n'
     result += 'X'
     return result
 
@@ -2006,12 +2006,29 @@ def num109(n): # DONE
 
 
 def vis110(n):
-    result = ''
+    """
+    Exercise #110
+    1   2   3    4     5      
+    OX  OX  OX   OX    OX
+    X   XX  XX   XX    XX
+    X   X   X.X  X.X   X.X
+        X   X    X..X  X..X
+            X    X     X...X
+                 X     X
+                       X
+    
+    Number of Os, Xs:
+    (1, 3)(1, 5)(1, 7)(1, 9)(1, 11)"""
+    result = 'OX\n' # Hard-coded first row
+    for i in range(n - 1):
+        result += 'X' + i * '.' + 'X\n'
+    result += 'X\nX' # Always two more vertical blues than diagonal blues
     return result
 
 
-def num110(n):
-    return -1
+def num110(n): # DONE
+    # Initially starts with three blues circles and each step adds two blues
+    return (1, 3 + 2 * (n - 1))
 
 
 def vis111(n):
