@@ -1730,94 +1730,305 @@ def num100(n):
     return -1
 
 
-def vis101(n):
+def vis101(n): # DONE
+    """
+    Exercise #101
+    1    2     3      4       5        6         
+    O.O  O..O  O...O  O....O  O.....O  O......O
+    .O   .OO   .OOO   .OOOO   .OOOOO   .OOOOOO
+    O.O  .OO   .OOO   .OOOO   .OOOOO   .OOOOOO
+         O..O  .OOO   .OOOO   .OOOOO   .OOOOOO
+               O...O  .OOOO   .OOOOO   .OOOOOO
+                      O....O  .OOOOO   .OOOOOO
+                              O.....O  .OOOOOO
+                                       O......O
+
+    Number of Os:
+    5    8     13     20      29       40"""
     result = ''
+    row_top = 'O' + n * '.' + 'O' + '\n'
+    row_middle = '.' + n * 'O' + '\n'
+    row_bottom = row_top[:-1] # Same as top without the newline
+    rows = n + 2
+    for i in range(rows):
+        if i == 0:
+            result += row_top
+        elif i == rows - 1:
+            result += row_bottom
+        else:
+            result += row_middle
     return result
 
 
-def num101(n):
-    return -1
+def num101(n): # DONE
+    # Add four corners pieces around the inner square
+    return n * n + 4
 
 
-def vis102(n):
-    result = ''
+def vis102(n): # DONE
+    """
+    Exercise #102
+    1 2   3    4     5      6       
+      O   OO   OOO   OOOO   OOOOO
+      OO  OOO  OOOO  OOOOO  OOOOOO
+          OOO  OOOO  OOOOO  OOOOOO
+               OOOO  OOOOO  OOOOOO
+                     OOOOO  OOOOOO
+                            OOOOOO
+    
+    Number of Os:
+    0 3   8    15    24     35"""
+    result = (n - 1) * 'O' + '\n'
+    for i in range(n - 1):
+        result += n * 'O' + '\n'
     return result
 
 
-def num102(n):
-    return -1
+def num102(n): # DONE
+    # Chew off one corner of a square
+    return n * n - 1
 
 
-def vis103(n):
-    result = ''
+def vis103(n): # DONE
+    """
+    Exercise #103
+    1     2      3       
+    OOOO  OOOOO  OOOOOO
+    OOOO  OOOOO  OOOOOO
+    OOOO  OOOOO  OOOOOO
+    OOOO  OOOOO  OOOOOO
+          OOOOO  OOOOOO
+                 OOOOOO
+
+    Number of Os:
+    16    25     36"""
+    side_length = n + 3
+    result = side_length * ((side_length * 'O') + '\n')
     return result
 
 
-def num103(n):
-    return -1
+def num103(n): # DONE
+    side_length = n + 3
+    return side_length * side_length
 
 
-def vis104(n):
+def vis104(n): # DONE
+    """
+    Exercise #104
+    1    2     3      
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+    OOO  OOOO  OOOOO
+         OOO   OOOOO
+         OOO   OOOOO
+               OOO
+               OOO
+
+    Number of Os:
+    24   38    56"""
+    width = n + 2
+    height = 6 + 2 * (n - 1)
     result = ''
+
+    # Create initial rectangle
+    result += height * (width * 'O' + '\n')
+
+    # Append 2x3 rectangle
+    result += "OOO\nOOO"
     return result
 
 
-def num104(n):
-    return -1
+def num104(n): # DONE
+    # NOTE: The first shape is three blocks wide so the 2x3 rectangle does not pop out
+    width = n + 2
+    height = 6 + 2 * (n - 1)
+    return width * height + 6
 
 
-def vis105(n):
-    result = ''
+def vis105(n): # DONE
+    """
+    Exercise #105
+    1  2   3    
+    O  OO  OOO
+    O  OO  OOO
+    O  OO  OOO
+       OO  OOO
+       OO  OOO
+       OO  OOO
+           OOO
+           OOO
+           OOO
+
+    Number of Os:
+    3  12  27"""
+    result = (3 * n) * ((n * 'O') + '\n')
     return result
 
 
-def num105(n):
-    return -1
+def num105(n): # DONE
+    return 3 * n * n
 
 
-def vis106(n):
+def vis106(n): # DONE
+    """
+    Exercise #106
+    1   2    3     4      5       
+    O   OO   OOO   OOOO   OOOOO
+    .O  OOO  OOOO  OOOOO  OOOOOO
+        .OO  OOOO  OOOOO  OOOOOO
+             .OOO  OOOOO  OOOOOO
+                   .OOOO  OOOOOO
+                          .OOOOO
+
+    Number of Os:
+    2   7    14    23     34"""
     result = ''
+    height = n + 1
+    row_top = (height - 1) * 'O' # Could add dot after for clarity
+    row_middle = height * 'O'
+    row_bottom = '.' + (height - 1) * 'O'
+    for i in range(height):
+        if i == 0:
+            result += row_top + '\n'
+        elif i == height - 1:
+            result += row_bottom
+        else:
+            result += row_middle + '\n'
     return result
 
 
-def num106(n):
-    return -1
+def num106(n): # DONE
+    # Chew off two corners of a square
+    width = n + 1
+    return width * width - 2
 
 
-def vis107(n):
+def vis107(n): # DONE
+    """
+    1    2     3      4       5        
+    OOO  OOOO  OOOOO  OOOOOO  OOOOOOO
+    O.O  O..O  O...O  O....O  O.....O
+    OOO  O..O  O...O  O....O  O.....O
+         OOOO  O...O  O....O  O.....O
+               OOOOO  O....O  O.....O
+                      OOOOOO  O.....O
+                              OOOOOOO
+    
+    Number of Os:
+    8    12    16     20      24"""
     result = ''
+    outer_height = n + 2
+    row_top = outer_height * 'O' + '\n'
+    row_middle = 'O' + n * '.' + 'O' + '\n'
+    row_bottom = row_top[:-1] # Same as top without the newline
+    for i in range(outer_height):
+        if i == 0:
+            result += row_top
+        elif i == outer_height - 1:
+            result += row_bottom
+        else:
+            result += row_middle
     return result
 
 
-def num107(n):
-    return -1
+def num107(n): # DONE
+    # Subtract the inner square from the outer square
+    inner_width = n
+    outer_width = n + 2
+    return outer_width * outer_width - inner_width * inner_width
 
 
-def vis108(n):
+def vis108(n): # DONE
+    """
+    Exercise #108
+    1    2     3      4       5        
+    .OO  .OOO  .OOOO  .OOOOO  .OOOOOO
+    .O   .OO   .OOO   .OOOO   .OOOOO
+    OO   .OO   .OOO   .OOOO   .OOOOO
+         OOO   .OOO   .OOOO   .OOOOO
+               OOOO   .OOOO   .OOOOO
+                      OOOOO   .OOOOO
+                              OOOOOO
+
+    Number of Os:
+    5    10    17     26      37"""
     result = ''
+    rows = n + 2
+    row_top = '.' + (rows - 1) * 'O' + '\n'
+    row_middle = '.' + (rows - 2) * 'O' + '\n'
+    row_bottom = row_top[1:-1] # Same as top shifted left without newline
+    for i in range(rows):
+        if i == 0:
+            result += row_top
+        elif i == rows - 1:
+            result += row_bottom
+        else:
+            result += row_middle
     return result
 
 
-def num108(n):
-    return -1
+def num108(n): # DONE
+    # Square with two sides missing all but one square
+    height = n + 2
+    return height * height - 2 * (height - 1)
 
 
-def vis109(n):
-    result = ''
+def vis109(n): # DONE
+    """
+    Exercise #109
+    1   2    3     4      5       
+    OX  OXX  OXXX  OXXXX  OXXXXX
+    X   XX   XX    XX     XX
+        X    X.X   X.X    X.X
+             X     X..X   X..X
+                   X      X...X
+                          X
+
+    Number of Os, Xs:
+    (1, 2)(1, 5)(1, 8)(1, 11)(1, 14)"""
+    # NOTE: 'O' for the red circle, 'X' for others
+    result = 'O' + n * 'X' + '\n'
+    for i in range(n - 1):
+        result += 'X' + i * '.' + 'X\n'
+    result += 'X'
     return result
 
 
-def num109(n):
-    return -1
+def num109(n): # DONE
+    # Returns a tuple of (Os, Xs)
+    # The middle diagonal with the red circle is as long as the blue side lengths
+    return (1, 3 * n - 1)
 
 
 def vis110(n):
-    result = ''
+    """
+    Exercise #110
+    1   2   3    4     5      
+    OX  OX  OX   OX    OX
+    X   XX  XX   XX    XX
+    X   X   X.X  X.X   X.X
+        X   X    X..X  X..X
+            X    X     X...X
+                 X     X
+                       X
+
+    Number of Os, Xs:
+    (1, 3)(1, 5)(1, 7)(1, 9)(1, 11)"""
+    result = 'OX\n' # Hard-coded first row
+    for i in range(n - 1):
+        result += 'X' + i * '.' + 'X\n'
+    result += 'X\nX' # Always two more vertical blues than diagonal blues
     return result
 
 
-def num110(n):
-    return -1
+def num110(n): # DONE
+    # Initially starts with three blues circles and each step adds two blues
+    return (1, 3 + 2 * (n - 1))
 
 
 def vis111(n):
@@ -1847,22 +2058,56 @@ def num113(n):
     return -1
 
 
-def vis114(n):
-    result = ''
+def vis114(n): # DONE
+    """
+    Exercise #114
+    1    2     3      4       5        
+    O.O  O..O  O...O  O....O  O.....O
+    OO   O.O   O..O   O...O   O....O
+    OOO  OO    O.O    O..O    O...O
+         OOOO  OO     O.O     O..O
+               OOOOO  OO      O.O
+                      OOOOOO  OO
+                              OOOOOOO
+
+    Number of Os:
+    7    10    13     16      19"""
+    result = 'O' + n * '.' + 'O\n'
+    for i in range(n):
+        result += 'O' + (n - i - 1) * '.' + 'O\n'
+    result += (n + 2) * 'O'
     return result
 
 
-def num114(n):
-    return -1
+def num114(n): # DONE
+    # Three equal length beams appended to a corner piece
+    return 1 + 3 * (n + 1)
 
 
-def vis115(n):
-    result = ''
+def vis115(n): # DONE
+    """
+    Exercise #115
+    1    2      3        4          5            
+    X.X  X.X.X  X.X.X.X  X.X.X.X.X  X.X.X.X.X.X
+    XXX  XXXXX  XXXXXXX  XXXXXXXXX  XXXXXXXXXXX
+    .X   .XXX   .XXXXX   .XXXXXXX   .XXXXXXXXX
+    .X   .XXX   .XXXXX   .XXXXXXX   .XXXXXXXXX
+
+    Number of Os:
+    7    14     21       28         35"""
+    battlement_merlons = n * 'X.' + 'X\n'
+    battlement_wall = (2 * n + 1) * 'X' + '\n'
+    wall_row = '.' + (2 * n - 1) * 'X' + '\n'
+    result = battlement_merlons \
+        + battlement_wall \
+        + wall_row \
+        + wall_row[:-1] # Same as wall_row without newline
     return result
 
 
-def num115(n):
-    return -1
+def num115(n): # DONE
+    # Sum of battlement merlon pieces, battlement wall pieces and two wall rows
+    return (n + 1) + (2 * n + 1) + 2 * (2 * n - 1)
 
 
 def vis116(n):
