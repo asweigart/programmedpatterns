@@ -2084,13 +2084,30 @@ def num114(n): # DONE
     return 1 + 3 * (n + 1)
 
 
-def vis115(n):
-    result = ''
+def vis115(n): # DONE
+    """
+    Exercise #115
+    1    2      3        4          5            
+    X.X  X.X.X  X.X.X.X  X.X.X.X.X  X.X.X.X.X.X
+    XXX  XXXXX  XXXXXXX  XXXXXXXXX  XXXXXXXXXXX
+    .X   .XXX   .XXXXX   .XXXXXXX   .XXXXXXXXX
+    .X   .XXX   .XXXXX   .XXXXXXX   .XXXXXXXXX
+
+    Number of Os:
+    7    14     21       28         35"""
+    battlement_merlons = n * 'X.' + 'X\n'
+    battlement_wall = (2 * n + 1) * 'X' + '\n'
+    wall_row = '.' + (2 * n - 1) * 'X' + '\n'
+    result = battlement_merlons \
+        + battlement_wall \
+        + wall_row \
+        + wall_row[:-1] # Same as wall_row without newline
     return result
 
 
-def num115(n):
-    return -1
+def num115(n): # DONE
+    # Sum of battlement merlon pieces, battlement wall pieces and two wall rows
+    return (n + 1) + (2 * n + 1) + 2 * (2 * n - 1)
 
 
 def vis116(n):
